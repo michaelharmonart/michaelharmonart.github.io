@@ -22,6 +22,7 @@ jobs:
       GO_VERSION: 1.25.1
       HUGO_VERSION: 0.151.0
       NODE_VERSION: 22.18.0
+      HUGO_DIR: hugo
       TZ: Europe/Oslo
     steps:
       - name: Checkout
@@ -79,6 +80,7 @@ jobs:
             hugo-
       - name: Build the site
         run: |
+          cd "${HUGO_DIR}"
           hugo \
             --gc \
             --minify \
