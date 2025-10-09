@@ -1,6 +1,6 @@
 baseURL = 'https://michaelharmonart.github.io/'
 languageCode = 'en-us'
-title = 'Michael Harmon's Rigging Resources'
+title = "Michael Harmon's Rigging Resources"
 theme = 'PaperMod'
 [caches]
   [caches.images]
