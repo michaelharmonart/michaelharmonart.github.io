@@ -1,4 +1,7 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://michaelharmonart.github.io/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Michael Harmon's Rigging Resources'
 theme = 'PaperMod'
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
