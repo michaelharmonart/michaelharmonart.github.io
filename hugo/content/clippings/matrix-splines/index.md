@@ -1,5 +1,6 @@
 ---
 title: "Matrix Splines in Maya"
+author: "Cole O'Brien"
 date: 2025-10-09
 tags: ["maya", "rigging", "splines"]
 categories: ["technical"]
