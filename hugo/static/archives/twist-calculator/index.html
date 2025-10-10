@@ -1,0 +1,81 @@
+<!DOCTYPE html> <html lang=en style><!--
+ Page saved with SingleFile 
+ url: https://bindpose.com/maya-matrix-nodes-part-2-node-based-matrix-twist-calculator/ 
+ saved date: Thu Oct 09 2025 22:41:28 GMT-0600 (Mountain Daylight Time)
+--><meta charset=utf-8>
+<meta name=description content="IK handles and aim constraints are overkill, today we will have a look at creating a matrix twist calculator, that is both clean and quick to evaluate.">
+<link rel=canonical href=https://bindpose.com/maya-matrix-nodes-part-2-node-based-matrix-twist-calculator/https%3A%2F%2Fbindpose.com%2Fmaya-matrix-nodes-part-2-node-based-matrix-twist-calculator>
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+<title>Maya matrix nodes - Part 2: Node based matrix twist calculator | bindpose</title>
+<link rel=stylesheet href=stylesheet_3.css>
+<link rel=stylesheet href=stylesheet_2.css>
+<link rel=stylesheet href=stylesheet_1.css>
+<link rel=stylesheet href=stylesheet_0.css>
+<meta name=referrer content=no-referrer><meta http-equiv=content-security-policy content="default-src 'none'; connect-src 'self' data: blob:; font-src 'self' data: blob:; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline' data: blob:; frame-src 'self' data: blob:; media-src 'self' data: blob:; script-src 'self' 'unsafe-inline' data: blob:; object-src 'self' data: blob:;"></head>
+<body>
+ <div class="main-and-sidebar-wrapper no-sidebar">
+ <header>
+ <section aria-label="site name, description and mobile menu toggle button">
+ <a href=https://bindpose.com/ aria-label="go to homepage">bindpose</a>
+ </section>
+ <div id=theme-switch style=display:block>
+ <button id=dark-button aria-label="switch to dark mode"><img alt=dark src=images/1.svg></button>
+ <button id=light-button aria-label="switch to light mode"><img alt=light src=images/2.svg></button>
+ </div>
+ </header>
+ <main>
+ <article>
+ <header>
+ <h1>Maya matrix nodes - Part 2: Node based matrix twist calculator</h1>
+ <div>
+ <time datetime="2017-07-02 10:36">July 2, 2017</time>
+ </div>
+ </header>
+ <div class=article-content>
+ <p>This post is a part of a three post series, where I implement popular rigging functionalities with just using maya's native matrix nodes.</p>
+<ul>
+<li><a href=http://bindpose.com/maya-matrix-based-functions-part-1-node-based-matrix-constraint/>Part 1: Node based matrix constraint</a></li>
+<li><strong>Part 2: Matrix twist calculator</strong></li>
+<li><a href=http://bindpose.com/maya-matrix-nodes-part-3-matrix-rivet/>Part 3: Matrix rivet</a></li>
+</ul>
+<p>Calculating twist is a popular rigging necessity, as often we would rather smoothly interpolate it along a joint chain, instead of just applying it at the end of it. The classical example is limbs, where we need some twist in the forearm/shin area to support the rotation of the wrist or foot. Some popular implementations utilize ik handles or aim constraints, but I find them as a bit of an <strong>overkill</strong> for the task. Therefore, today we will have a look at creating a matrix twist calculator, that is both clean and quick to evaluate.</p>
+<p>Other than matrix nodes I will be using a couple of quaternion ones, but I promise it will be quite simple, as even I myself am not really used to working with them.</p>
+<p><em><strong>tl;dr:</strong> We will get the matrix offset between two objects - <strong>relative matrix</strong>, then extract the quaternion of that matrix and get only the X and W components, which when converted to an euler angle, will result in the twist between the two matrices along the desired axis.</em></p>
+<h2 id=desired-behaviour>Desired behaviour</h2>
+<p><img alt="Matrix twist calculator - desired behaviour" src=images/3.gif>
+<em>Please excuse the skinning, I have just done a geodesic voxel bind</em></p>
+<p>As you can see what we are doing is calculating the twist amount (<em>often called </em><em>roll</em><em> as well from the yaw, pitch and roll notation</em>) between two objects. That is, the rotation difference on the axis aiming down the joint chain.</p>
+<h2 id=limitations>Limitations</h2>
+<p>An undesirable effect you can notice is the flip when the angle reaches 180 degrees. Now, as far as I am aware, there is no reasonable solution to this problem, that does not involve some sort of caching of the previous rotation. I believe, that is what the <em>No flip</em> <code>interpType</code> on constraints does. There was one, using an orient constraint between a no roll joint and the rolling joint and then multiplying the resulting angle by 2, which worked in simple cases, but I found it a bit unintuitive and not always predictable. Additionally, most animators are familiar with the issue, and are reasonable about it. In the rare cases, where this issue will be a pain in your production you can always add control over the twisting matrices, so the animators can tweak them.</p>
+<p>Something else to keep in mind is to always use the first axis of the rotate order to calculate the twist in, since the other ones might flip at 90 degrees instead of 180. That is why, I will be looking at calculating the X twist, as the default rotate order is <em>XYZ</em>.</p>
+<p>With that out of the way, let us have a look at the setup.</p>
+<h2 id=matrix-twist-calculator>Matrix twist calculator</h2>
+<p>I will be looking at the simple case of extracting the twist between two cubes oriented in the same way. Now, you might think that is too simple of an example, but in fact this is exactly what I do in my rigs. I create two locators, which are oriented with the X axis being aligned with the axis I am interested in. Then I parent them to the two objects I want to find the twist between, respectively. This, means that finding the twist on that axis of the locators, will give me the twist between the two objects.</p>
+<p><img alt="Matrix twist calculator" src=images/4.gif>
+<em>Granted, I do not use actual locators or cubes, but just create matrices to represent them, so I keep my outliner cleaner. But, that is not important at the moment.</em></p>
+<h3 id=the-relative-matrix>The relative matrix</h3>
+<p>Now, since we are going to be comparing two matrices to get the twist angle between them, we need to start by getting one of them in the <em>relative</em> space of the other one. If you have had a look at my <a href=http://bindpose.com/maya-matrix-based-functions-part-1-node-based-matrix-constraint/>Node based matrix constraint</a> post or you were already familiar with matrices, you would know that we can do that with a simple multiplication of the <em>child matrix</em> by the inverse of the <em>parent matrix</em>. That will give us the matrix of the child object relative to that of the parent one.</p>
+<p>The reason, we need that is because that relative matrix is now holding all the differences in the transformations between the two objects, and we are interested in exactly that, the difference on the aim axis.</p>
+<p>Here is how that would look in the graph.</p>
+<p><img alt="Matrix twist calculator - relative matrix" src=images/5.png></p>
+<h3 id=the-quaternion>The quaternion</h3>
+<p>So, if we have the relative matrix, we can proceed to extracting the rotation out of it. The thing with rotations in 3D space is that they seem a bit messy, mainly because we usually think of them in terms of <a href=http://mathworld.wolfram.com/EulerAngles.html>Euler angles</a>, as that is what maya gives us in the <code>.rotation</code> attributes of transforms. There is a thing called a <a href=https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation>quaternion</a>, though, which also represents a rotation in 3D space, and dare I say it, is much nicer to work with. Nicer, mainly because we do not care about rotate order, when working with quaternions, since they represent just a <a href=http://download.autodesk.com/us/maya/2010help/api/class_m_quaternion.html#6814277ada06a1494a82c7add19258a1>single rotation</a>. What this gives us is a reliable representation of an angle along just one axis.</p>
+<p>In practical terms, this means, that taking the <em>X</em> and <em>W</em> components of the quaternion, and zeroing out the <em>Y</em> and <em>Z</em> ones, will give us the desired rotation only in the <em>X</em> axis.</p>
+<p>In maya terms, we will make use of the <code>decomposeMatrix</code> to get the quaternion out of a matrix and then use the <code>quatToEuler</code> node to convert that quaternion to an euler rotation, which will hold the twist between the matrices.</p>
+<p>Here is the full graph, where the <code>.outputRotateX</code> of the <code>quatToEuler</code> node is the actual twist value.</p>
+<p><img alt="Matrix twist calculator - full graph" src=images/6.png></p>
+<h2 id=conclusion>Conclusion</h2>
+<p>And that is it! As you can see, it is a stupidly simple procedure, but has proved to be giving stable results, which in fact are 100% the same as using an ik handle or an aim constraint, but with little to no overhead, since matrix and quaternion nodes are very computationally efficient.</p>
+<p>Stay tuned for part 3 from this matrix series, where I will look at creating a rivet by using just matrix nodes.</p></div>
+ </article>
+<nav style="width:100%;text-align:center;border-top:1px solid var(--body-bg1);padding-top:1em;--darkreader-inline-border-top-short:1px solid var(--darkreader-border--body-bg1)" data-darkreader-inline-border-top-short>
+ <a aria-label="go to the homepage" href=https://bindpose.com/>home</a>
+</nav>
+ </main>
+ </div>
+ <footer>
+ Copyright © 2022 <a href=https://bindpose.com/ aria-label="home page">bindpose</a>.
+ Powered by <a aria-label="the 'lamya' site generator github repository" href=https://github.com/vshotarov/lamya>lamya</a>.
+ </footer>
+ 
+ 
