@@ -1,0 +1,1 @@
+.article-content{font-family:inherit}.main-and-sidebar-wrapper:not(.home)>main,.main-and-sidebar-wrapper:not(.home)>aside{max-width:800px;flex:1 100%}@media screen and (max-width:800px){.main-and-sidebar-wrapper:not(.home)>main,.main-and-sidebar-wrapper:not(.home)>aside{max-width:100%}}.article-content p>img{display:block;margin:0 auto}

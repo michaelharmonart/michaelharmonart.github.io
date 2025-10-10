@@ -1,0 +1,111 @@
+<!DOCTYPE html> <html lang=en style><!--
+ Page saved with SingleFile 
+ url: https://bindpose.com/maya-matrix-based-functions-part-1-node-based-matrix-constraint/ 
+ saved date: Thu Oct 09 2025 22:31:17 GMT-0600 (Mountain Daylight Time)
+--><meta charset=utf-8>
+<meta name=description content="in this post we will have a look at constraints, without the performance overhead of maya constraints, effectively creating a node based matrix constraint.">
+<link rel=canonical href=https://bindpose.com/maya-matrix-based-functions-part-1-node-based-matrix-constraint/https%3A%2F%2Fbindpose.com%2Fmaya-matrix-based-functions-part-1-node-based-matrix-constraint>
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+<title>Maya matrix nodes - Part 1: Node based matrix constraint | bindpose</title>
+<link rel=stylesheet href=stylesheet_3.css>
+<link rel=stylesheet href=stylesheet_2.css>
+<link rel=stylesheet href=stylesheet_1.css>
+<link rel=stylesheet href=stylesheet_0.css>
+<meta name=referrer content=no-referrer><meta http-equiv=content-security-policy content="default-src 'none'; connect-src 'self' data: blob:; font-src 'self' data: blob:; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline' data: blob:; frame-src 'self' data: blob:; media-src 'self' data: blob:; script-src 'self' 'unsafe-inline' data: blob:; object-src 'self' data: blob:;"></head>
+<body>
+ <div class="main-and-sidebar-wrapper no-sidebar">
+ <header>
+ <section aria-label="site name, description and mobile menu toggle button">
+ <a href=https://bindpose.com/ aria-label="go to homepage">bindpose</a>
+ </section>
+ <div id=theme-switch style=display:block>
+ <button id=dark-button aria-label="switch to dark mode"><img alt=dark src=images/1.svg></button>
+ <button id=light-button aria-label="switch to light mode"><img alt=light src=images/2.svg></button>
+ </div>
+ </header>
+ <main>
+ <article>
+ <header>
+ <h1>Maya matrix nodes - Part 1: Node based matrix constraint</h1>
+ <div>
+ <time datetime="2017-06-25 09:57">June 25, 2017</time>
+ </div>
+ </header>
+ <div class=article-content>
+ <p>This post is a part of a three post series, where I will try to implement popular rigging functionalities by only using maya's native matrix nodes.</p>
+<ul>
+<li><strong>Part 1: Node based matrix constraint</strong></li>
+<li><a href=http://bindpose.com/maya-matrix-nodes-part-2-node-based-matrix-twist-calculator/>Part 2: Matrix twist calculator</a></li>
+<li><a href=http://bindpose.com/maya-matrix-nodes-part-3-matrix-rivet/>Part 3: Matrix rivet</a></li>
+</ul>
+<p>Following the <a href=http://www.cultofrig.com/>Cult of rig</a> lately, I realized I have been <strong>very</strong> wasteful in my rigs in terms of constraints. I have always known that they are slower than direct connections and parenting, but then I thought that is the only way to do broken hierarchy rigs. Even though I did matrix math at university, I never used it in maya as I weirdly thought the matrix nodes are broken or limited. There was always the option of writing my own nodes, but since I would like to make it as easy for people to use my rigs, I would rather keep everything in vanilla maya.</p>
+<p>Therefore, when Raffaele used the <code>matrixMult</code> and <code>decomposeMatrix</code> nodes to reparent a transform, I was very pleasantly inspired. Since then, I have tried applying the concept to a couple of other rigging functionalities, such as the twist calculation and rivets and it has been giving me steadily good results. So, in this post we will have a look at how we can use the technique he showed in the <a href="https://www.youtube.com/watch?v=zDf4Ak9R2yM">stream</a>, to simulate a parent + scale constraint, without the performance overhead of constraints, effectively creating a node based matrix constraint.</p>
+<h2 id=limitations>Limitations</h2>
+<p>There are some limitations with using this approach, though. Some of them are not complex to go around, but the issue is that this adds extra nodes to the graph, which in turn leads to performance overhead and clutter. That being said, constraints add up to the outliner clutter, so I suppose it might be a matter of a preference.</p>
+<h3 id=joints>Joints</h3>
+<p>Constraining a joint with <code>jointOrient</code> values, will not work, as the <code>jointOrient</code> matrix is applied before the rotation. There is a way to get around this, but it involves creating a number of other nodes, which add some overhead and for me are making it unreasonable to use the setup instead of an orient constraint.</p>
+<p>If you want to see how we go around the <code>jointOrient</code> issue just out of curiosity, have a look at the <a href=#jointOrient>joint orient</a> section.</p>
+<h3 id=weights-and-multiple-targets>Weights and multiple targets</h3>
+<p>Weights and multiple targets are also not entirely suitable for this approach. Again, it is definitely not impossible, since we can always blend the output values of the matrix decomposition, but that will also involve an additional <code>blendColors</code> node for each of the transform attributes we need - <code>translate</code>, <code>rotate</code> and <code>scale</code>. And similarly to the previous one, that means extra overhead and more node graph clutter. If there was an easy way to blend matrices with maya's native nodes, that would be great.</p>
+<h3 id=rotate-order>Rotate order</h3>
+<p>Weirdly, even though the decompose matrix has a <code>rotateOrder</code> attribute, it does not seem to do anything, so this method will work with only the <code>xyz</code> rotate order. Last week I received an email from the <a href=https://groups.google.com/forum/#!topic/maya_he3d/mU-21jvAHOE>maya_he3d</a> mailing list, about that issue and it seems like it has been flagged to Autodesk for fixing, which is great.</p>
+<h2 id=construction>Construction</h2>
+<p>The construction of such a node based matrix constraint is fairly simple both in terms of nodes and the math. We will be constructing the graph as shown in the <a href="https://www.youtube.com/watch?v=zDf4Ak9R2yM">Cult of Rig stream</a>, so feel free to have a look at it for a more visual approach. The only addition I will make to it is supporting a <em>maintainOffset</em> functionality. Also, Raffaele talks a lot about math in his other videos as well, so have a look at them, too.</p>
+<p><img alt="Node based matrix constraint" src=images/3.png></p>
+<p>All the math is happening inside the <code>matrixMult</code> node. Essentially, we are taking the <code>worldMatrix</code> of a target object and we are converting it to relative space by multiplying by the <code>parentInverseMatrix</code> of the constrained object. The <code>decomposeMatrix</code> after that is there to break the matrix into attributes which we could actually connect to a transform - <code>translate</code>, <code>rotate</code>, <code>scale</code> and <code>shear</code>. It would be great if we could directly connect to an input matrix attribute, but that would probably create it's own set of problems.</p>
+<p>That's the basic node based matrix constraint. How about maintaining the offset, though?</p>
+<h2 id=maintain-offset>Maintain offset</h2>
+<p>In order to be able to maintain the offset, we need to just calculate it first and then put it in the <code>multMatrix</code> node before the other two matrices.</p>
+<p><img alt="Node based matrix constraint - maintain offset" src=images/4.png></p>
+<h3 id=calculating-offset>Calculating offset</h3>
+<p>The way we calculate the local matrix offset is by multiplying the <code>worldMatrix</code> of the object by the <code>worldInverseMatrix</code> of the parent (object relative to). The result is the local matrix offset.</p>
+<h4 id=using-the-multmatrix-node>Using the multMatrix node</h4>
+<p>It is entirely possible to do this using another <code>matrixMult</code> node, and then doing a <code>getAttr</code> of the output and set it in the main <code>matrixMult</code> by doing a <code>setAttr</code> with the <code>type</code> flag set to <code>"matrix"</code>. The local <code>matrixMult</code> is then free to be deleted. The reason we get and set the attribute, instead of connecting it, is that otherwise we create a cycle.</p>
+<p><img alt="Node based matrix constraint - local matrix offset" src=images/5.png></p>
+<h4 id=using-the-maya-api>Using the Maya API</h4>
+<p>What I prefer doing, though, is getting the local offset via the API, as it does not involve creating nodes and then deleting them, which is much nicer when you need to code it. Let's have a look.</p>
+<div class=codehilite><pre><span></span><code><span class=p>:::</span><span class=n>python</span>
+<span class=kn>import</span><span class=w> </span><span class=nn>maya.OpenMaya</span><span class=w> </span><span class=k>as</span><span class=w> </span><span class=nn>om</span>
+
+<span class=k>def</span><span class=w> </span><span class=nf>getDagPath</span><span class=p>(</span><span class=n>node</span><span class=o>=</span><span class=kc>None</span><span class=p>):</span>
+    <span class=n>sel</span> <span class=o>=</span> <span class=n>om</span><span class=o>.</span><span class=n>MSelectionList</span><span class=p>()</span>
+    <span class=n>sel</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>node</span><span class=p>)</span>
+    <span class=n>d</span> <span class=o>=</span> <span class=n>om</span><span class=o>.</span><span class=n>MDagPath</span><span class=p>()</span>
+    <span class=n>sel</span><span class=o>.</span><span class=n>getDagPath</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=n>d</span><span class=p>)</span>
+    <span class=k>return</span> <span class=n>d</span>
+
+<span class=k>def</span><span class=w> </span><span class=nf>getLocalOffset</span><span class=p>(</span><span class=n>parent</span><span class=p>,</span> <span class=n>child</span><span class=p>):</span>
+    <span class=n>parentWorldMatrix</span> <span class=o>=</span> <span class=n>getDagPath</span><span class=p>(</span><span class=n>parent</span><span class=p>)</span><span class=o>.</span><span class=n>inclusiveMatrix</span><span class=p>()</span>
+    <span class=n>childWorldMatrix</span> <span class=o>=</span> <span class=n>getDagPath</span><span class=p>(</span><span class=n>child</span><span class=p>)</span><span class=o>.</span><span class=n>inclusiveMatrix</span><span class=p>()</span>
+
+    <span class=k>return</span> <span class=n>childWorldMatrix</span> <span class=o>*</span> <span class=n>parentWorldMatrix</span><span class=o>.</span><span class=n>inverse</span><span class=p>()</span>
+</code></pre></div>
+<p>The <code>getDagPath</code> function is just there to give us a reference to an <a href=http://download.autodesk.com/us/maya/2010help/api/class_m_dag_path.html><code>MDagPath</code></a> instance of the passed object. Then, inside the <code>getLocalOffset</code> we get the <code>inclusiveMatrix</code> of the object, which is the full world matrix equivalent to the <code>worldMatrix</code> attribute. And in the end we return the local offset as an <a href=http://download.autodesk.com/us/maya/2010help/api/class_m_matrix.html><code>MMatrix</code></a> instance.</p>
+<p>Then, all we need to do is to set the <code>multMatrix.matrixIn[0]</code> attribute to our local offset matrix. The way we do that is by using the <code>MMatrix</code>'s <code>()</code> operator which returns the element of the matrix specified by the row and column index. So, we can write it like this.</p>
+<div class=codehilite><pre><span></span><code><span class=o>::</span><span class=p>:</span><span class=nx>python</span>
+<span class=nx>localOffset</span><span class=w> </span><span class=p>=</span><span class=w> </span><span class=nx>getLocalOffset</span><span class=p>(</span><span class=nx>parent</span><span class=p>,</span><span class=w> </span><span class=nx>child</span><span class=p>)</span>
+<span class=nx>mc</span><span class=p>.</span><span class=nx>setAttr</span><span class=p>(</span><span class=s>"multMatrix1.matrixIn[0]"</span><span class=p>,</span><span class=w> </span><span class=p>[</span><span class=nx>localOffset</span><span class=p>(</span><span class=nx>i</span><span class=p>,</span><span class=w> </span><span class=nx>j</span><span class=p>)</span><span class=w> </span><span class=k>for</span><span class=w> </span><span class=nx>i</span><span class=w> </span><span class=k>in</span><span class=w> </span><span class=nx>range</span><span class=p>(</span><span class=mi>4</span><span class=p>)</span><span class=w> </span><span class=k>for</span><span class=w> </span><span class=nx>j</span><span class=w> </span><span class=k>in</span><span class=w> </span><span class=nx>range</span><span class=p>(</span><span class=mi>4</span><span class=p>)],</span><span class=w> </span><span class=k>type</span><span class=p>=</span><span class=s>"matrix"</span><span class=p>)</span>
+</code></pre></div>
+<p>Essentially, we are calculating the difference between the <code>parent</code> and <code>child</code> objects and we are applying it before the other two matrices in the <code>multMatrix</code> node in order to implement the <code>maintainOffset</code> functionality in our own node based matrix constraint.</p>
+<h2 id=joint-orient>Joint orient</h2>
+<p>Lastly, let us have a look at how we can go around the joint orientation issue I mentioned in the <em>Limitations</em> section.</p>
+<p>What we need to do is account for the <code>jointOrient</code> attribute on joints. The difficulty comes from the fact that the <code>jointOrient</code> is a separate matrix that is applied after the <code>rotation</code> matrix. That means, that all we need to do is, in the end of our matrix chain rotate by the inverse of the <code>jointOrient</code>. I tried doing it a couple of times via matrices, but I could not get it to work. Then I resolved to write a node and test how I would do it from within. It is really simple, to do it via the API as all we need to do is use the <a href=http://download.autodesk.com/us/maya/2009help/api/class_m_transformation_matrix.html#f648d410137f7d14c017cc715fea977d><code>rotateBy</code></a> function of the <code>MTransformationMatrix</code> class, with the inverse of the <code>jointOrient</code> attribute taken as a <code>MQuaternion</code>.</p>
+<p>Then, I thought that this should not be too hard to implement in vanilla maya too, since there are the quaternion nodes as well. And yeah there is, but honestly, I do not think that graph looks nice at all. Have a look.</p>
+<p><img alt="Node based matrix constraint - joint orient" src=images/6.png></p>
+<p>As you can see, what we do is, we create a quaternion from the joint orientation, then we invert it and apply it to the calculated output matrix of the <code>multMatrix</code>. The way we apply it is by doing a quaternion product. All we do after that is just convert it to euler and connect it to the rotation of the joint. Bear in mind, the <code>quatToEuler</code> node supports rotate orders, so it is quite useful.</p>
+<p>Of course, you can still use the <code>maintainOffset</code> functionality with this method. As I said though, comparing this to just an orient constraint it seems like the orient constraint was performing faster every time, so I see no reason of doing this other than keeping the outliner cleaner.</p>
+<p>Additionally, I am assuming that there is probably an easier way of doing this, but I could not find it. If you have something in mind, give me a shout.</p>
+<h2 id=conclusion>Conclusion</h2>
+<p>Using this node based constrain I was able to remove parent, point and orient constraints from my body rig, making it perform much faster than before, and also the outliner is much nicer to look at. Stay tuned for parts 2 and 3 from this matrix series, where I will look at creating a twist calculator and a rivet by using just matrix nodes.</p></div>
+ </article>
+<nav style="width:100%;text-align:center;border-top:1px solid var(--body-bg1);padding-top:1em;--darkreader-inline-border-top-short:1px solid var(--darkreader-border--body-bg1)" data-darkreader-inline-border-top-short>
+ <a aria-label="go to the homepage" href=https://bindpose.com/>home</a>
+</nav>
+ </main>
+ </div>
+ <footer>
+ Copyright © 2022 <a href=https://bindpose.com/ aria-label="home page">bindpose</a>.
+ Powered by <a aria-label="the 'lamya' site generator github repository" href=https://github.com/vshotarov/lamya>lamya</a>.
+ </footer>
+ 
+ 
