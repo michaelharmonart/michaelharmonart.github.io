@@ -2,6 +2,7 @@ baseURL = 'https://michaelharmonart.github.io/'
 languageCode = 'en-us'
 title = "Michael Harmon's Rigging Resources"
 theme = 'PaperMod'
+sectionPagesMenu = 'main'
 [caches]
   [caches.images]
     dir = ':cacheDir/images'

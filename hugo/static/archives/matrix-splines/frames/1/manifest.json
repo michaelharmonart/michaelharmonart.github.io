@@ -1,0 +1,11 @@
+{
+  "originalUrl": "https://www.google.com/recaptcha/enterprise/anchor?ar=1&k=6Le-uGgpAAAAAPprRaokM8AKthQ9KNGdoxaGUvVp&co=aHR0cHM6Ly9jb2xlb2JyaWVuLm1lZGl1bS5jb206NDQz&hl=en&v=bGi-DxR800F5_ueMVcTwXc6q&size=invisible&anchor-ms=20000&execute-ms=15000&cb=e6ia549nnt0a",
+  "indexFilename": "index.html",
+  "resources": {
+    "fonts/1.woff2": "https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4.woff2",
+    "fonts/0.woff2": "https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2",
+    "stylesheet_0.css": "https://www.gstatic.com/recaptcha/releases/bGi-DxR800F5_ueMVcTwXc6q/styles__ltr.css",
+    "images/3": "blob:https://www.google.com/413a2a51-07e7-4dda-b199-c7e651d2893e",
+    "images/2.png": "https://www.gstatic.com/recaptcha/api2/logo_48.png"
+  }
+}

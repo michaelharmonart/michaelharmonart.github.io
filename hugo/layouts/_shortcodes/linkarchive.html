@@ -1,0 +1,5 @@
+{{- $dir := strings.TrimPrefix "/clippings/" .Page.Path -}}
+{{- $archiveURL := printf "/archives/%s/index.html" $dir -}}
+{{- if fileExists (printf "/static/%s/" $archiveURL) -}}
+  <a href="{{ $archiveURL }}" target="_blank" rel="noopener">View Archived Page 💾</a>
+{{- end -}}
