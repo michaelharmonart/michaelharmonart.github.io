@@ -1,25 +1,25 @@
 - name: Walter Yoder
   role: Founder / Rigging Artist
   company: Squarebit Studios
+  company_website: https://www.squarebitstudios.com/
   notable_work:
-    - "Raya and The Last Dragon – Raya facial Rig"
+    - Raya and The Last Dragon – Raya facial Rig
   links:
-    - title: "Website"
-      url: "https://https://walteryoder.blogspot.com/.com/johndoe"
-    - title: "Squarebit Studios"
-      url: "https://www.squarebitstudios.com/"
-    - title: "Raya Facial Rig"
-      url: "https://www.instagram.com/p/CNHJm8AjwlC/"
-  notes: "Check out his Siggraph paper on Rig optimization at Disney."
+    - title: Website
+      url: https://https://walteryoder.blogspot.com/.com/johndoe
+    - title: Raya Facial Rig
+      url: https://www.instagram.com/p/CNHJm8AjwlC/
+  notes: Check out his Siggraph paper on Rig optimization at Disney.
 
 - name: Perry Leijten
   role: Rigging / Tech Artist
   company: Square Enix Tokyo
+  company_website: https://www.squarebitstudios.com/
   notable_work:
-    - "Horizon Zero Dawn – Rigged many of the Robots"
+    - Horizon Zero Dawn – Rigged many of the Robots
   links:
-    - title: "Website"
-      url: "https://www.perryleijten.com"
-    - title: "Gumroad"
-      url: "https://peerke.gumroad.com/"
-  notes: "Has some great articles, but is also active on the [Ask A Rigger Discord Server](/resources/ask-a-rigger)."
+    - title: Website
+      url: https://www.perryleijten.com
+    - title: Gumroad
+      url: https://peerke.gumroad.com/
+  notes: Has some great articles, but is also active on the [Ask A Rigger Discord Server](/resources/ask-a-rigger).

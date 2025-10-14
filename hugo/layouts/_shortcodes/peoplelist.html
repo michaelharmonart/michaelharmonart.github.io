@@ -3,9 +3,9 @@
     {{ range $person := $people }}
     <div class="person">
         <h2>{{ $person.name }}</h2>   
-        {{ $person.role }} at <a href="{{ $person.website }}">{{ $person.company }}</a><br>
+        {{ $person.role }} at <a href="{{ $person.company_website }}">{{ $person.company }}</a><br>
 
-        {{ if $person.notable_work }}
+        {{ if $person.notable_work }}s
             <strong>Notable Work:</strong> {{ delimit $person.notable_work ", " | markdownify }}<br>
         {{ end }}
 
