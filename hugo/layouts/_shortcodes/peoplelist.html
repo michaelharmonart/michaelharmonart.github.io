@@ -5,7 +5,7 @@
         <h2>{{ $person.name }}</h2>   
         {{ $person.role }} at <a href="{{ $person.company_website }}">{{ $person.company }}</a><br>
 
-        {{ if $person.notable_work }}s
+        {{ if $person.notable_work }}
             <strong>Notable Work:</strong> {{ delimit $person.notable_work ", " | markdownify }}<br>
         {{ end }}
 
