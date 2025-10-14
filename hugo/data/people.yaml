@@ -11,3 +11,15 @@
     - title: "Raya Facial Rig"
       url: "https://www.instagram.com/p/CNHJm8AjwlC/"
   notes: "Check out his Siggraph paper on Rig optimization at Disney."
+
+- name: Perry Leijten
+  role: Rigging / Tech Artist
+  company: Square Enix Tokyo
+  notable_work:
+    - "Horizon Zero Dawn – Rigged many of the Robots"
+  links:
+    - title: "Website"
+      url: "https://www.perryleijten.com"
+    - title: "Gumroad"
+      url: "https://peerke.gumroad.com/"
+  notes: "Has some great articles, but is also active on the [Ask A Rigger Discord Server](/resources/ask-a-rigger)."

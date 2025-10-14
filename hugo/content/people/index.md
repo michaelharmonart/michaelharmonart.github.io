@@ -1,6 +1,8 @@
 ---
 menus: main
-title: People to Follow
+title: People
 ---
+
+This a collection of industry professionals who are also great resources.
 
 {{< peoplelist>}}
