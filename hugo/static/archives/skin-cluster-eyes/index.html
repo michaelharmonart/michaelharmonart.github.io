@@ -1,0 +1,256 @@
+<!DOCTYPE html> <html lang=en style><!--
+ Page saved with SingleFile 
+ url: https://rigmarolestudio.com/rigging-spherical-eyes/ 
+ saved date: Tue Oct 14 2025 14:36:14 GMT-0600 (Mountain Daylight Time)
+--><meta charset=utf-8>
+<meta http-equiv=X-UA-Compatible content="IE=edge">
+<title>Rigging Spherical Eyes with Just a skinCluster and Sin and Cos</title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<link href=stylesheet_5.css rel=stylesheet>
+<link rel=stylesheet type=text/css href=stylesheet_4.css>
+<link rel=stylesheet type=text/css href=stylesheet_3.css>
+<link rel=stylesheet type=text/css href=stylesheet_2.css>
+<link rel=stylesheet type=text/css href=stylesheet_1.css>
+<link rel=canonical href=https://rigmarolestudio.com/rigging-spherical-eyes/>
+<meta property=og:site_name content="Rigmarole Studio">
+<meta property=og:type content=article>
+<meta property=og:title content="Rigging Spherical Eyes with Just a skinCluster and Sin and Cos">
+<meta property=og:description content="This is a quick Maya character rigging tip about how to rig perfectly spherical
+iris and pupil scaling in your characters, using only a single skinCluster and
+some basic nodes. I used Maya, but this technique can easily be mapped to all
+the other 3D applications using their own sine">
+<meta property=og:url content=https://rigmarolestudio.com/rigging-spherical-eyes/>
+<meta property=og:image content=https://rigmarolestudio.com/content/images/2019/06/final_pupil_iris_result-2.gif>
+<meta property=article:published_time content=2019-06-14T16:29:51.000Z>
+<meta property=article:modified_time content=2019-07-06T01:54:33.000Z>
+<meta property=article:tag content=character-rigging>
+<meta property=article:tag content=face-rigging>
+<meta property=article:tag content=rigtip>
+<meta property=article:tag content=maya>
+<meta name=twitter:card content=summary_large_image>
+<meta name=twitter:title content="Rigging Spherical Eyes with Just a skinCluster and Sin and Cos">
+<meta name=twitter:description content="This is a quick Maya character rigging tip about how to rig perfectly spherical
+iris and pupil scaling in your characters, using only a single skinCluster and
+some basic nodes. I used Maya, but this technique can easily be mapped to all
+the other 3D applications using their own sine">
+<meta name=twitter:url content=https://rigmarolestudio.com/rigging-spherical-eyes/>
+<meta name=twitter:image content=https://rigmarolestudio.com/content/images/2019/06/final_pupil_iris_result-2.gif>
+<meta name=twitter:label1 content="Written by">
+<meta name=twitter:data1 content="Chris Lesage">
+<meta name=twitter:label2 content="Filed under">
+<meta name=twitter:data2 content="character-rigging, face-rigging, rigtip, maya">
+<meta name=twitter:creator content=@chrislesage>
+<meta property=og:image:width content=500>
+<meta property=og:image:height content=500>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","publisher":{"@type":"Organization","name":"Rigmarole Studio","url":"https://rigmarolestudio.com/","logo":{"@type":"ImageObject","url":"https://rigmarolestudio.com/content/images/2022/03/rigamarole02_square_format_transparent.png"}},"author":{"@type":"Person","name":"Chris Lesage","image":{"@type":"ImageObject","url":"//www.gravatar.com/avatar/fe235fb8ee5c2d1b2580876512d64daa?s=250&d=mm&r=x","width":250,"height":250},"url":"https://rigmarolestudio.com/author/chrislesage/","sameAs":["https://x.com/chrislesage"]},"headline":"Rigging Spherical Eyes with Just a skinCluster and Sin and Cos","url":"https://rigmarolestudio.com/rigging-spherical-eyes/","datePublished":"2019-06-14T16:29:51.000Z","dateModified":"2019-07-06T01:54:33.000Z","image":{"@type":"ImageObject","url":"https://rigmarolestudio.com/content/images/2019/06/final_pupil_iris_result-2.gif","width":500,"height":500},"keywords":"character-rigging, face-rigging, rigtip, maya","description":"This is a quick Maya character rigging tip about how to rig perfectly spherical\niris and pupil scaling in your characters, using only a single skinCluster and\nsome basic nodes. I used Maya, but this technique can easily be mapped to all\nthe other 3D applications using their own sine and cosine math functions.\n\n(I’ll include a more full tutorial with example scripts and files in the\nfuture.)\n\nRemember when Karolis Galkus [https://vimeo.com/galkus] gave that tip about \nusing eulerToQuat nodes to d","mainEntityOfPage":"https://rigmarolestudio.com/rigging-spherical-eyes/"}</script>
+<meta name=generator content="Ghost 5.130">
+<link rel=alternate type=application/rss+xml title="Rigmarole Studio" href=https://rigmarolestudio.com/blog/rss/>
+<link href=https://rigmarolestudio.com/webmentions/receive/ rel=webmention>
+<link rel=stylesheet type=text/css href=stylesheet_0.css>
+<style>:root{--ghost-accent-color:#15171A}</style>
+<meta name=p:domain_verify content=2d2be537824a385a86277e4603d7cfe3>
+<style>@media (prefers-reduced-motion:no-preference){}@keyframes App-logo-spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}</style><meta name=referrer content=no-referrer><link rel=icon href=images/11.png type=image/png><style>.sf-hidden{display:none!important}</style><meta http-equiv=content-security-policy content="default-src 'none'; connect-src 'self' data: blob:; font-src 'self' data: blob:; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline' data: blob:; frame-src 'self' data: blob:; media-src 'self' data: blob:; script-src 'self' 'unsafe-inline' data: blob:; object-src 'self' data: blob:;"></head>
+ <body class="post-template tag-character-rigging tag-face-rigging tag-rigtip tag-maya">
+ 
+<header class=site-header id=main-navbar>
+ <div class=container>
+ <div class=row>
+ <div class=navbar-header>
+ 
+ <a class="logo image-logo" href=https://rigmarolestudio.com/><img src=images/12.png alt="Rigmarole Studio"></a>
+ 
+ </div>
+ <nav class="main-menu hidden-sm hidden-xs" id=main-menu>
+ <ul>
+ <li class=blog><a href=https://rigmarolestudio.com/blog/>Blog</a></li>
+ <li class=instagram><a href=https://www.instagram.com/rigmarolestudio/>Instagram</a></li>
+ <li class=twitter><a href=https://twitter.com/chrislesage>Twitter</a></li>
+ <li class=about><a href=https://rigmarolestudio.com/about/>About</a></li>
+ </ul>
+</nav>
+ <div class="nav-right pull-right align-right">
+ <span class=search-toggle id=search-button data-toggle=modal data-target=#searchmodal>Search<i class="fa fa-search align-center"></i></span>
+ <span class="mobile-menu-toggle hidden-md hidden-lg sf-hidden" id=nav-toggle-button></span>
+ </div>
+ <nav class="mobile-menu visible-sm visible-xs sf-hidden" id=mobile-menu>
+ 
+</nav>
+ <div class="backdrop hidden-md hidden-lg sf-hidden" id=backdrop>
+ 
+ </div>
+ </div>
+ </div>
+</header>
+ 
+ <div class="main-content-area single-post">
+ <article>
+ <div class=post-head style=background-image:url(images/8.gif)>
+ <div class="top-container align-center">
+ <div class=row>
+ <div class="col-md-offset-1 col-md-10">
+ <span class=category>
+ #<a href=https://rigmarolestudio.com/tag/character-rigging/>character-rigging</a>   #<a href=https://rigmarolestudio.com/tag/face-rigging/>face-rigging</a>   #<a href=https://rigmarolestudio.com/tag/rigtip/>rigtip</a>   #<a href=https://rigmarolestudio.com/tag/maya/>maya</a>
+ </span>
+ <h1 class=title>Rigging Spherical Eyes with Just a skinCluster and Sin and Cos</h1>
+ <div class=post-meta>
+ <a class=author href=https://rigmarolestudio.com/author/chrislesage/ rel=author>
+ <span class=name>Chris Lesage</span>
+ </a>
+ <time class=time datetime="2019-06-14 12:06:00" itemprop=datePublished>June 14, 2019</time>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=container>
+ <div class=row>
+ <div class="col-md-offset-1 col-md-10">
+ <div class=post-content>
+ <p>This is a quick Maya character rigging tip about how to rig perfectly spherical iris and pupil scaling in your characters, using only a single skinCluster and some basic nodes. I used Maya, but this technique can easily be mapped to all the other 3D applications using their own sine and cosine math functions.<p>(I’ll include a more full tutorial with example scripts and files in the future.)<p>Remember when <a href="https://vimeo.com/galkus?ref=rigmarolestudio.com">Karolis Galkus</a> gave that tip about <a href="http://tech-artists.org/t/maya-sine-function/9903/5?ref=rigmarolestudio.com">using eulerToQuat nodes to drive sin and cos</a> on the TAO forum? Basically, with just a few nodes, using the <strong>eulerToQuat</strong> node, multiplied by 180, you can output a sin or cos wave, using just standard Maya nodes. outputQuatX is sin and outputQuatZ is cos.<p>If <strong>translateZ</strong> is sine and <strong>translateY</strong> is cosine, now you can drive a point along a circle.<figure class="kg-card kg-image-card"><img src=images/13.gif class=kg-image alt loading=lazy></figure><p>Ok, big deal. Not too interesting yet. You could do that just by rotating too.<p>Here's how the basic graph looks for driving this effect:<figure class="kg-card kg-image-card"><img src=images/14.jpg class=kg-image alt loading=lazy></figure><p>Next, if <strong>translateZ</strong> is sine and <strong>scaleX and scaleY</strong> is cosine, you can now drive a circle along a sphere. That's a bit more interesting!<figure class="kg-card kg-image-card"><img src=images/15.gif class=kg-image alt loading=lazy></figure><p>And now, if you drive joints instead of circles, you can skin a polygon sphere, and drive the edge-loops along the surface of the sphere. One joint per edge-loop is all it takes.<figure class="kg-card kg-image-card"><img src=images/16.gif class=kg-image alt loading=lazy></figure><figure class="kg-card kg-image-card"><img src=images/17.png class=kg-image alt loading=lazy></figure><p>And by doing this, you can have a perfectly spherical pupil and iris scaling effect, without the need for perfectly parametric blendshapes or any fancy deformers. <p>Spherical eyes are usually preferred for very cartoony rigs. And even on realistic rigs, you could still use this sphere as a clean basis. Then you could create the cone and bulge effects of the eye by using shaders, or an additional deformation or joint offset, on top of the perfect sphere.<p>There are ways to create this kind of iris and pupil effect with lattices and other deformers. But this technique is 100% skinCluster, and so it is also perfectly game-engine friendly.<p><strong>A few extra footnotes about this:</strong><ul><li>If you export to a game-engine, you may need to scale your joints in X, Y <strong>and</strong> Z. Some game engines do not support non-uniform scaling. As long as your joints line up with your edge-loop, scaling in Z should not cause any distortion.<li>Instead of eulerToQuat, you could use <a href="https://github.com/serguei-k/maya-math-nodes?ref=rigmarolestudio.com">maya-math-nodes plugin by Serguei Kalentchouk</a>. Personally, I freelance with many different clients. And in this last year I've had to support Maya 2015 to 2018. (Still avoiding Maya 2019, for various bugs…) So when I can solve something with built-in nodes, without the need for extra plugin dependencies, that's a win for me, for my clients, and for my rigs to survive long-term through Maya upgrades.<li>Yes you could write your own Maya plugin to do sin and cos. But Maya's plugin API is a vicious beast that I'd rather not sacrifice my life to. ¯\_( ツ )_/¯ Also, I like to write tutorials that beginners or intermediate rigging artists can also follow.<li>You can also use sin and cos functions in Maya expressions. 10 to 15 years ago, expressions simply meant slow rigs. And so I think many of us built up a fear of using them. But on modern computers, sometimes they are fine to use. They do seem to punch a big giant hole in parallel processing... So profile and test! I still prefer nodes in Maya.<li>Other 3D apps like Cinema4D, Houdini, and Blender either have math nodes, or integrated ways to add basic math formulas to your rigs. So this technique would work in any of them. Cinema4D has Xpresso, Blender has a sine node, and Houdini likely has 1000 different ways to do this. A simple VEX snippet or VOPs, channel expressions, constraint networks, CHOPs if you're brave... etc. Alas, here we are stuck with Maya. :)</ul><p>Thanks for reading!</p>
+ </div>
+ <br><hr>
+<div class="share-wrap clearfix align-center">
+ <div class="share-text h5">Share this article</div>
+ <ul class=share-links>
+ 
+ <li>
+ <a class=facebook href="https://www.facebook.com/sharer/sharer.php?u=https://rigmarolestudio.com/rigging-spherical-eyes/" title="Share on Facebook"><i class="fa fa-facebook"></i>Facebook</a>
+ </li>
+ 
+ <li>
+ <a class=twitter href="https://twitter.com/share?text=Rigging%20Spherical%20Eyes%20with%20Just%20a%20skinCluster%20and%20Sin%20and%20Cos&amp;url=https://rigmarolestudio.com/rigging-spherical-eyes/" title="Share on Twitter"><i class="fa fa-twitter"></i>Twitter</a>
+ </li>
+ 
+ <li>
+ <a class=linkedin href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://rigmarolestudio.com/rigging-spherical-eyes/&amp;title=Rigging%20Spherical%20Eyes%20with%20Just%20a%20skinCluster%20and%20Sin%20and%20Cos" title="Share on Linkedin"><i class="fa fa-linkedin"></i>Linkedin</a>
+ </li>
+ 
+ <li>
+ <a class=pinterest href="http://pinterest.com/pin/create/button/?url=https://rigmarolestudio.com/rigging-spherical-eyes/&amp;description=Rigging%20Spherical%20Eyes%20with%20Just%20a%20skinCluster%20and%20Sin%20and%20Cos" title="Share on Pinterest"><i class="fa fa-pinterest"></i>Pinterest</a>
+ </li>
+ </ul>
+</div> <div class=about-author-wrap>
+ 
+<div class="about-author clearfix">
+ <a href=https://rigmarolestudio.com/author/chrislesage/ title="Chris Lesage"><img src=images/18.jpg alt="Author image" class="avatar pull-left"></a>
+ <div class=details>
+ <div class=bio>
+ Chris Lesage is a freelance rigging TD and tech artist. He's worked on productions like Kena: Bridge of Spirits, The Little Prince, Majora's Mask Terrible Fate, Hextech Mayhem, and more.
+ </div>
+ <ul class=meta-info>
+ <li><a href=https://x.com/chrislesage target=_blank><i class="fa fa-twitter"> @chrislesage</i></a></li>
+ <li class=location><i class="fa fa-map-marker"></i>Montreal, Canada</li>
+ </ul>
+ </div>
+</div>
+ </div>
+ <div class=subscribe-box-wrap>
+ <div class=widget>
+ <div class=subscribe-box-wrap>
+ <img class=subscribe-image src=images/19.png>
+ <div class=subscribe-buttons>
+ <h4 class=subscribe-title>Sign up to the Rigmarole Tech Art Newsletter</h4>
+ <div class="content tagcloud">
+ <section class=gh-subscribe>
+ <form data-members-form=subscribe class=sign-up-form>
+ <div class=form-group>
+ <input data-members-name type=text class=form-control name=name placeholder="First Name" required value>
+ <input data-members-email type=email class=form-control name=email placeholder="Your email address" required value>
+ <button class=btn-signup-primary type=submit>Subscribe</button>
+ </div>
+ <div class="error-box text-center">
+ <div class="message-loading sf-hidden">
+ Please wait...
+ </div>
+ <div class="message-success sf-hidden">
+ Check your inbox and click the link to complete sign in
+ </div>
+ <div class="message-error sf-hidden">
+ Please enter a valid email address!
+ </div>
+ </div>
+ </form>
+ </section>
+ </div>
+ </div>
+ </div>
+</div>
+ </div>
+ <div class=widget style=margin-left:10px>
+ <hr>
+ <h4 class="widget-title-next h4">Next Post: ➡</h4>
+ <div class="content recent-post">
+ 
+ <div class="recent-single-post clearfix have-image">
+ <a href=https://rigmarolestudio.com/maya_remapvalue_slerp/>
+ <div class="post-thumb pull-left" style=background-image:url(images/9.gif)></div>
+ </a>
+ <div class=post-info>
+ <h4 class=post-title><a href=https://rigmarolestudio.com/maya_remapvalue_slerp/>How To Fake A Multi-Output Curve Interpolation in Maya</a></h4>
+ 
+ <div class=latest_excerpt>Here is a way to smoothly interpolate (LERP and SLERP) attributes in Maya with
+just basic nodes, without having to rely on any plugins.
+Imagine that you have a smooth or linear curve. And as you animate 2 simple
+control points, any number of points output their values along that</div>
+ </div>
+ </div>
+ 
+ </div>
+ </div>
+ <div class=widget style=margin-left:10px>
+ <hr>
+ <h4 class="widget-title-prev h4">⬅ Previous Post:</h4>
+ <div class="content recent-post">
+ 
+ <div class="recent-single-post clearfix have-image">
+ <a href=https://rigmarolestudio.com/blendshape_hooks/>
+ <div class="post-thumb pull-left" style=background-image:url(images/10.jpg)></div>
+ </a>
+ <div class=post-info>
+ <h4 class=post-title><a href=https://rigmarolestudio.com/blendshape_hooks/>Don't Connect Controllers to Blendshapes in Maya</a></h4>
+ 
+ <div class=latest_excerpt>This is a quick overview of a production-friendly way to set up blendshapes on a Maya rig, that makes it super easy to reuse complex rigs and save a ton of time and effort.</div>
+ </div>
+ </div>
+ 
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </article>
+</div>
+ 
+<footer class=site-footer>
+ <div class=footer-bottom>
+ <div class=container>
+ <div class="footer-bottom-wrap clearfix">
+ <div class=social-links-wrap>
+ <ul class=social-links>
+ <li><a href=https://twitter.com/chrislesage><i class="fa fa-twitter"></i></a></li>
+ <li><a href=https://www.instagram.com/rigmarolestudio/><i class="fa fa-instagram"></i></a></li>
+ <li><a href=https://www.linkedin.com/in/chrislesage><i class="fa fa-linkedin"></i></a></li>
+ <li><a href=https://rigmarolestudio.com/rss/><i class="fa fa-rss"></i></a></li>
+</ul> </div>
+ <div class=copyright-info>
+ © 2025 Rigmarole Studio
+ </div>
+ <div class=cheese>
+ <img src=images/20.png>
+ </div>
+ </div>
+ </div>
+ </div>
+</footer>
+<span class="back-to-top pull-right" id=back-to-top style=display:none></span>
+<div class="modal sf-hidden" id=searchmodal tabindex=-1 role=dialog aria-labelledby=myModalLabel>
+ 
+</div>
+ 
+ 
+ 
+ 
+ 
+ <a rel=me href=https://jawns.club/@rigmarole></a>
+ 
+<div id=ghost-portal-root></div><div id=sodo-search-root></div>

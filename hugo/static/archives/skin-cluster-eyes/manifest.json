@@ -1,0 +1,30 @@
+{
+  "originalUrl": "https://rigmarolestudio.com/rigging-spherical-eyes/",
+  "title": "Rigging Spherical Eyes with Just a skinCluster and Sin and Cos",
+  "archiveTime": "2025-10-14T20:36:15.524Z",
+  "indexFilename": "index.html",
+  "resources": {
+    "fonts/0.woff2": "https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B5OaVIGxA.woff2",
+    "fonts/1.woff2": "https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVI.woff2",
+    "fonts/4.woff2": "https://rigmarolestudio.com/assets/fonts/fontawesome-webfont.woff2?v=4.7.0",
+    "stylesheet_0.css": "https://rigmarolestudio.com/public/cards.min.css?v=6f08d57701",
+    "stylesheet_1.css": "https://rigmarolestudio.com/assets/css/screen.css?v=6f08d57701",
+    "stylesheet_2.css": "https://rigmarolestudio.com/assets/css/hl-styles/atom-one-dark.css?v=6f08d57701",
+    "stylesheet_3.css": "https://rigmarolestudio.com/assets/css/font-awesome.min.css?v=6f08d57701",
+    "stylesheet_4.css": "https://rigmarolestudio.com/assets/css/bootstrap.min.css?v=6f08d57701",
+    "stylesheet_5.css": "https://fonts.googleapis.com/css?family=Open+Sans",
+    "images/10.jpg": "https://rigmarolestudio.com/content/images/2019/03/blendshape_hooks_illustration_cover.jpg",
+    "images/11.png": "https://rigmarolestudio.com/content/images/size/w256h256/2022/02/rigamaroleMouseCircleSquareB-min.png",
+    "images/13.gif": "https://rigmarolestudio.com/content/images/2019/06/locator_along_circle.gif",
+    "images/12.png": "https://rigmarolestudio.com/content/images/2022/03/rigamarole02_square_format_transparent.png",
+    "images/14.jpg": "https://rigmarolestudio.com/content/images/2019/06/eulerToQuat_polar.jpg",
+    "images/15.gif": "https://rigmarolestudio.com/content/images/2019/06/circle_along_sphere.gif",
+    "images/9.gif": "https://rigmarolestudio.com/content/images/2019/06/slerp_remap_cover-2.gif",
+    "images/8.gif": "https://rigmarolestudio.com/content/images/2019/06/final_pupil_iris_result-2.gif",
+    "images/16.gif": "https://rigmarolestudio.com/content/images/2019/06/final_pupil_iris_result-1.gif",
+    "images/17.png": "https://rigmarolestudio.com/content/images/2019/06/joint_scaling_graph.png",
+    "images/18.jpg": "https://www.gravatar.com/avatar/fe235fb8ee5c2d1b2580876512d64daa?s=250&d=mm&r=x",
+    "images/20.png": "https://rigmarolestudio.com/assets/images/cheese.png?v=6f08d57701",
+    "images/19.png": "https://rigmarolestudio.com/content/images/2022/03/rigamarole02_square_format_transparent-1.png"
+  }
+}
