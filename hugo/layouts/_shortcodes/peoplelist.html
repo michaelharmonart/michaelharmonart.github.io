@@ -1,0 +1,22 @@
+<div class="people-container" style="display: flex; flex-direction: column; gap: 0.5em;">
+    {{ $people := .Site.Data.people }}
+    {{ range $person := $people }}
+    <div class="person">
+        <h2>{{ $person.name }}</h2>   
+        {{ $person.role }} at <a href="{{ $person.website }}">{{ $person.company }}</a><br>
+
+        {{ if $person.notable_work }}
+            <strong>Notable Work:</strong> {{ delimit $person.notable_work ", " }}<br>
+        {{ end }}
+
+        {{ if $person.links }}
+            {{ range $i, $link := $person.links }}
+            <a href="{{ $link.url }}">{{ $link.title }}</a>{{ if lt (add $i 1) (len $person.links) }} | {{ end }}
+            {{ end }}<br>
+        {{ end }}
+        {{ if $person.notes }}
+            <em>Notes:</em> {{ $person.notes }}
+        {{ end }}
+    </div>
+    {{ end }}
+</div>

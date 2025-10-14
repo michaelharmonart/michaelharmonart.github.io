@@ -1,0 +1,13 @@
+- name: Walter Yoder
+  role: Founder / Rigging Artist
+  company: Squarebit Studios
+  notable_work:
+    - "Raya and The Last Dragon – Raya facial Rig"
+  links:
+    - title: "Website"
+      url: "https://https://walteryoder.blogspot.com/.com/johndoe"
+    - title: "Squarebit Studios"
+      url: "https://www.squarebitstudios.com/"
+    - title: "Raya Facial Rig"
+      url: "https://www.instagram.com/p/CNHJm8AjwlC/"
+  notes: "Check out his Siggraph paper on Rig optimization at Disney."
