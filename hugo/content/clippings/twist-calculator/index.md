@@ -3,7 +3,6 @@ title: "Quaternion Twist Calculator"
 author: "Vasil Shotarov (bindpose)"
 date: 2025-10-09
 tags: ["maya", "rigging", "matrix"]
-categories: ["technical"]
 original_url: "https://bindpose.com/maya-matrix-nodes-part-2-node-based-matrix-twist-calculator/"
 ---
 {{< figure src="preview.png" link="https://bindpose.com/maya-matrix-nodes-part-2-node-based-matrix-twist-calculator/" alt="Node Based Matrix Constraint Screenshot" >}}

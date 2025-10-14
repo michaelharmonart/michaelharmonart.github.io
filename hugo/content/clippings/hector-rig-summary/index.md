@@ -2,7 +2,7 @@
 title: "Hector Abraham Torres Rigging Summary"
 author: "Hector Abraham Torres"
 date: 2025-10-13
-tags: ["maya", "rigging", "facial"]
+tags: ["maya", "rigging", "facial", "video"]
 categories: ["technical"]
 original_url: "https://www.instagram.com/hat_3dart"
 ---

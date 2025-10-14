@@ -3,7 +3,6 @@ title: "Node Based Matrix Constraint"
 author: "Vasil Shotarov (bindpose)"
 date: 2025-10-09
 tags: ["maya", "rigging", "matrix"]
-categories: ["technical"]
 original_url: "https://bindpose.com/maya-matrix-based-functions-part-1-node-based-matrix-constraint/"
 ---
 {{< figure src="preview.png" link="https://bindpose.com/maya-matrix-based-functions-part-1-node-based-matrix-constraint/" alt="Node Based Matrix Constraint Screenshot" >}}
