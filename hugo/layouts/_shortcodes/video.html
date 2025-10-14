@@ -17,12 +17,15 @@
 {{- $loop := $.Get "loop" -}}
 {{- $autoplay := $.Get "autoplay" -}}
 {{- $poster := $.Get "poster" -}}
+{{- $max_width := $.Get "max_width" | default "100%" -}}
+{{- $centered := $.Get "centered" | default true -}}
+
 
 {{- if $caption -}}
 <figure>
 {{- end -}}
   <video
-      style="max-width:100%;height:auto;display:block;margin:1rem auto;border-radius:8px;"
+      style="max-width:{{ $max_width }};height:auto;display:inline-block;margin:1rem 1rem;border-radius:8px;"
       preload="{{ $preload }}"
     {{- if $controls }} controls{{ end -}}
     {{- if $muted }} muted{{ end -}}

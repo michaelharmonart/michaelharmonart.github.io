@@ -13,22 +13,21 @@ If you're interested in diving in deeper, Hector teaches rigging workshops on [h
 
 These videos are all originally from [his instagram](https://www.instagram.com/hat_3dart)
 <!--more-->
-## Instagram Videos
-{{< instagram C0zmKktvEfD >}}
-{{< instagram C1plPD5Pcch >}}
-{{< instagram C2xhqFLvNyV >}}
-{{< instagram C6C8532xUeB >}}
-{{< instagram DNjJpQwStZe >}}
-{{< instagram DOohqhNkt4S >}}
-
----
-## Archived Videos
-{{< video src="archive/part1.mp4" >}}
-{{< video src="archive/part2.mp4" >}}
-{{< video src="archive/part3.mp4" >}}  
-{{< video src="archive/part4.mp4" >}}
-{{< video src="archive/part5.mp4" >}} 
-{{< video src="archive/part6.mp4" >}} 
-
+{{< rawdetails summary="Instagram Videos" >}}
+    {{< instagram C0zmKktvEfD >}}
+    {{< instagram C1plPD5Pcch >}}
+    {{< instagram C2xhqFLvNyV >}}
+    {{< instagram C6C8532xUeB >}}
+    {{< instagram DNjJpQwStZe >}}
+    {{< instagram DOohqhNkt4S >}}
+{{< /rawdetails >}}
+{{< rawdetails summary="Archived Videos" >}}
+    {{< video src="archive/part1.mp4" max_width="256px" centered="true">}}
+    {{< video src="archive/part2.mp4"  max_width="256px" centered="true">}}
+    {{< video src="archive/part3.mp4"  max_width="256px" centered="true">}}  
+    {{< video src="archive/part4.mp4"  max_width="256px" centered="true">}}
+    {{< video src="archive/part5.mp4"  max_width="256px" centered="true">}} 
+    {{< video src="archive/part6.mp4"  max_width="256px" centered="true">}} 
+{{< /rawdetails >}}
 
 
