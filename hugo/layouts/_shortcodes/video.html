@@ -18,14 +18,25 @@
 {{- $autoplay := $.Get "autoplay" -}}
 {{- $poster := $.Get "poster" -}}
 {{- $max_width := $.Get "max_width" | default "100%" -}}
-{{- $centered := $.Get "centered" | default true -}}
+{{- $centered := $.Get "centered" | default "true" -}}
 
+{{- $style := slice
+    (printf "max-width:%s" $max_width)
+    "height:auto"
+    "border-radius:8px"
+-}}
+{{- if eq $centered "true" -}}
+  {{- $style = $style | append "display:block" "margin:1rem auto" -}}
+{{- else -}}
+  {{- $style = $style | append "display:inline-block" "margin:1rem 1rem" -}}
+{{- end -}}
+{{- $style_str := (delimit $style ";") | printf "%s;" | safeCSS -}}
 
 {{- if $caption -}}
 <figure>
 {{- end -}}
   <video
-      style="max-width:{{ $max_width }};height:auto;display:inline-block;margin:1rem 1rem;border-radius:8px;"
+      style="{{ $style_str }}"
       preload="{{ $preload }}"
     {{- if $controls }} controls{{ end -}}
     {{- if $muted }} muted{{ end -}}

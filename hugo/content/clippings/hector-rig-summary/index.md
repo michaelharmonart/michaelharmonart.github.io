@@ -22,12 +22,12 @@ These videos are all originally from [his instagram](https://www.instagram.com/h
     {{< instagram DOohqhNkt4S >}}
 {{< /rawdetails >}}
 {{< rawdetails summary="Archived Videos" >}}
-    {{< video src="archive/part1.mp4" max_width="256px" centered="true">}}
-    {{< video src="archive/part2.mp4"  max_width="256px" centered="true">}}
-    {{< video src="archive/part3.mp4"  max_width="256px" centered="true">}}  
-    {{< video src="archive/part4.mp4"  max_width="256px" centered="true">}}
-    {{< video src="archive/part5.mp4"  max_width="256px" centered="true">}} 
-    {{< video src="archive/part6.mp4"  max_width="256px" centered="true">}} 
+    {{< video src="archive/part1.mp4" max_width="256px" centered="false">}}
+    {{< video src="archive/part2.mp4"  max_width="256px" centered="false">}}
+    {{< video src="archive/part3.mp4"  max_width="256px" centered="false">}}  
+    {{< video src="archive/part4.mp4"  max_width="256px" centered="false">}}
+    {{< video src="archive/part5.mp4"  max_width="256px" centered="false">}} 
+    {{< video src="archive/part6.mp4"  max_width="256px" centered="false">}} 
 {{< /rawdetails >}}
 
 
