@@ -1,5 +1,5 @@
 ---
-title: "Hector Abraham Torres Rigging Summary"
+title: "Vittorio Rigging Shorts"
 author: "Hector Abraham Torres"
 date: 2025-10-13
 tags: ["maya", "rigging", "facial", "video"]
