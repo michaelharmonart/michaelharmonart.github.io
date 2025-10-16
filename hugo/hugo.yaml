@@ -7,3 +7,14 @@ ShowPostType: true
 caches:
   images:
     dir: :cacheDir/images
+params:
+  mainSections: ["clippings", "posts"]
+  homeInfoParams:
+    Title: "Welcome!"
+    Content: "This is a collection of some of the best rigging resources from around the internet. Learning to rig at high level often feels like trying to divine industry secrets, and these resources have been what I've found helpful. Feel free to reach out if you need anything."
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/michaelharmonart"
+    - name: "email"
+      url: "mailto:michaelharmonart@gmail.com"
+    
