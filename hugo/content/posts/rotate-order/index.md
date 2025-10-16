@@ -1,7 +1,7 @@
 ---
 title: "Picking Good Default Rotate Orders"
 author: "Michael Harmon"
-date: 2025-10-14
+date: 2025-10-16
 tags: ["maya", "rigging"]
 ---
 {{< figure src="rotate-order.webp" 
