@@ -1,0 +1,716 @@
+<!DOCTYPE html> <html data-darkreader-mode=dynamic data-darkreader-scheme=dark><meta charset=utf-8><style class="darkreader darkreader--user-agent" media=screen>@layer{html{color-scheme:dark!important}iframe{color-scheme:dark!important}html,body{border-color:var(--darkreader-border-4c4c4c,#736b5e);color:var(--darkreader-text-000000,#e8e6e3)}a{color:var(--darkreader-text-0040ff,#3391ff)}table{border-color:var(--darkreader-border-808080,#545b5e)}mark{color:var(--darkreader-text-000000,#e8e6e3)}::placeholder{color:var(--darkreader-text-a9a9a9,#b2aba1)}input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill{background-color:var(--darkreader-background-faffbd,#404400)!important;color:var(--darkreader-text-000000,#e8e6e3)!important}::selection{background-color:var(--darkreader-background-0060d4,#004daa)!important;color:var(--darkreader-text-ffffff,#e8e6e3)!important}::-moz-selection{background-color:var(--darkreader-background-0060d4,#004daa)!important;color:var(--darkreader-text-ffffff,#e8e6e3)!important}}</style><style class="darkreader darkreader--variables" media=screen>:root{--darkreader-neutral-background:var(--darkreader-background-ffffff,#181a1b);--darkreader-neutral-text:var(--darkreader-text-000000,#e8e6e3);--darkreader-selection-background:var(--darkreader-background-0060d4,#004daa);--darkreader-selection-text:var(--darkreader-text-ffffff,#e8e6e3)}</style><title>skin_merge.py for the medium article on deformation layering – Medium</title><meta name=description content="skin_merge.py for the medium article on deformation layering"><meta name=twitter:widgets:csp content=on><meta name=robots content=noindex><style>body{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:"ff-tisa-web-pro",Georgia,Cambria,"Times New Roman",Times,serif;font-weight:400;color:#333332;font-size:18px;line-height:1.4;margin:0;background-color:white;overflow:hidden}</style><style class="darkreader darkreader--sync" media=screen>body{color:var(--darkreader-text-333332,#c8c3bc);background-color:var(--darkreader-background-ffffff,#181a1b)}</style><meta name=darkreader content=adf02f14d0cf4ffd86a6b7637352becf><style class="darkreader darkreader--override" media=screen>::placeholder{opacity:0.5!important}:host{--d2l-border-color:var(--darkreader-bg--d2l-color-gypsum)!important;--d2l-button-icon-background-color-hover:var(--darkreader-bg--d2l-color-gypsum)!important;--d2l-color-ferrite:var(--darkreader-neutral-text)!important;--d2l-color-sylvite:var(--darkreader-bg--d2l-color-sylvite)!important;--d2l-dropdown-background-color:var(--darkreader-neutral-background)!important;--d2l-dropdown-border-color:var(--darkreader-border--d2l-color-mica)!important;--d2l-input-backgroud-color:var(--darkreader-neutral-background)!important;--d2l-menu-border-color:var(--darkreader-bg--d2l-color-gypsum)!important;--d2l-tooltip-background-color:var(--darkreader-neutral-background)!important;--d2l-tooltip-border-color:var(--darkreader-bg--d2l-color-gypsum)!important}</style><meta name=referrer content=no-referrer><style>.sf-hidden{display:none!important}</style><meta http-equiv=content-security-policy content="default-src 'none'; connect-src 'self' data: blob:; font-src 'self' data: blob:; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline' data: blob:; frame-src 'self' data: blob:; media-src 'self' data: blob:; script-src 'self' 'unsafe-inline' data: blob:; object-src 'self' data: blob:;"><body><style class=sf-hidden>.gist .gist-file{margin-bottom:0!important}.gist{text-rendering:auto}</style><link rel=stylesheet href=stylesheet_0.css><style class="darkreader darkreader--cors sf-hidden" media=screen>[data-color-mode="light"][data-light-theme="light"]{--bgColor-success-emphasis:#1f883d;--button-outline-bgColor-active:#0757ba;--button-primary-bgColor-active:#197935;--button-primary-bgColor-disabled:#95d8a6;--button-primary-bgColor-hover:#1c8139;--buttonCounter-danger-fgColor-rest:#c21c2c;--color-ansi-cyan:#1b7c83;--color-ansi-cyan-bright:#3192aa;--control-checked-bgColor-active:#0757ba;--control-checked-bgColor-hover:#0860ca;--fgColor-danger:#d1242f;--reactionButton-selected-bgColor-hover:#caecff;--avatarStack-fade-bgColor-default:#c8d1da;--avatarStack-fade-bgColor-muted:#dae0e7;--bgColor-accent-emphasis:#0969da;--bgColor-accent-muted:#ddf4ff;--bgColor-attention-emphasis:#9a6700;--bgColor-attention-muted:#fff8c5;--bgColor-danger-emphasis:#cf222e;--bgColor-danger-muted:#ffebe9;--bgColor-disabled:#eff2f5;--bgColor-done-emphasis:#8250df;--bgColor-done-muted:#fbefff;--bgColor-emphasis:#25292e;--bgColor-inverse:#25292e;--bgColor-muted:#f6f8fa;--bgColor-neutral-emphasis:#59636e;--bgColor-neutral-muted:#818b981f;--bgColor-open-emphasis:var(--bgColor-success-emphasis);--bgColor-severe-emphasis:#bc4c00;--bgColor-severe-muted:#fff1e5;--bgColor-sponsors-emphasis:#bf3989;--bgColor-sponsors-muted:#ffeff7;--bgColor-success-muted:#dafbe1;--bgColor-transparent:#ffffff00;--borderColor-accent-emphasis:#0969da;--borderColor-accent-muted:#54aeff66;--borderColor-attention-emphasis:#9a6700;--borderColor-attention-muted:#d4a72c66;--borderColor-danger-emphasis:#cf222e;--borderColor-danger-muted:#ff818266;--borderColor-default:#d1d9e0;--borderColor-disabled:#818b981a;--borderColor-done-emphasis:#8250df;--borderColor-done-muted:#c297ff66;--borderColor-emphasis:#818b98;--borderColor-neutral-emphasis:#59636e;--borderColor-severe-emphasis:#bc4c00;--borderColor-severe-muted:#fb8f4466;--borderColor-sponsors-emphasis:#bf3989;--borderColor-sponsors-muted:#ff80c866;--borderColor-success-emphasis:#1a7f37;--borderColor-success-muted:#4ac26b66;--borderColor-transparent:#ffffff00;--button-danger-bgColor-active:#a40e26;--button-danger-fgColor-disabled:#d1242f80;--button-danger-fgColor-rest:var(--fgColor-danger);--button-danger-shadow-selected:inset 0px 1px 0px 0px #4c001433;--button-inactive-bgColor:#e6eaef;--button-inactive-fgColor:#59636e;--button-invisible-bgColor-disabled:#ffffff00;--button-invisible-borderColor-disabled:#ffffff00;--button-outline-shadow-selected:inset 0px 1px 0px 0px #00215533;--button-primary-bgColor-rest:var(--bgColor-success-emphasis);--button-primary-borderColor-disabled:var(--button-primary-bgColor-disabled);--button-primary-shadow-selected:inset 0px 1px 0px 0px #002d114d;--button-star-iconColor:#eac54f;--buttonCounter-danger-fgColor-disabled:#d1242f80;--buttonCounter-outline-fgColor-rest:#0550ae;--buttonCounter-primary-bgColor-rest:#002d1133;--codeMirror-syntax-fgColor-constant:#0550ae;--codeMirror-syntax-fgColor-entity:#8250df;--codeMirror-syntax-fgColor-keyword:#cf222e;--codeMirror-syntax-fgColor-storage:#cf222e;--codeMirror-syntax-fgColor-string:#0a3069;--codeMirror-syntax-fgColor-support:#0550ae;--codeMirror-syntax-fgColor-variable:#953800;--color-ansi-black-bright:#393f46;--color-ansi-blue:#0969da;--color-ansi-blue-bright:#218bff;--color-ansi-gray:#59636e;--color-ansi-green:#116329;--color-ansi-green-bright:#1a7f37;--color-ansi-magenta:#8250df;--color-ansi-magenta-bright:#a475f9;--color-ansi-red:#cf222e;--color-ansi-red-bright:#a40e26;--color-ansi-white:#59636e;--color-ansi-white-bright:#818b98;--color-ansi-yellow:#4d2d00;--color-ansi-yellow-bright:#633c01;--color-prettylights-syntax-brackethighlighter-angle:#59636e;--color-prettylights-syntax-brackethighlighter-unmatched:#82071e;--color-prettylights-syntax-carriage-return-bg:#cf222e;--color-prettylights-syntax-carriage-return-text:#f6f8fa;--color-prettylights-syntax-comment:#59636e;--color-prettylights-syntax-constant:#0550ae;--color-prettylights-syntax-constant-other-reference-link:#0a3069;--color-prettylights-syntax-entity:#6639ba;--color-prettylights-syntax-entity-tag:#0550ae;--color-prettylights-syntax-invalid-illegal-bg:#82071e;--color-prettylights-syntax-invalid-illegal-text:#f6f8fa;--color-prettylights-syntax-keyword:#cf222e;--color-prettylights-syntax-markup-changed-bg:#ffd8b5;--color-prettylights-syntax-markup-changed-text:#953800;--color-prettylights-syntax-markup-deleted-bg:#ffebe9;--color-prettylights-syntax-markup-deleted-text:#82071e;--color-prettylights-syntax-markup-heading:#0550ae;--color-prettylights-syntax-markup-ignored-bg:#0550ae;--color-prettylights-syntax-markup-ignored-text:#d1d9e0;--color-prettylights-syntax-markup-inserted-bg:#dafbe1;--color-prettylights-syntax-markup-inserted-text:#116329;--color-prettylights-syntax-markup-list:#3b2300;--color-prettylights-syntax-meta-diff-range:#8250df;--color-prettylights-syntax-string:#0a3069;--color-prettylights-syntax-string-regexp:#116329;--color-prettylights-syntax-sublimelinter-gutter-mark:#818b98;--color-prettylights-syntax-variable:#953800;--contribution-default-bgColor-0:#eff2f5;--contribution-default-bgColor-1:#aceebb;--contribution-default-bgColor-2:#4ac26b;--contribution-default-bgColor-3:#2da44e;--contribution-default-bgColor-4:#116329;--contribution-default-borderColor-0:#1f23280d;--contribution-halloween-bgColor-1:#f0db3d;--contribution-halloween-bgColor-2:#ffd642;--contribution-halloween-bgColor-3:#f68c41;--contribution-halloween-bgColor-4:#1f2328;--contribution-winter-bgColor-1:#b6e3ff;--contribution-winter-bgColor-2:#54aeff;--contribution-winter-bgColor-3:#0969da;--contribution-winter-bgColor-4:#0a3069;--control-bgColor-active:#e6eaef;--control-bgColor-hover:#eff2f5;--control-bgColor-rest:#f6f8fa;--control-checked-borderColor-active:var(--control-checked-bgColor-active);--control-checked-borderColor-hover:var(--control-checked-bgColor-hover);--control-danger-fgColor-hover:var(--fgColor-danger);--control-danger-fgColor-rest:var(--fgColor-danger);--control-fgColor-rest:#25292e;--control-transparent-bgColor-active:#818b9826;--control-transparent-bgColor-hover:#818b981a;--control-transparent-bgColor-rest:#ffffff00;--control-transparent-bgColor-selected:#818b9826;--control-transparent-borderColor-active:#ffffff00;--control-transparent-borderColor-hover:#ffffff00;--control-transparent-borderColor-rest:#ffffff00;--controlTrack-bgColor-active:#dae0e7;--controlTrack-bgColor-hover:#e0e6eb;--controlTrack-bgColor-rest:#e6eaef;--controlTrack-fgColor-rest:#59636e;--counter-borderColor:#ffffff00;--data-auburn-color-emphasis:#9d615c;--data-auburn-color-muted:#f2e9e9;--data-blue-color-emphasis:#006edb;--data-blue-color-muted:#d1f0ff;--data-brown-color-emphasis:#856d4c;--data-brown-color-muted:#eeeae2;--data-coral-color-emphasis:#d43511;--data-coral-color-muted:#ffe5db;--data-gray-color-emphasis:#808fa3;--data-gray-color-muted:#e8ecf2;--data-green-color-emphasis:#30a147;--data-green-color-muted:#caf7ca;--data-lemon-color-emphasis:#866e04;--data-lemon-color-muted:#f7eea1;--data-lime-color-emphasis:#527a29;--data-lime-color-muted:#e3f2b5;--data-olive-color-emphasis:#64762d;--data-olive-color-muted:#f0f0ad;--data-orange-color-emphasis:#eb670f;--data-orange-color-muted:#ffe7d1;--data-pine-color-emphasis:#167e53;--data-pine-color-muted:#bff8db;--data-pink-color-emphasis:#ce2c85;--data-pink-color-muted:#ffe5f1;--data-plum-color-emphasis:#a830e8;--data-plum-color-muted:#f8e5ff;--data-purple-color-emphasis:#894ceb;--data-purple-color-muted:#f1e5ff;--data-red-color-emphasis:#df0c24;--data-red-color-muted:#ffe2e0;--data-teal-color-emphasis:#179b9b;--data-teal-color-muted:#c7f5ef;--data-yellow-color-emphasis:#b88700;--data-yellow-color-muted:#ffec9e;--diffBlob-additionNum-bgColor:#aceebb;--diffBlob-additionWord-bgColor:#aceebb;--diffBlob-deletionNum-bgColor:#ffcecb;--diffBlob-deletionWord-bgColor:#ffcecb;--diffBlob-hunkNum-bgColor-rest:#b6e3ff;--display-auburn-bgColor-emphasis:#9d615c;--display-auburn-bgColor-muted:#f2e9e9;--display-auburn-borderColor-emphasis:#9d615c;--display-auburn-borderColor-muted:#e6d6d5;--display-auburn-fgColor:#8a5551;--display-auburn-scale-0:#f2e9e9;--display-auburn-scale-1:#e6d6d5;--display-auburn-scale-2:#d4b7b5;--display-auburn-scale-3:#c59e9b;--display-auburn-scale-4:#b4827e;--display-auburn-scale-5:#9d615c;--display-auburn-scale-6:#8a5551;--display-auburn-scale-7:#744744;--display-auburn-scale-8:#5d3937;--display-auburn-scale-9:#432928;--display-blue-bgColor-emphasis:#006edb;--display-blue-bgColor-muted:#d1f0ff;--display-blue-borderColor-emphasis:#006edb;--display-blue-borderColor-muted:#ade1ff;--display-blue-fgColor:#005fcc;--display-blue-scale-0:#d1f0ff;--display-blue-scale-1:#ade1ff;--display-blue-scale-2:#75c8ff;--display-blue-scale-3:#47afff;--display-blue-scale-4:#0f8fff;--display-blue-scale-5:#006edb;--display-blue-scale-6:#005fcc;--display-blue-scale-7:#004db3;--display-blue-scale-8:#003d99;--display-blue-scale-9:#002b75;--display-brown-bgColor-emphasis:#856d4c;--display-brown-bgColor-muted:#eeeae2;--display-brown-borderColor-emphasis:#856d4c;--display-brown-borderColor-muted:#dfd7c8;--display-brown-fgColor:#755f43;--display-brown-scale-0:#eeeae2;--display-brown-scale-1:#dfd7c8;--display-brown-scale-2:#cbbda4;--display-brown-scale-3:#b8a484;--display-brown-scale-4:#a68b64;--display-brown-scale-5:#856d4c;--display-brown-scale-6:#755f43;--display-brown-scale-7:#64513a;--display-brown-scale-8:#51412f;--display-brown-scale-9:#3a2e22;--display-coral-bgColor-emphasis:#d43511;--display-coral-bgColor-muted:#ffe5db;--display-coral-borderColor-emphasis:#d43511;--display-coral-borderColor-muted:#fecebe;--display-coral-fgColor:#ba2e12;--display-coral-scale-0:#ffe5db;--display-coral-scale-1:#fecebe;--display-coral-scale-2:#fcab92;--display-coral-scale-3:#f88768;--display-coral-scale-4:#f25f3a;--display-coral-scale-5:#d43511;--display-coral-scale-6:#ba2e12;--display-coral-scale-7:#9b2712;--display-coral-scale-8:#7e2011;--display-coral-scale-9:#5d180e;--display-cyan-bgColor-emphasis:#007b94;--display-cyan-bgColor-muted:#bdf4ff;--display-cyan-borderColor-emphasis:#007b94;--display-cyan-borderColor-muted:#7ae9ff;--display-cyan-fgColor:#006a80;--display-cyan-scale-0:#bdf4ff;--display-cyan-scale-1:#7ae9ff;--display-cyan-scale-2:#00d0fa;--display-cyan-scale-3:#00b7db;--display-cyan-scale-4:#0099b8;--display-cyan-scale-5:#007b94;--display-cyan-scale-6:#006a80;--display-cyan-scale-7:#00596b;--display-cyan-scale-8:#004857;--display-cyan-scale-9:#003742;--display-gray-bgColor-emphasis:#647182;--display-gray-bgColor-muted:#e8ecf2;--display-gray-borderColor-emphasis:#647182;--display-gray-borderColor-muted:#d2dae4;--display-gray-fgColor:#5c6570;--display-gray-scale-0:#e8ecf2;--display-gray-scale-1:#d2dae4;--display-gray-scale-2:#b4c0cf;--display-gray-scale-3:#9ba9bb;--display-gray-scale-4:#808fa3;--display-gray-scale-5:#647182;--display-gray-scale-6:#5c6570;--display-gray-scale-7:#4e535a;--display-gray-scale-8:#424448;--display-gray-scale-9:#303031;--display-green-bgColor-emphasis:#2c8141;--display-green-bgColor-muted:#caf7ca;--display-green-borderColor-emphasis:#2c8141;--display-green-borderColor-muted:#9ceda0;--display-green-fgColor:#2b6e3f;--display-green-scale-0:#caf7ca;--display-green-scale-1:#9ceda0;--display-green-scale-2:#54d961;--display-green-scale-3:#31bf46;--display-green-scale-4:#30a147;--display-green-scale-5:#2c8141;--display-green-scale-6:#2b6e3f;--display-green-scale-7:#285c3b;--display-green-scale-8:#254b34;--display-green-scale-9:#1d3528;--display-indigo-bgColor-emphasis:#5a61e7;--display-indigo-bgColor-muted:#e5e9ff;--display-indigo-borderColor-emphasis:#5a61e7;--display-indigo-borderColor-muted:#d2d7fe;--display-indigo-fgColor:#494edf;--display-indigo-scale-0:#e5e9ff;--display-indigo-scale-1:#d2d7fe;--display-indigo-scale-2:#b1b9fb;--display-indigo-scale-3:#979ff7;--display-indigo-scale-4:#7a82f0;--display-indigo-scale-5:#5a61e7;--display-indigo-scale-6:#494edf;--display-indigo-scale-7:#393cd5;--display-indigo-scale-8:#2d2db4;--display-indigo-scale-9:#25247b;--display-lemon-bgColor-emphasis:#866e04;--display-lemon-bgColor-muted:#f7eea1;--display-lemon-borderColor-emphasis:#866e04;--display-lemon-borderColor-muted:#f0db3d;--display-lemon-fgColor:#786002;--display-lemon-scale-0:#f7eea1;--display-lemon-scale-1:#f0db3d;--display-lemon-scale-2:#d8bd0e;--display-lemon-scale-3:#c2a60a;--display-lemon-scale-4:#a68c07;--display-lemon-scale-5:#866e04;--display-lemon-scale-6:#786002;--display-lemon-scale-7:#654f01;--display-lemon-scale-8:#523f00;--display-lemon-scale-9:#3d2e00;--display-lime-bgColor-emphasis:#527a29;--display-lime-bgColor-muted:#e3f2b5;--display-lime-borderColor-emphasis:#527a29;--display-lime-borderColor-muted:#c7e580;--display-lime-fgColor:#476c28;--display-lime-scale-0:#e3f2b5;--display-lime-scale-1:#c7e580;--display-lime-scale-2:#9bd039;--display-lime-scale-3:#80b530;--display-lime-scale-4:#6c9d2f;--display-lime-scale-5:#527a29;--display-lime-scale-6:#476c28;--display-lime-scale-7:#3a5b25;--display-lime-scale-8:#2f4a21;--display-lime-scale-9:#213319;--display-olive-bgColor-emphasis:#64762d;--display-olive-bgColor-muted:#f0f0ad;--display-olive-borderColor-emphasis:#64762d;--display-olive-borderColor-muted:#dbe170;--display-olive-fgColor:#56682c;--display-olive-scale-0:#f0f0ad;--display-olive-scale-1:#dbe170;--display-olive-scale-2:#b9c832;--display-olive-scale-3:#9bae32;--display-olive-scale-4:#819532;--display-olive-scale-5:#64762d;--display-olive-scale-6:#56682c;--display-olive-scale-7:#495a2b;--display-olive-scale-8:#3b4927;--display-olive-scale-9:#2a331f;--display-orange-bgColor-emphasis:#b8500f;--display-orange-bgColor-muted:#ffe7d1;--display-orange-borderColor-emphasis:#b8500f;--display-orange-borderColor-muted:#fecfaa;--display-orange-fgColor:#a24610;--display-orange-scale-0:#ffe7d1;--display-orange-scale-1:#fecfaa;--display-orange-scale-2:#fbaf74;--display-orange-scale-3:#f68c41;--display-orange-scale-4:#eb670f;--display-orange-scale-5:#b8500f;--display-orange-scale-6:#a24610;--display-orange-scale-7:#8d3c11;--display-orange-scale-8:#70300f;--display-orange-scale-9:#54230d;--display-pine-bgColor-emphasis:#167e53;--display-pine-bgColor-muted:#bff8db;--display-pine-borderColor-emphasis:#167e53;--display-pine-borderColor-muted:#80efb9;--display-pine-fgColor:#156f4b;--display-pine-scale-0:#bff8db;--display-pine-scale-1:#80efb9;--display-pine-scale-2:#1dd781;--display-pine-scale-3:#1dbf76;--display-pine-scale-4:#1aa267;--display-pine-scale-5:#167e53;--display-pine-scale-6:#156f4b;--display-pine-scale-7:#135d41;--display-pine-scale-8:#114b36;--display-pine-scale-9:#0d3627;--display-pink-bgColor-emphasis:#ce2c85;--display-pink-bgColor-muted:#ffe5f1;--display-pink-borderColor-emphasis:#ce2c85;--display-pink-borderColor-muted:#fdc9e2;--display-pink-fgColor:#b12f79;--display-pink-scale-0:#ffe5f1;--display-pink-scale-1:#fdc9e2;--display-pink-scale-2:#f8a5cf;--display-pink-scale-3:#f184bc;--display-pink-scale-4:#e55da5;--display-pink-scale-5:#ce2c85;--display-pink-scale-6:#b12f79;--display-pink-scale-7:#8e2e66;--display-pink-scale-8:#6e2b53;--display-pink-scale-9:#4d233d;--display-plum-bgColor-emphasis:#a830e8;--display-plum-bgColor-muted:#f8e5ff;--display-plum-borderColor-emphasis:#a830e8;--display-plum-borderColor-muted:#f0cdfe;--display-plum-fgColor:#961edc;--display-plum-scale-0:#f8e5ff;--display-plum-scale-1:#f0cdfe;--display-plum-scale-2:#e2a7fb;--display-plum-scale-3:#d487f7;--display-plum-scale-4:#c264f2;--display-plum-scale-5:#a830e8;--display-plum-scale-6:#961edc;--display-plum-scale-7:#7d1eb8;--display-plum-scale-8:#651d96;--display-plum-scale-9:#471769;--display-purple-bgColor-emphasis:#894ceb;--display-purple-bgColor-muted:#f1e5ff;--display-purple-borderColor-emphasis:#894ceb;--display-purple-borderColor-muted:#e6d2fe;--display-purple-fgColor:#783ae4;--display-purple-scale-0:#f1e5ff;--display-purple-scale-1:#e6d2fe;--display-purple-scale-2:#d1b1fc;--display-purple-scale-3:#bc91f8;--display-purple-scale-4:#a672f3;--display-purple-scale-5:#894ceb;--display-purple-scale-6:#783ae4;--display-purple-scale-7:#6223d7;--display-purple-scale-8:#4f21ab;--display-purple-scale-9:#391b79;--display-red-bgColor-emphasis:#df0c24;--display-red-bgColor-muted:#ffe2e0;--display-red-borderColor-emphasis:#df0c24;--display-red-borderColor-muted:#fecdcd;--display-red-fgColor:#c50d28;--display-red-scale-0:#ffe2e0;--display-red-scale-1:#fecdcd;--display-red-scale-2:#fda5a7;--display-red-scale-3:#fb8389;--display-red-scale-4:#f85461;--display-red-scale-5:#df0c24;--display-red-scale-6:#c50d28;--display-red-scale-7:#a60c29;--display-red-scale-8:#880c27;--display-red-scale-9:#610a20;--display-teal-bgColor-emphasis:#127e81;--display-teal-bgColor-muted:#c7f5ef;--display-teal-borderColor-emphasis:#127e81;--display-teal-borderColor-muted:#89ebe1;--display-teal-fgColor:#106e75;--display-teal-scale-0:#c7f5ef;--display-teal-scale-1:#89ebe1;--display-teal-scale-2:#22d3c7;--display-teal-scale-3:#1db9b4;--display-teal-scale-4:#179b9b;--display-teal-scale-5:#127e81;--display-teal-scale-6:#106e75;--display-teal-scale-7:#0d5b63;--display-teal-scale-8:#0a4852;--display-teal-scale-9:#073740;--display-yellow-bgColor-emphasis:#946a00;--display-yellow-bgColor-muted:#ffec9e;--display-yellow-borderColor-emphasis:#946a00;--display-yellow-borderColor-muted:#ffd642;--display-yellow-fgColor:#805900;--display-yellow-scale-0:#ffec9e;--display-yellow-scale-1:#ffd642;--display-yellow-scale-2:#ebb400;--display-yellow-scale-3:#d19d00;--display-yellow-scale-4:#b88700;--display-yellow-scale-5:#946a00;--display-yellow-scale-6:#805900;--display-yellow-scale-7:#704d00;--display-yellow-scale-8:#5c3d00;--display-yellow-scale-9:#422b00;--fgColor-accent:#0969da;--fgColor-attention:#9a6700;--fgColor-closed:var(--fgColor-danger);--fgColor-disabled:#818b98;--fgColor-done:#8250df;--fgColor-muted:#59636e;--fgColor-neutral:#59636e;--fgColor-severe:#bc4c00;--fgColor-sponsors:#bf3989;--fgColor-success:#1a7f37;--header-bgColor:#25292e;--header-borderColor-divider:#818b98;--headerSearch-bgColor:#25292e;--headerSearch-borderColor:#818b98;--highlight-neutral-bgColor:#fff8c5;--label-auburn-bgColor-active:#d4b7b5;--label-auburn-bgColor-hover:#e6d6d5;--label-auburn-bgColor-rest:#f2e9e9;--label-auburn-borderColor:#ffffff00;--label-auburn-fgColor-active:#5d3937;--label-auburn-fgColor-hover:#744744;--label-auburn-fgColor-rest:#8a5551;--label-blue-bgColor-active:#75c8ff;--label-blue-bgColor-hover:#ade1ff;--label-blue-bgColor-rest:#d1f0ff;--label-blue-borderColor:#ffffff00;--label-blue-fgColor-active:#003d99;--label-blue-fgColor-hover:#004db3;--label-blue-fgColor-rest:#005fcc;--label-brown-bgColor-active:#cbbda4;--label-brown-bgColor-hover:#dfd7c8;--label-brown-bgColor-rest:#eeeae2;--label-brown-borderColor:#ffffff00;--label-brown-fgColor-active:#51412f;--label-brown-fgColor-hover:#64513a;--label-brown-fgColor-rest:#755f43;--label-coral-bgColor-active:#fcab92;--label-coral-bgColor-hover:#fecebe;--label-coral-bgColor-rest:#ffe5db;--label-coral-borderColor:#ffffff00;--label-coral-fgColor-active:#7e2011;--label-coral-fgColor-hover:#9b2712;--label-coral-fgColor-rest:#ba2e12;--label-cyan-bgColor-active:#00d0fa;--label-cyan-bgColor-hover:#7ae9ff;--label-cyan-bgColor-rest:#bdf4ff;--label-cyan-borderColor:#ffffff00;--label-cyan-fgColor-active:#004857;--label-cyan-fgColor-hover:#00596b;--label-cyan-fgColor-rest:#006a80;--label-gray-bgColor-active:#b4c0cf;--label-gray-bgColor-hover:#d2dae4;--label-gray-bgColor-rest:#e8ecf2;--label-gray-borderColor:#ffffff00;--label-gray-fgColor-active:#424448;--label-gray-fgColor-hover:#4e535a;--label-gray-fgColor-rest:#5c6570;--label-green-bgColor-active:#54d961;--label-green-bgColor-hover:#9ceda0;--label-green-bgColor-rest:#caf7ca;--label-green-borderColor:#ffffff00;--label-green-fgColor-active:#254b34;--label-green-fgColor-hover:#285c3b;--label-green-fgColor-rest:#2b6e3f;--label-indigo-bgColor-active:#b1b9fb;--label-indigo-bgColor-hover:#d2d7fe;--label-indigo-bgColor-rest:#e5e9ff;--label-indigo-borderColor:#ffffff00;--label-indigo-fgColor-active:#2d2db4;--label-indigo-fgColor-hover:#393cd5;--label-indigo-fgColor-rest:#494edf;--label-lemon-bgColor-active:#d8bd0e;--label-lemon-bgColor-hover:#f0db3d;--label-lemon-bgColor-rest:#f7eea1;--label-lemon-borderColor:#ffffff00;--label-lemon-fgColor-active:#523f00;--label-lemon-fgColor-hover:#654f01;--label-lemon-fgColor-rest:#786002;--label-lime-bgColor-active:#9bd039;--label-lime-bgColor-hover:#c7e580;--label-lime-bgColor-rest:#e3f2b5;--label-lime-borderColor:#ffffff00;--label-lime-fgColor-active:#2f4a21;--label-lime-fgColor-hover:#3a5b25;--label-lime-fgColor-rest:#476c28;--label-olive-bgColor-active:#b9c832;--label-olive-bgColor-hover:#dbe170;--label-olive-bgColor-rest:#f0f0ad;--label-olive-borderColor:#ffffff00;--label-olive-fgColor-active:#3b4927;--label-olive-fgColor-hover:#495a2b;--label-olive-fgColor-rest:#56682c;--label-orange-bgColor-active:#fbaf74;--label-orange-bgColor-hover:#fecfaa;--label-orange-bgColor-rest:#ffe7d1;--label-orange-borderColor:#ffffff00;--label-orange-fgColor-active:#70300f;--label-orange-fgColor-hover:#8d3c11;--label-orange-fgColor-rest:#a24610;--label-pine-bgColor-active:#1dd781;--label-pine-bgColor-hover:#80efb9;--label-pine-bgColor-rest:#bff8db;--label-pine-borderColor:#ffffff00;--label-pine-fgColor-active:#114b36;--label-pine-fgColor-hover:#135d41;--label-pine-fgColor-rest:#156f4b;--label-pink-bgColor-active:#f8a5cf;--label-pink-bgColor-hover:#fdc9e2;--label-pink-bgColor-rest:#ffe5f1;--label-pink-borderColor:#ffffff00;--label-pink-fgColor-active:#6e2b53;--label-pink-fgColor-hover:#8e2e66;--label-pink-fgColor-rest:#b12f79;--label-plum-bgColor-active:#e2a7fb;--label-plum-bgColor-hover:#f0cdfe;--label-plum-bgColor-rest:#f8e5ff;--label-plum-borderColor:#ffffff00;--label-plum-fgColor-active:#651d96;--label-plum-fgColor-hover:#7d1eb8;--label-plum-fgColor-rest:#961edc;--label-purple-bgColor-active:#d1b1fc;--label-purple-bgColor-hover:#e6d2fe;--label-purple-bgColor-rest:#f1e5ff;--label-purple-borderColor:#ffffff00;--label-purple-fgColor-active:#4f21ab;--label-purple-fgColor-hover:#6223d7;--label-purple-fgColor-rest:#783ae4;--label-red-bgColor-active:#fda5a7;--label-red-bgColor-hover:#fecdcd;--label-red-bgColor-rest:#ffe2e0;--label-red-borderColor:#ffffff00;--label-red-fgColor-active:#880c27;--label-red-fgColor-hover:#a60c29;--label-red-fgColor-rest:#c50d28;--label-teal-bgColor-active:#22d3c7;--label-teal-bgColor-hover:#89ebe1;--label-teal-bgColor-rest:#c7f5ef;--label-teal-borderColor:#ffffff00;--label-teal-fgColor-active:#0a4852;--label-teal-fgColor-hover:#0d5b63;--label-teal-fgColor-rest:#106e75;--label-yellow-bgColor-active:#ebb400;--label-yellow-bgColor-hover:#ffd642;--label-yellow-bgColor-rest:#ffec9e;--label-yellow-borderColor:#ffffff00;--label-yellow-fgColor-active:#5c3d00;--label-yellow-fgColor-hover:#704d00;--label-yellow-fgColor-rest:#805900;--menu-bgColor-active:#ffffff00;--overlay-backdrop-bgColor:#c8d1da66;--progressBar-bgColor-success:var(--bgColor-success-emphasis);--progressBar-track-borderColor:#ffffff00;--reactionButton-selected-bgColor-rest:#ddf4ff;--reactionButton-selected-fgColor-hover:#0550ae;--selectMenu-bgColor-active:#b6e3ff;--selectMenu-borderColor:#ffffff00;--shadow-floating-legacy:0px 6px 12px -3px #25292e0a,0px 6px 18px 0px #25292e1f;--shadow-resting-medium:0px 1px 1px 0px #25292e1a,0px 3px 6px 0px #25292e1f;--skeletonLoader-bgColor:#818b981a;--topicTag-borderColor:#ffffff00;--treeViewItem-leadingVisual-iconColor-rest:#54aeff;--underlineNav-borderColor-active:#fd8c73;--avatar-bgColor:#ffffff;--avatar-shadow:0px 0px 0px 2px #ffffffcc;--bgColor-black:#1f2328;--bgColor-closed-emphasis:var(--bgColor-danger-emphasis);--bgColor-closed-muted:var(--bgColor-danger-muted);--bgColor-default:#ffffff;--bgColor-draft-emphasis:var(--bgColor-neutral-emphasis);--bgColor-draft-muted:var(--bgColor-neutral-muted);--bgColor-inset:var(--bgColor-muted);--bgColor-open-muted:var(--bgColor-success-muted);--bgColor-upsell-emphasis:var(--bgColor-done-emphasis);--bgColor-upsell-muted:var(--bgColor-done-muted);--bgColor-white:#ffffff;--border-accent-emphasis:0.0625rem solid #0969da;--border-accent-muted:0.0625rem solid #54aeff66;--border-attention-emphasis:0.0625rem solid #9a6700;--border-attention-muted:0.0625rem solid #d4a72c66;--border-danger-emphasis:0.0625rem solid #cf222e;--border-danger-muted:0.0625rem solid #ff818266;--border-default:0.0625rem solid #d1d9e0;--border-disabled:0.0625rem solid #818b981a;--border-done-emphasis:0.0625rem solid #8250df;--border-done-muted:0.0625rem solid #c297ff66;--border-emphasis:0.0625rem solid #818b98;--border-neutral-emphasis:0.0625rem solid #59636e;--border-severe-emphasis:0.0625rem solid #bc4c00;--border-severe-muted:0.0625rem solid #fb8f4466;--border-sponsors-emphasis:0.0625rem solid #bf3989;--border-sponsors-muted:0.0625rem solid #ff80c866;--border-success-emphasis:0.0625rem solid #1a7f37;--border-success-muted:0.0625rem solid #4ac26b66;--border-transparent:0.0625rem solid #ffffff00;--borderColor-closed-emphasis:var(--borderColor-danger-emphasis);--borderColor-closed-muted:var(--borderColor-danger-muted);--borderColor-draft-emphasis:var(--borderColor-neutral-emphasis);--borderColor-muted:#d1d9e0b3;--borderColor-open-emphasis:var(--borderColor-success-emphasis);--borderColor-open-muted:var(--borderColor-success-muted);--borderColor-translucent:#1f232826;--borderColor-upsell-emphasis:var(--borderColor-done-emphasis);--borderColor-upsell-muted:var(--borderColor-done-muted);--button-danger-bgColor-hover:var(--bgColor-danger-emphasis);--button-danger-bgColor-rest:var(--control-bgColor-rest);--button-danger-fgColor-active:#ffffff;--button-danger-fgColor-hover:#ffffff;--button-danger-iconColor-hover:#ffffff;--button-danger-iconColor-rest:var(--button-danger-fgColor-rest);--button-default-bgColor-active:var(--control-bgColor-active);--button-default-bgColor-hover:var(--control-bgColor-hover);--button-default-bgColor-rest:var(--control-bgColor-rest);--button-default-bgColor-selected:var(--control-bgColor-active);--button-default-fgColor-rest:var(--control-fgColor-rest);--button-default-shadow-resting:0px 1px 0px 0px #1f23280a;--button-invisible-bgColor-active:var(--control-transparent-bgColor-active);--button-invisible-bgColor-hover:var(--control-transparent-bgColor-hover);--button-invisible-bgColor-rest:var(--control-transparent-bgColor-rest);--button-invisible-borderColor-hover:var(--control-transparent-borderColor-hover);--button-invisible-borderColor-rest:var(--control-transparent-borderColor-rest);--button-invisible-fgColor-active:var(--control-fgColor-rest);--button-invisible-fgColor-hover:var(--control-fgColor-rest);--button-invisible-fgColor-rest:var(--control-fgColor-rest);--button-invisible-iconColor-hover:var(--fgColor-muted);--button-invisible-iconColor-rest:var(--fgColor-muted);--button-outline-bgColor-hover:var(--bgColor-accent-emphasis);--button-outline-bgColor-rest:var(--control-bgColor-rest);--button-outline-fgColor-active:#ffffff;--button-outline-fgColor-disabled:#0969da80;--button-outline-fgColor-hover:#ffffff;--button-outline-fgColor-rest:var(--fgColor-accent);--button-primary-fgColor-disabled:#ffffffcc;--buttonCounter-danger-bgColor-disabled:#cf222e0d;--buttonCounter-danger-bgColor-hover:#ffffff33;--buttonCounter-danger-bgColor-rest:#cf222e1a;--buttonCounter-danger-fgColor-hover:#ffffff;--buttonCounter-default-bgColor-rest:var(--bgColor-neutral-muted);--buttonCounter-invisible-bgColor-rest:var(--bgColor-neutral-muted);--buttonCounter-outline-bgColor-disabled:#0969da0d;--buttonCounter-outline-bgColor-hover:#ffffff33;--buttonCounter-outline-bgColor-rest:#0969da1a;--buttonCounter-outline-fgColor-disabled:#0969da80;--buttonCounter-outline-fgColor-hover:#ffffff;--codeMirror-activeline-bgColor:var(--bgColor-neutral-muted);--codeMirror-gutterMarker-fgColor-muted:var(--fgColor-muted);--codeMirror-lineNumber-fgColor:var(--fgColor-muted);--codeMirror-selection-bgColor:var(--borderColor-accent-muted);--codeMirror-syntax-fgColor-comment:#1f2328;--color-ansi-black:#1f2328;--color-prettylights-syntax-markup-bold:#1f2328;--color-prettylights-syntax-markup-italic:#1f2328;--color-prettylights-syntax-storage-modifier-import:#1f2328;--contribution-default-borderColor-1:var(--contribution-default-borderColor-0);--contribution-default-borderColor-2:var(--contribution-default-borderColor-0);--contribution-default-borderColor-3:var(--contribution-default-borderColor-0);--contribution-default-borderColor-4:var(--contribution-default-borderColor-0);--control-bgColor-disabled:var(--bgColor-disabled);--control-bgColor-selected:var(--control-bgColor-rest);--control-borderColor-danger:var(--borderColor-danger-emphasis);--control-borderColor-disabled:var(--borderColor-disabled);--control-borderColor-emphasis:var(--borderColor-emphasis);--control-borderColor-rest:var(--borderColor-default);--control-borderColor-success:var(--borderColor-success-emphasis);--control-borderColor-warning:var(--borderColor-attention-emphasis);--control-checked-bgColor-disabled:var(--fgColor-disabled);--control-checked-bgColor-rest:var(--bgColor-accent-emphasis);--control-danger-bgColor-active:#ffebe966;--control-danger-bgColor-hover:var(--bgColor-danger-muted);--control-fgColor-disabled:var(--fgColor-disabled);--control-fgColor-placeholder:var(--fgColor-muted);--control-iconColor-rest:var(--fgColor-muted);--control-transparent-bgColor-disabled:var(--bgColor-disabled);--controlKnob-bgColor-checked:#ffffff;--controlKnob-bgColor-rest:#ffffff;--controlTrack-bgColor-disabled:var(--fgColor-disabled);--controlTrack-borderColor-disabled:var(--fgColor-disabled);--controlTrack-borderColor-rest:var(--borderColor-default);--counter-bgColor-emphasis:var(--bgColor-neutral-emphasis);--counter-bgColor-muted:var(--bgColor-neutral-muted);--diffBlob-additionLine-bgColor:var(--bgColor-success-muted);--diffBlob-deletionLine-bgColor:var(--bgColor-danger-muted);--diffBlob-emptyLine-bgColor:var(--bgColor-muted);--diffBlob-emptyNum-bgColor:var(--bgColor-muted);--diffBlob-expander-iconColor:var(--fgColor-muted);--diffBlob-hunkLine-bgColor:var(--bgColor-accent-muted);--diffBlob-hunkLine-fgColor:var(--fgColor-muted);--diffBlob-hunkNum-bgColor-hover:var(--bgColor-accent-emphasis);--fgColor-black:#1f2328;--fgColor-default:#1f2328;--fgColor-draft:var(--fgColor-neutral);--fgColor-link:var(--fgColor-accent);--fgColor-onEmphasis:#ffffff;--fgColor-onInverse:#ffffff;--fgColor-open:var(--fgColor-success);--fgColor-upsell:var(--fgColor-done);--fgColor-white:#ffffff;--focus-outlineColor:var(--borderColor-accent-emphasis);--header-fgColor-default:#ffffffb3;--header-fgColor-logo:#ffffff;--overlay-bgColor:#ffffff;--page-header-bgColor:var(--bgColor-muted);--progressBar-bgColor-accent:var(--bgColor-accent-emphasis);--progressBar-bgColor-attention:var(--bgColor-attention-emphasis);--progressBar-bgColor-danger:var(--bgColor-danger-emphasis);--progressBar-bgColor-done:var(--bgColor-done-emphasis);--progressBar-bgColor-neutral:var(--bgColor-neutral-emphasis);--progressBar-bgColor-severe:var(--bgColor-severe-emphasis);--progressBar-bgColor-sponsors:var(--bgColor-sponsors-emphasis);--progressBar-track-bgColor:var(--borderColor-default);--selection-bgColor:#0969da33;--shadow-inset:inset 0px 1px 0px 0px #1f23280a;--shadow-resting-small:0px 1px 1px 0px #1f23280f,0px 1px 3px 0px #1f23280f;--shadow-resting-xsmall:0px 1px 1px 0px #1f23280f;--sideNav-bgColor-selected:#ffffff;--timelineBadge-bgColor:var(--bgColor-muted);--tooltip-bgColor:var(--bgColor-emphasis);--underlineNav-iconColor-rest:var(--fgColor-muted);--avatar-borderColor:var(--borderColor-translucent);--border-closed-emphasis:var(--border-danger-emphasis);--border-closed-muted:var(--border-danger-muted);--border-muted:0.0625rem solid #d1d9e0b3;--border-open-emphasis:var(--border-success-emphasis);--border-open-muted:var(--border-success-muted);--border-upsell-emphasis:0.0625rem solid #8250df;--border-upsell-muted:0.0625rem solid #c297ff66;--borderColor-neutral-muted:var(--borderColor-muted);--button-danger-bgColor-disabled:var(--control-bgColor-disabled);--button-danger-borderColor-rest:var(--control-borderColor-rest);--button-default-bgColor-disabled:var(--control-bgColor-disabled);--button-default-borderColor-active:var(--control-borderColor-rest);--button-default-borderColor-disabled:var(--control-borderColor-disabled);--button-default-borderColor-rest:var(--control-borderColor-rest);--button-invisible-fgColor-disabled:var(--control-fgColor-disabled);--button-invisible-iconColor-disabled:var(--control-fgColor-disabled);--button-outline-bgColor-disabled:var(--control-bgColor-disabled);--button-primary-borderColor-rest:var(--borderColor-translucent);--button-primary-fgColor-rest:var(--fgColor-white);--button-primary-iconColor-rest:#ffffffcc;--card-bgColor:var(--bgColor-default);--codeMirror-bgColor:var(--bgColor-default);--codeMirror-cursor-fgColor:var(--fgColor-default);--codeMirror-fgColor:var(--fgColor-default);--codeMirror-gutterMarker-fgColor-default:var(--bgColor-default);--codeMirror-gutters-bgColor:var(--bgColor-default);--codeMirror-lines-bgColor:var(--bgColor-default);--codeMirror-matchingBracket-fgColor:var(--fgColor-default);--control-borderColor-selected:var(--control-bgColor-selected);--control-checked-borderColor-disabled:var(--control-checked-bgColor-disabled);--control-checked-borderColor-rest:var(--control-checked-bgColor-rest);--control-checked-fgColor-disabled:var(--fgColor-onEmphasis);--control-checked-fgColor-rest:var(--fgColor-onEmphasis);--controlKnob-bgColor-disabled:var(--control-bgColor-disabled);--controlKnob-borderColor-checked:var(--control-checked-bgColor-rest);--controlKnob-borderColor-disabled:var(--control-bgColor-disabled);--controlKnob-borderColor-rest:var(--control-borderColor-rest);--controlTrack-fgColor-disabled:var(--fgColor-onEmphasis);--dashboard-bgColor:var(--bgColor-default);--diffBlob-additionLine-fgColor:var(--fgColor-default);--diffBlob-additionNum-fgColor:var(--fgColor-default);--diffBlob-additionWord-fgColor:var(--fgColor-default);--diffBlob-deletionLine-fgColor:var(--fgColor-default);--diffBlob-deletionNum-fgColor:var(--fgColor-default);--diffBlob-deletionWord-fgColor:var(--fgColor-default);--diffBlob-hunkNum-fgColor-hover:var(--fgColor-onEmphasis);--diffBlob-hunkNum-fgColor-rest:var(--fgColor-default);--focus-outline:2px solid #0969da;--overlay-borderColor:#d1d9e080;--reactionButton-selected-fgColor-rest:var(--fgColor-link);--tooltip-fgColor:var(--fgColor-onEmphasis);--underlineNav-borderColor-hover:var(--borderColor-muted);--border-neutral-muted:0.0625rem solid #d1d9e0b3;--borderColor-draft-muted:var(--borderColor-neutral-muted);--button-danger-borderColor-hover:var(--button-primary-borderColor-rest);--button-default-borderColor-hover:var(--button-default-borderColor-rest);--button-primary-borderColor-active:var(--button-primary-borderColor-rest);--button-primary-borderColor-hover:var(--button-primary-borderColor-rest);--shadow-floating-large:0px 0px 0px 1px #d1d9e0,0px 40px 80px 0px #25292e3d;--shadow-floating-medium:0px 0px 0px 1px #d1d9e0,0px 8px 16px -4px #25292e14,0px 4px 32px -4px #25292e14,0px 24px 48px -12px #25292e14,0px 48px 96px -24px #25292e14;--shadow-floating-small:0px 0px 0px 1px #d1d9e080,0px 6px 12px -3px #25292e0a,0px 6px 18px 0px #25292e1f;--shadow-floating-xlarge:0px 0px 0px 1px #d1d9e0,0px 56px 112px 0px #25292e52;--button-danger-borderColor-active:var(--button-danger-borderColor-hover);--button-outline-borderColor-hover:var(--button-primary-borderColor-hover);--button-outline-borderColor-active:var(--button-outline-borderColor-hover)}@media (prefers-color-scheme:dark){}.gist{font-size:16px;color:#333;text-align:left;direction:ltr}.gist .pl-c{color:#6a737d}.gist .pl-c1{color:#005cc5}.gist .pl-en{color:#6f42c1}.gist .pl-k{color:#d73a49}.gist .pl-s{color:#032f62}.gist .pl-v{color:#e36209}.gist .blob-wrapper{overflow-x:auto;overflow-y:hidden}.gist .blob-wrapper table tr:nth-child(2n){background-color:rgba(0,0,0,0)}.gist .blob-num{position:relative;width:1%;padding-right:10px;padding-left:10px;font-family:var(--fontStack-monospace,ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace);font-size:12px;line-height:20px;color:var(--fgColor-muted,var(--color-fg-subtle));text-align:right;white-space:nowrap;vertical-align:top;cursor:pointer;-webkit-user-select:none;user-select:none}.gist .blob-num:hover{color:var(--fgColor-default,var(--color-fg-default))}.gist .blob-num::before{content:attr(data-line-number)}.gist .blob-code{position:relative;padding-right:10px;padding-left:10px;line-height:20px;vertical-align:top}.gist .blob-code-inner{display:table-cell;overflow:visible;font-family:var(--fontStack-monospace,ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace);font-size:12px;color:var(--fgColor-default,var(--color-fg-default));word-wrap:anywhere;white-space:pre}.gist .blob-code-inner::selection,.gist .blob-code-inner *::selection{background-color:var(--selection-bgColor,var(--color-accent-muted))}@media (max-width:1280px){}@media (min-width:1280px){}.gist .highlight{padding:0;margin:0;font-family:var(--fontStack-monospace,ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace);font-size:12px;font-weight:var(--base-text-weight-normal,400);line-height:1.4;color:#333;background:var(--bgColor-default,var(--color-canvas-default));border:0}.gist .gist-meta{padding:10px;overflow:hidden;font:12px var(--fontStack-sansSerif,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji");color:var(--fgColor-muted,var(--color-fg-muted));background-color:#f7f7f7;border-radius:0 0 var(--borderRadius-medium) var(--borderRadius-medium)}.gist .gist-meta a{font-weight:var(--base-text-weight-semibold,600);color:#666;text-decoration:none;border:0}.gist .gist-data{overflow:auto;word-wrap:normal;background-color:var(--bgColor-default,var(--color-canvas-default));border-bottom:var(--borderWidth-thin) solid #ddd;border-radius:var(--borderRadius-medium) var(--borderRadius-medium)0 0}.gist .gist-file{margin-bottom:1em;font-family:var(--fontStack-monospace,ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace);border:var(--borderWidth-thin) solid #ddd;border-bottom:var(--borderWidth-thin) solid #ccc;border-radius:var(--borderRadius-medium)}.gist .blob-num{min-width:inherit;padding:1px 10px!important;background:rgba(0,0,0,0)}.gist .blob-code{padding:1px 10px!important;text-align:left;background:rgba(0,0,0,0);border:0}.gist .blob-code-inner::selection,.gist .blob-code-inner *::selection{background-color:var(--selection-bgColor,#c8e1ff)}.gist .blob-wrapper table{border-collapse:collapse}.gist .blob-wrapper tr:first-child td{padding-top:var(--base-size-4)}</style><style class="darkreader darkreader--sync sf-hidden" media=screen>[data-color-mode="light"][data-light-theme="light"]{--bgColor-success-emphasis:#1f883d;--button-outline-bgColor-active:#0757ba;--button-primary-bgColor-active:#197935;--button-primary-bgColor-disabled:#95d8a6;--button-primary-bgColor-hover:#1c8139;--buttonCounter-danger-fgColor-rest:#c21c2c;--color-ansi-cyan:#1b7c83;--color-ansi-cyan-bright:#3192aa;--control-checked-bgColor-active:#0757ba;--control-checked-bgColor-hover:#0860ca;--darkreader-bg--fgColor-danger:var(--darkreader-background-d1242f,#a71d26);--darkreader-text--fgColor-danger:var(--darkreader-text-d1242f,#de414b);--reactionButton-selected-bgColor-hover:#caecff;--avatarStack-fade-bgColor-default:#c8d1da;--avatarStack-fade-bgColor-muted:#dae0e7;--darkreader-bg--bgColor-accent-emphasis:var(--darkreader-background-0969da,#0754ae);--darkreader-bg--bgColor-accent-muted:var(--darkreader-background-ddf4ff,#003047);--bgColor-attention-emphasis:#9a6700;--darkreader-bg--bgColor-attention-muted:var(--darkreader-background-fff8c5,#403900);--bgColor-danger-emphasis:#cf222e;--darkreader-bg--bgColor-danger-muted:var(--darkreader-background-ffebe9,#400600);--bgColor-disabled:#eff2f5;--bgColor-done-emphasis:#8250df;--bgColor-done-muted:#fbefff;--bgColor-emphasis:#25292e;--bgColor-inverse:#25292e;--darkreader-bg--bgColor-muted:var(--darkreader-background-f6f8fa,#1c1e1f);--bgColor-neutral-emphasis:#59636e;--darkreader-bg--bgColor-neutral-muted:var(--darkreader-background-818b981f,rgba(89,96,100,0.12));--bgColor-open-emphasis:var(--bgColor-success-emphasis);--bgColor-severe-emphasis:#bc4c00;--bgColor-severe-muted:#fff1e5;--bgColor-sponsors-emphasis:#bf3989;--bgColor-sponsors-muted:#ffeff7;--darkreader-bg--bgColor-success-muted:var(--darkreader-background-dafbe1,#074420);--bgColor-transparent:#ffffff00;--darkreader-border--borderColor-accent-emphasis:var(--darkreader-border-0969da,#0756b3);--darkreader-border--borderColor-accent-muted:var(--darkreader-border-54aeff66,rgba(0,81,153,0.4));--borderColor-attention-emphasis:#9a6700;--darkreader-bg--borderColor-attention-muted:var(--darkreader-background-d4a72c66,rgba(127,100,26,0.4));--darkreader-border--borderColor-attention-muted:var(--darkreader-border-d4a72c66,rgba(148,116,30,0.4));--darkreader-border--borderColor-danger-emphasis:var(--darkreader-border-cf222e,#9d1a23);--borderColor-danger-muted:#ff818266;--darkreader-bg--borderColor-default:var(--darkreader-background-d1d9e0,#2e3233);--darkreader-border--borderColor-default:var(--darkreader-border-d1d9e0,#3b4042);--borderColor-disabled:#818b981a;--borderColor-done-emphasis:#8250df;--borderColor-done-muted:#c297ff66;--borderColor-emphasis:#818b98;--borderColor-neutral-emphasis:#59636e;--borderColor-severe-emphasis:#bc4c00;--borderColor-severe-muted:#fb8f4466;--borderColor-sponsors-emphasis:#bf3989;--borderColor-sponsors-muted:#ff80c866;--darkreader-border--borderColor-success-emphasis:var(--darkreader-border-1a7f37,#24ae4b);--borderColor-success-muted:#4ac26b66;--borderColor-transparent:#ffffff00;--button-danger-bgColor-active:#a40e26;--button-danger-fgColor-disabled:#d1242f80;--button-danger-fgColor-rest:var(--fgColor-danger);--button-danger-shadow-selected:inset 0px 1px 0px 0px #4c001433;--button-inactive-bgColor:#e6eaef;--button-inactive-fgColor:#59636e;--button-invisible-bgColor-disabled:#ffffff00;--button-invisible-borderColor-disabled:#ffffff00;--button-outline-shadow-selected:inset 0px 1px 0px 0px #00215533;--button-primary-bgColor-rest:var(--bgColor-success-emphasis);--button-primary-borderColor-disabled:var(--button-primary-bgColor-disabled);--button-primary-shadow-selected:inset 0px 1px 0px 0px #002d114d;--button-star-iconColor:#eac54f;--buttonCounter-danger-fgColor-disabled:#d1242f80;--buttonCounter-outline-fgColor-rest:#0550ae;--buttonCounter-primary-bgColor-rest:#002d1133;--codeMirror-syntax-fgColor-constant:#0550ae;--codeMirror-syntax-fgColor-entity:#8250df;--codeMirror-syntax-fgColor-keyword:#cf222e;--codeMirror-syntax-fgColor-storage:#cf222e;--codeMirror-syntax-fgColor-string:#0a3069;--codeMirror-syntax-fgColor-support:#0550ae;--codeMirror-syntax-fgColor-variable:#953800;--color-ansi-black-bright:#393f46;--color-ansi-blue:#0969da;--color-ansi-blue-bright:#218bff;--color-ansi-gray:#59636e;--color-ansi-green:#116329;--color-ansi-green-bright:#1a7f37;--color-ansi-magenta:#8250df;--color-ansi-magenta-bright:#a475f9;--color-ansi-red:#cf222e;--color-ansi-red-bright:#a40e26;--color-ansi-white:#59636e;--color-ansi-white-bright:#818b98;--color-ansi-yellow:#4d2d00;--color-ansi-yellow-bright:#633c01;--color-prettylights-syntax-brackethighlighter-angle:#59636e;--color-prettylights-syntax-brackethighlighter-unmatched:#82071e;--color-prettylights-syntax-carriage-return-bg:#cf222e;--color-prettylights-syntax-carriage-return-text:#f6f8fa;--color-prettylights-syntax-comment:#59636e;--color-prettylights-syntax-constant:#0550ae;--color-prettylights-syntax-constant-other-reference-link:#0a3069;--color-prettylights-syntax-entity:#6639ba;--color-prettylights-syntax-entity-tag:#0550ae;--color-prettylights-syntax-invalid-illegal-bg:#82071e;--color-prettylights-syntax-invalid-illegal-text:#f6f8fa;--color-prettylights-syntax-keyword:#cf222e;--color-prettylights-syntax-markup-changed-bg:#ffd8b5;--color-prettylights-syntax-markup-changed-text:#953800;--color-prettylights-syntax-markup-deleted-bg:#ffebe9;--color-prettylights-syntax-markup-deleted-text:#82071e;--color-prettylights-syntax-markup-heading:#0550ae;--color-prettylights-syntax-markup-ignored-bg:#0550ae;--color-prettylights-syntax-markup-ignored-text:#d1d9e0;--color-prettylights-syntax-markup-inserted-bg:#dafbe1;--color-prettylights-syntax-markup-inserted-text:#116329;--color-prettylights-syntax-markup-list:#3b2300;--color-prettylights-syntax-meta-diff-range:#8250df;--color-prettylights-syntax-string:#0a3069;--color-prettylights-syntax-string-regexp:#116329;--color-prettylights-syntax-sublimelinter-gutter-mark:#818b98;--color-prettylights-syntax-variable:#953800;--contribution-default-bgColor-0:#eff2f5;--contribution-default-bgColor-1:#aceebb;--contribution-default-bgColor-2:#4ac26b;--contribution-default-bgColor-3:#2da44e;--contribution-default-bgColor-4:#116329;--contribution-default-borderColor-0:#1f23280d;--contribution-halloween-bgColor-1:#f0db3d;--contribution-halloween-bgColor-2:#ffd642;--contribution-halloween-bgColor-3:#f68c41;--contribution-halloween-bgColor-4:#1f2328;--contribution-winter-bgColor-1:#b6e3ff;--contribution-winter-bgColor-2:#54aeff;--contribution-winter-bgColor-3:#0969da;--contribution-winter-bgColor-4:#0a3069;--control-bgColor-active:#e6eaef;--control-bgColor-hover:#eff2f5;--control-bgColor-rest:#f6f8fa;--control-checked-borderColor-active:var(--control-checked-bgColor-active);--control-checked-borderColor-hover:var(--control-checked-bgColor-hover);--control-danger-fgColor-hover:var(--fgColor-danger);--control-danger-fgColor-rest:var(--fgColor-danger);--control-fgColor-rest:#25292e;--control-transparent-bgColor-active:#818b9826;--control-transparent-bgColor-hover:#818b981a;--control-transparent-bgColor-rest:#ffffff00;--control-transparent-bgColor-selected:#818b9826;--control-transparent-borderColor-active:#ffffff00;--control-transparent-borderColor-hover:#ffffff00;--control-transparent-borderColor-rest:#ffffff00;--controlTrack-bgColor-active:#dae0e7;--controlTrack-bgColor-hover:#e0e6eb;--controlTrack-bgColor-rest:#e6eaef;--controlTrack-fgColor-rest:#59636e;--counter-borderColor:#ffffff00;--data-auburn-color-emphasis:#9d615c;--data-auburn-color-muted:#f2e9e9;--data-blue-color-emphasis:#006edb;--data-blue-color-muted:#d1f0ff;--data-brown-color-emphasis:#856d4c;--data-brown-color-muted:#eeeae2;--data-coral-color-emphasis:#d43511;--data-coral-color-muted:#ffe5db;--data-gray-color-emphasis:#808fa3;--data-gray-color-muted:#e8ecf2;--data-green-color-emphasis:#30a147;--data-green-color-muted:#caf7ca;--data-lemon-color-emphasis:#866e04;--data-lemon-color-muted:#f7eea1;--data-lime-color-emphasis:#527a29;--data-lime-color-muted:#e3f2b5;--data-olive-color-emphasis:#64762d;--data-olive-color-muted:#f0f0ad;--data-orange-color-emphasis:#eb670f;--data-orange-color-muted:#ffe7d1;--data-pine-color-emphasis:#167e53;--data-pine-color-muted:#bff8db;--data-pink-color-emphasis:#ce2c85;--data-pink-color-muted:#ffe5f1;--data-plum-color-emphasis:#a830e8;--data-plum-color-muted:#f8e5ff;--data-purple-color-emphasis:#894ceb;--data-purple-color-muted:#f1e5ff;--data-red-color-emphasis:#df0c24;--data-red-color-muted:#ffe2e0;--data-teal-color-emphasis:#179b9b;--data-teal-color-muted:#c7f5ef;--data-yellow-color-emphasis:#b88700;--data-yellow-color-muted:#ffec9e;--darkreader-bg--diffBlob-additionNum-bgColor:var(--darkreader-background-aceebb,#135c32);--darkreader-bg--diffBlob-additionWord-bgColor:var(--darkreader-background-aceebb,#135c32);--darkreader-bg--diffBlob-deletionNum-bgColor:var(--darkreader-background-ffcecb,#520500);--darkreader-bg--diffBlob-deletionWord-bgColor:var(--darkreader-background-ffcecb,#520500);--darkreader-bg--diffBlob-hunkNum-bgColor-rest:var(--darkreader-background-b6e3ff,#2d3032);--display-auburn-bgColor-emphasis:#9d615c;--display-auburn-bgColor-muted:#f2e9e9;--display-auburn-borderColor-emphasis:#9d615c;--display-auburn-borderColor-muted:#e6d6d5;--display-auburn-fgColor:#8a5551;--display-auburn-scale-0:#f2e9e9;--display-auburn-scale-1:#e6d6d5;--display-auburn-scale-2:#d4b7b5;--display-auburn-scale-3:#c59e9b;--display-auburn-scale-4:#b4827e;--display-auburn-scale-5:#9d615c;--display-auburn-scale-6:#8a5551;--display-auburn-scale-7:#744744;--display-auburn-scale-8:#5d3937;--display-auburn-scale-9:#432928;--display-blue-bgColor-emphasis:#006edb;--display-blue-bgColor-muted:#d1f0ff;--display-blue-borderColor-emphasis:#006edb;--display-blue-borderColor-muted:#ade1ff;--display-blue-fgColor:#005fcc;--display-blue-scale-0:#d1f0ff;--display-blue-scale-1:#ade1ff;--display-blue-scale-2:#75c8ff;--display-blue-scale-3:#47afff;--display-blue-scale-4:#0f8fff;--display-blue-scale-5:#006edb;--display-blue-scale-6:#005fcc;--display-blue-scale-7:#004db3;--display-blue-scale-8:#003d99;--display-blue-scale-9:#002b75;--display-brown-bgColor-emphasis:#856d4c;--display-brown-bgColor-muted:#eeeae2;--display-brown-borderColor-emphasis:#856d4c;--display-brown-borderColor-muted:#dfd7c8;--display-brown-fgColor:#755f43;--display-brown-scale-0:#eeeae2;--display-brown-scale-1:#dfd7c8;--display-brown-scale-2:#cbbda4;--display-brown-scale-3:#b8a484;--display-brown-scale-4:#a68b64;--display-brown-scale-5:#856d4c;--display-brown-scale-6:#755f43;--display-brown-scale-7:#64513a;--display-brown-scale-8:#51412f;--display-brown-scale-9:#3a2e22;--display-coral-bgColor-emphasis:#d43511;--display-coral-bgColor-muted:#ffe5db;--display-coral-borderColor-emphasis:#d43511;--display-coral-borderColor-muted:#fecebe;--display-coral-fgColor:#ba2e12;--display-coral-scale-0:#ffe5db;--display-coral-scale-1:#fecebe;--display-coral-scale-2:#fcab92;--display-coral-scale-3:#f88768;--display-coral-scale-4:#f25f3a;--display-coral-scale-5:#d43511;--display-coral-scale-6:#ba2e12;--display-coral-scale-7:#9b2712;--display-coral-scale-8:#7e2011;--display-coral-scale-9:#5d180e;--display-cyan-bgColor-emphasis:#007b94;--display-cyan-bgColor-muted:#bdf4ff;--display-cyan-borderColor-emphasis:#007b94;--display-cyan-borderColor-muted:#7ae9ff;--display-cyan-fgColor:#006a80;--display-cyan-scale-0:#bdf4ff;--display-cyan-scale-1:#7ae9ff;--display-cyan-scale-2:#00d0fa;--display-cyan-scale-3:#00b7db;--display-cyan-scale-4:#0099b8;--display-cyan-scale-5:#007b94;--display-cyan-scale-6:#006a80;--display-cyan-scale-7:#00596b;--display-cyan-scale-8:#004857;--display-cyan-scale-9:#003742;--display-gray-bgColor-emphasis:#647182;--display-gray-bgColor-muted:#e8ecf2;--display-gray-borderColor-emphasis:#647182;--display-gray-borderColor-muted:#d2dae4;--display-gray-fgColor:#5c6570;--display-gray-scale-0:#e8ecf2;--display-gray-scale-1:#d2dae4;--display-gray-scale-2:#b4c0cf;--display-gray-scale-3:#9ba9bb;--display-gray-scale-4:#808fa3;--display-gray-scale-5:#647182;--display-gray-scale-6:#5c6570;--display-gray-scale-7:#4e535a;--display-gray-scale-8:#424448;--display-gray-scale-9:#303031;--display-green-bgColor-emphasis:#2c8141;--display-green-bgColor-muted:#caf7ca;--display-green-borderColor-emphasis:#2c8141;--display-green-borderColor-muted:#9ceda0;--display-green-fgColor:#2b6e3f;--display-green-scale-0:#caf7ca;--display-green-scale-1:#9ceda0;--display-green-scale-2:#54d961;--display-green-scale-3:#31bf46;--display-green-scale-4:#30a147;--display-green-scale-5:#2c8141;--display-green-scale-6:#2b6e3f;--display-green-scale-7:#285c3b;--display-green-scale-8:#254b34;--display-green-scale-9:#1d3528;--display-indigo-bgColor-emphasis:#5a61e7;--display-indigo-bgColor-muted:#e5e9ff;--display-indigo-borderColor-emphasis:#5a61e7;--display-indigo-borderColor-muted:#d2d7fe;--display-indigo-fgColor:#494edf;--display-indigo-scale-0:#e5e9ff;--display-indigo-scale-1:#d2d7fe;--display-indigo-scale-2:#b1b9fb;--display-indigo-scale-3:#979ff7;--display-indigo-scale-4:#7a82f0;--display-indigo-scale-5:#5a61e7;--display-indigo-scale-6:#494edf;--display-indigo-scale-7:#393cd5;--display-indigo-scale-8:#2d2db4;--display-indigo-scale-9:#25247b;--display-lemon-bgColor-emphasis:#866e04;--display-lemon-bgColor-muted:#f7eea1;--display-lemon-borderColor-emphasis:#866e04;--display-lemon-borderColor-muted:#f0db3d;--display-lemon-fgColor:#786002;--display-lemon-scale-0:#f7eea1;--display-lemon-scale-1:#f0db3d;--display-lemon-scale-2:#d8bd0e;--display-lemon-scale-3:#c2a60a;--display-lemon-scale-4:#a68c07;--display-lemon-scale-5:#866e04;--display-lemon-scale-6:#786002;--display-lemon-scale-7:#654f01;--display-lemon-scale-8:#523f00;--display-lemon-scale-9:#3d2e00;--display-lime-bgColor-emphasis:#527a29;--display-lime-bgColor-muted:#e3f2b5;--display-lime-borderColor-emphasis:#527a29;--display-lime-borderColor-muted:#c7e580;--display-lime-fgColor:#476c28;--display-lime-scale-0:#e3f2b5;--display-lime-scale-1:#c7e580;--display-lime-scale-2:#9bd039;--display-lime-scale-3:#80b530;--display-lime-scale-4:#6c9d2f;--display-lime-scale-5:#527a29;--display-lime-scale-6:#476c28;--display-lime-scale-7:#3a5b25;--display-lime-scale-8:#2f4a21;--display-lime-scale-9:#213319;--display-olive-bgColor-emphasis:#64762d;--display-olive-bgColor-muted:#f0f0ad;--display-olive-borderColor-emphasis:#64762d;--display-olive-borderColor-muted:#dbe170;--display-olive-fgColor:#56682c;--display-olive-scale-0:#f0f0ad;--display-olive-scale-1:#dbe170;--display-olive-scale-2:#b9c832;--display-olive-scale-3:#9bae32;--display-olive-scale-4:#819532;--display-olive-scale-5:#64762d;--display-olive-scale-6:#56682c;--display-olive-scale-7:#495a2b;--display-olive-scale-8:#3b4927;--display-olive-scale-9:#2a331f;--display-orange-bgColor-emphasis:#b8500f;--display-orange-bgColor-muted:#ffe7d1;--display-orange-borderColor-emphasis:#b8500f;--display-orange-borderColor-muted:#fecfaa;--display-orange-fgColor:#a24610;--display-orange-scale-0:#ffe7d1;--display-orange-scale-1:#fecfaa;--display-orange-scale-2:#fbaf74;--display-orange-scale-3:#f68c41;--display-orange-scale-4:#eb670f;--display-orange-scale-5:#b8500f;--display-orange-scale-6:#a24610;--display-orange-scale-7:#8d3c11;--display-orange-scale-8:#70300f;--display-orange-scale-9:#54230d;--display-pine-bgColor-emphasis:#167e53;--display-pine-bgColor-muted:#bff8db;--display-pine-borderColor-emphasis:#167e53;--display-pine-borderColor-muted:#80efb9;--display-pine-fgColor:#156f4b;--display-pine-scale-0:#bff8db;--display-pine-scale-1:#80efb9;--display-pine-scale-2:#1dd781;--display-pine-scale-3:#1dbf76;--display-pine-scale-4:#1aa267;--display-pine-scale-5:#167e53;--display-pine-scale-6:#156f4b;--display-pine-scale-7:#135d41;--display-pine-scale-8:#114b36;--display-pine-scale-9:#0d3627;--display-pink-bgColor-emphasis:#ce2c85;--display-pink-bgColor-muted:#ffe5f1;--display-pink-borderColor-emphasis:#ce2c85;--display-pink-borderColor-muted:#fdc9e2;--display-pink-fgColor:#b12f79;--display-pink-scale-0:#ffe5f1;--display-pink-scale-1:#fdc9e2;--display-pink-scale-2:#f8a5cf;--display-pink-scale-3:#f184bc;--display-pink-scale-4:#e55da5;--display-pink-scale-5:#ce2c85;--display-pink-scale-6:#b12f79;--display-pink-scale-7:#8e2e66;--display-pink-scale-8:#6e2b53;--display-pink-scale-9:#4d233d;--display-plum-bgColor-emphasis:#a830e8;--display-plum-bgColor-muted:#f8e5ff;--display-plum-borderColor-emphasis:#a830e8;--display-plum-borderColor-muted:#f0cdfe;--display-plum-fgColor:#961edc;--display-plum-scale-0:#f8e5ff;--display-plum-scale-1:#f0cdfe;--display-plum-scale-2:#e2a7fb;--display-plum-scale-3:#d487f7;--display-plum-scale-4:#c264f2;--display-plum-scale-5:#a830e8;--display-plum-scale-6:#961edc;--display-plum-scale-7:#7d1eb8;--display-plum-scale-8:#651d96;--display-plum-scale-9:#471769;--display-purple-bgColor-emphasis:#894ceb;--display-purple-bgColor-muted:#f1e5ff;--display-purple-borderColor-emphasis:#894ceb;--display-purple-borderColor-muted:#e6d2fe;--display-purple-fgColor:#783ae4;--display-purple-scale-0:#f1e5ff;--display-purple-scale-1:#e6d2fe;--display-purple-scale-2:#d1b1fc;--display-purple-scale-3:#bc91f8;--display-purple-scale-4:#a672f3;--display-purple-scale-5:#894ceb;--display-purple-scale-6:#783ae4;--display-purple-scale-7:#6223d7;--display-purple-scale-8:#4f21ab;--display-purple-scale-9:#391b79;--display-red-bgColor-emphasis:#df0c24;--display-red-bgColor-muted:#ffe2e0;--display-red-borderColor-emphasis:#df0c24;--display-red-borderColor-muted:#fecdcd;--display-red-fgColor:#c50d28;--display-red-scale-0:#ffe2e0;--display-red-scale-1:#fecdcd;--display-red-scale-2:#fda5a7;--display-red-scale-3:#fb8389;--display-red-scale-4:#f85461;--display-red-scale-5:#df0c24;--display-red-scale-6:#c50d28;--display-red-scale-7:#a60c29;--display-red-scale-8:#880c27;--display-red-scale-9:#610a20;--display-teal-bgColor-emphasis:#127e81;--display-teal-bgColor-muted:#c7f5ef;--display-teal-borderColor-emphasis:#127e81;--display-teal-borderColor-muted:#89ebe1;--display-teal-fgColor:#106e75;--display-teal-scale-0:#c7f5ef;--display-teal-scale-1:#89ebe1;--display-teal-scale-2:#22d3c7;--display-teal-scale-3:#1db9b4;--display-teal-scale-4:#179b9b;--display-teal-scale-5:#127e81;--display-teal-scale-6:#106e75;--display-teal-scale-7:#0d5b63;--display-teal-scale-8:#0a4852;--display-teal-scale-9:#073740;--display-yellow-bgColor-emphasis:#946a00;--display-yellow-bgColor-muted:#ffec9e;--display-yellow-borderColor-emphasis:#946a00;--display-yellow-borderColor-muted:#ffd642;--display-yellow-fgColor:#805900;--display-yellow-scale-0:#ffec9e;--display-yellow-scale-1:#ffd642;--display-yellow-scale-2:#ebb400;--display-yellow-scale-3:#d19d00;--display-yellow-scale-4:#b88700;--display-yellow-scale-5:#946a00;--display-yellow-scale-6:#805900;--display-yellow-scale-7:#704d00;--display-yellow-scale-8:#5c3d00;--display-yellow-scale-9:#422b00;--darkreader-text--fgColor-accent:var(--darkreader-text-0969da,#4ba8f8);--darkreader-text--fgColor-attention:var(--darkreader-text-9a6700,#ffca60);--fgColor-closed:var(--fgColor-danger);--fgColor-disabled:#818b98;--fgColor-done:#8250df;--darkreader-text--fgColor-muted:var(--darkreader-text-59636e,#a9a297);--fgColor-neutral:#59636e;--fgColor-severe:#bc4c00;--fgColor-sponsors:#bf3989;--darkreader-text--fgColor-success:var(--darkreader-text-1a7f37,#7ce49a);--header-bgColor:#25292e;--header-borderColor-divider:#818b98;--headerSearch-bgColor:#25292e;--headerSearch-borderColor:#818b98;--highlight-neutral-bgColor:#fff8c5;--label-auburn-bgColor-active:#d4b7b5;--label-auburn-bgColor-hover:#e6d6d5;--label-auburn-bgColor-rest:#f2e9e9;--label-auburn-borderColor:#ffffff00;--label-auburn-fgColor-active:#5d3937;--label-auburn-fgColor-hover:#744744;--label-auburn-fgColor-rest:#8a5551;--label-blue-bgColor-active:#75c8ff;--label-blue-bgColor-hover:#ade1ff;--label-blue-bgColor-rest:#d1f0ff;--label-blue-borderColor:#ffffff00;--label-blue-fgColor-active:#003d99;--label-blue-fgColor-hover:#004db3;--label-blue-fgColor-rest:#005fcc;--label-brown-bgColor-active:#cbbda4;--label-brown-bgColor-hover:#dfd7c8;--label-brown-bgColor-rest:#eeeae2;--label-brown-borderColor:#ffffff00;--label-brown-fgColor-active:#51412f;--label-brown-fgColor-hover:#64513a;--label-brown-fgColor-rest:#755f43;--label-coral-bgColor-active:#fcab92;--label-coral-bgColor-hover:#fecebe;--label-coral-bgColor-rest:#ffe5db;--label-coral-borderColor:#ffffff00;--label-coral-fgColor-active:#7e2011;--label-coral-fgColor-hover:#9b2712;--label-coral-fgColor-rest:#ba2e12;--label-cyan-bgColor-active:#00d0fa;--label-cyan-bgColor-hover:#7ae9ff;--label-cyan-bgColor-rest:#bdf4ff;--label-cyan-borderColor:#ffffff00;--label-cyan-fgColor-active:#004857;--label-cyan-fgColor-hover:#00596b;--label-cyan-fgColor-rest:#006a80;--label-gray-bgColor-active:#b4c0cf;--label-gray-bgColor-hover:#d2dae4;--label-gray-bgColor-rest:#e8ecf2;--label-gray-borderColor:#ffffff00;--label-gray-fgColor-active:#424448;--label-gray-fgColor-hover:#4e535a;--label-gray-fgColor-rest:#5c6570;--label-green-bgColor-active:#54d961;--label-green-bgColor-hover:#9ceda0;--label-green-bgColor-rest:#caf7ca;--label-green-borderColor:#ffffff00;--label-green-fgColor-active:#254b34;--label-green-fgColor-hover:#285c3b;--label-green-fgColor-rest:#2b6e3f;--label-indigo-bgColor-active:#b1b9fb;--label-indigo-bgColor-hover:#d2d7fe;--label-indigo-bgColor-rest:#e5e9ff;--label-indigo-borderColor:#ffffff00;--label-indigo-fgColor-active:#2d2db4;--label-indigo-fgColor-hover:#393cd5;--label-indigo-fgColor-rest:#494edf;--label-lemon-bgColor-active:#d8bd0e;--label-lemon-bgColor-hover:#f0db3d;--label-lemon-bgColor-rest:#f7eea1;--label-lemon-borderColor:#ffffff00;--label-lemon-fgColor-active:#523f00;--label-lemon-fgColor-hover:#654f01;--label-lemon-fgColor-rest:#786002;--label-lime-bgColor-active:#9bd039;--label-lime-bgColor-hover:#c7e580;--label-lime-bgColor-rest:#e3f2b5;--label-lime-borderColor:#ffffff00;--label-lime-fgColor-active:#2f4a21;--label-lime-fgColor-hover:#3a5b25;--label-lime-fgColor-rest:#476c28;--label-olive-bgColor-active:#b9c832;--label-olive-bgColor-hover:#dbe170;--label-olive-bgColor-rest:#f0f0ad;--label-olive-borderColor:#ffffff00;--label-olive-fgColor-active:#3b4927;--label-olive-fgColor-hover:#495a2b;--label-olive-fgColor-rest:#56682c;--label-orange-bgColor-active:#fbaf74;--label-orange-bgColor-hover:#fecfaa;--label-orange-bgColor-rest:#ffe7d1;--label-orange-borderColor:#ffffff00;--label-orange-fgColor-active:#70300f;--label-orange-fgColor-hover:#8d3c11;--label-orange-fgColor-rest:#a24610;--label-pine-bgColor-active:#1dd781;--label-pine-bgColor-hover:#80efb9;--label-pine-bgColor-rest:#bff8db;--label-pine-borderColor:#ffffff00;--label-pine-fgColor-active:#114b36;--label-pine-fgColor-hover:#135d41;--label-pine-fgColor-rest:#156f4b;--label-pink-bgColor-active:#f8a5cf;--label-pink-bgColor-hover:#fdc9e2;--label-pink-bgColor-rest:#ffe5f1;--label-pink-borderColor:#ffffff00;--label-pink-fgColor-active:#6e2b53;--label-pink-fgColor-hover:#8e2e66;--label-pink-fgColor-rest:#b12f79;--label-plum-bgColor-active:#e2a7fb;--label-plum-bgColor-hover:#f0cdfe;--label-plum-bgColor-rest:#f8e5ff;--label-plum-borderColor:#ffffff00;--label-plum-fgColor-active:#651d96;--label-plum-fgColor-hover:#7d1eb8;--label-plum-fgColor-rest:#961edc;--label-purple-bgColor-active:#d1b1fc;--label-purple-bgColor-hover:#e6d2fe;--label-purple-bgColor-rest:#f1e5ff;--label-purple-borderColor:#ffffff00;--label-purple-fgColor-active:#4f21ab;--label-purple-fgColor-hover:#6223d7;--label-purple-fgColor-rest:#783ae4;--label-red-bgColor-active:#fda5a7;--label-red-bgColor-hover:#fecdcd;--label-red-bgColor-rest:#ffe2e0;--label-red-borderColor:#ffffff00;--label-red-fgColor-active:#880c27;--label-red-fgColor-hover:#a60c29;--label-red-fgColor-rest:#c50d28;--label-teal-bgColor-active:#22d3c7;--label-teal-bgColor-hover:#89ebe1;--label-teal-bgColor-rest:#c7f5ef;--label-teal-borderColor:#ffffff00;--label-teal-fgColor-active:#0a4852;--label-teal-fgColor-hover:#0d5b63;--label-teal-fgColor-rest:#106e75;--label-yellow-bgColor-active:#ebb400;--label-yellow-bgColor-hover:#ffd642;--label-yellow-bgColor-rest:#ffec9e;--label-yellow-borderColor:#ffffff00;--label-yellow-fgColor-active:#5c3d00;--label-yellow-fgColor-hover:#704d00;--label-yellow-fgColor-rest:#805900;--menu-bgColor-active:#ffffff00;--overlay-backdrop-bgColor:#c8d1da66;--progressBar-bgColor-success:var(--bgColor-success-emphasis);--progressBar-track-borderColor:#ffffff00;--reactionButton-selected-bgColor-rest:#ddf4ff;--reactionButton-selected-fgColor-hover:#0550ae;--selectMenu-bgColor-active:#b6e3ff;--selectMenu-borderColor:#ffffff00;--shadow-floating-legacy:0px 6px 12px -3px #25292e0a,0px 6px 18px 0px #25292e1f;--darkreader-bg--shadow-resting-medium:0px 1px 1px 0px #25292e1a,0px 3px 6px 0px #25292e1f;--skeletonLoader-bgColor:#818b981a;--topicTag-borderColor:#ffffff00;--treeViewItem-leadingVisual-iconColor-rest:#54aeff;--underlineNav-borderColor-active:#fd8c73;--avatar-bgColor:#ffffff;--avatar-shadow:0px 0px 0px 2px #ffffffcc;--bgColor-black:#1f2328;--bgColor-closed-emphasis:var(--bgColor-danger-emphasis);--bgColor-closed-muted:var(--bgColor-danger-muted);--darkreader-bg--bgColor-default:var(--darkreader-background-ffffff,#181a1b);--darkreader-border--bgColor-default:var(--darkreader-border-ffffff,#303436);--bgColor-draft-emphasis:var(--bgColor-neutral-emphasis);--bgColor-draft-muted:var(--bgColor-neutral-muted);--bgColor-inset:var(--bgColor-muted);--bgColor-open-muted:var(--bgColor-success-muted);--bgColor-upsell-emphasis:var(--bgColor-done-emphasis);--bgColor-upsell-muted:var(--bgColor-done-muted);--bgColor-white:#ffffff;--border-accent-emphasis:0.0625rem solid #0969da;--border-accent-muted:0.0625rem solid #54aeff66;--border-attention-emphasis:0.0625rem solid #9a6700;--border-attention-muted:0.0625rem solid #d4a72c66;--border-danger-emphasis:0.0625rem solid #cf222e;--border-danger-muted:0.0625rem solid #ff818266;--border-default:0.0625rem solid #d1d9e0;--border-disabled:0.0625rem solid #818b981a;--border-done-emphasis:0.0625rem solid #8250df;--border-done-muted:0.0625rem solid #c297ff66;--border-emphasis:0.0625rem solid #818b98;--border-neutral-emphasis:0.0625rem solid #59636e;--border-severe-emphasis:0.0625rem solid #bc4c00;--border-severe-muted:0.0625rem solid #fb8f4466;--border-sponsors-emphasis:0.0625rem solid #bf3989;--border-sponsors-muted:0.0625rem solid #ff80c866;--border-success-emphasis:0.0625rem solid #1a7f37;--border-success-muted:0.0625rem solid #4ac26b66;--border-transparent:0.0625rem solid #ffffff00;--borderColor-closed-emphasis:var(--borderColor-danger-emphasis);--borderColor-closed-muted:var(--borderColor-danger-muted);--borderColor-draft-emphasis:var(--borderColor-neutral-emphasis);--darkreader-border--borderColor-muted:var(--darkreader-border-d1d9e0b3,rgba(59,64,66,0.7));--borderColor-open-emphasis:var(--borderColor-success-emphasis);--borderColor-open-muted:var(--borderColor-success-muted);--borderColor-translucent:#1f232826;--borderColor-upsell-emphasis:var(--borderColor-done-emphasis);--borderColor-upsell-muted:var(--borderColor-done-muted);--button-danger-bgColor-hover:var(--bgColor-danger-emphasis);--button-danger-bgColor-rest:var(--control-bgColor-rest);--button-danger-fgColor-active:#ffffff;--button-danger-fgColor-hover:#ffffff;--button-danger-iconColor-hover:#ffffff;--button-danger-iconColor-rest:var(--button-danger-fgColor-rest);--button-default-bgColor-active:var(--control-bgColor-active);--button-default-bgColor-hover:var(--control-bgColor-hover);--button-default-bgColor-rest:var(--control-bgColor-rest);--button-default-bgColor-selected:var(--control-bgColor-active);--button-default-fgColor-rest:var(--control-fgColor-rest);--button-default-shadow-resting:0px 1px 0px 0px #1f23280a;--button-invisible-bgColor-active:var(--control-transparent-bgColor-active);--button-invisible-bgColor-hover:var(--control-transparent-bgColor-hover);--button-invisible-bgColor-rest:var(--control-transparent-bgColor-rest);--button-invisible-borderColor-hover:var(--control-transparent-borderColor-hover);--button-invisible-borderColor-rest:var(--control-transparent-borderColor-rest);--button-invisible-fgColor-active:var(--control-fgColor-rest);--button-invisible-fgColor-hover:var(--control-fgColor-rest);--button-invisible-fgColor-rest:var(--control-fgColor-rest);--button-invisible-iconColor-hover:var(--fgColor-muted);--button-invisible-iconColor-rest:var(--fgColor-muted);--button-outline-bgColor-hover:var(--bgColor-accent-emphasis);--button-outline-bgColor-rest:var(--control-bgColor-rest);--button-outline-fgColor-active:#ffffff;--button-outline-fgColor-disabled:#0969da80;--button-outline-fgColor-hover:#ffffff;--button-outline-fgColor-rest:var(--fgColor-accent);--button-primary-fgColor-disabled:#ffffffcc;--buttonCounter-danger-bgColor-disabled:#cf222e0d;--buttonCounter-danger-bgColor-hover:#ffffff33;--buttonCounter-danger-bgColor-rest:#cf222e1a;--buttonCounter-danger-fgColor-hover:#ffffff;--buttonCounter-default-bgColor-rest:var(--bgColor-neutral-muted);--buttonCounter-invisible-bgColor-rest:var(--bgColor-neutral-muted);--buttonCounter-outline-bgColor-disabled:#0969da0d;--buttonCounter-outline-bgColor-hover:#ffffff33;--buttonCounter-outline-bgColor-rest:#0969da1a;--buttonCounter-outline-fgColor-disabled:#0969da80;--buttonCounter-outline-fgColor-hover:#ffffff;--codeMirror-activeline-bgColor:var(--bgColor-neutral-muted);--codeMirror-gutterMarker-fgColor-muted:var(--fgColor-muted);--codeMirror-lineNumber-fgColor:var(--fgColor-muted);--codeMirror-selection-bgColor:var(--borderColor-accent-muted);--codeMirror-syntax-fgColor-comment:#1f2328;--color-ansi-black:#1f2328;--color-prettylights-syntax-markup-bold:#1f2328;--color-prettylights-syntax-markup-italic:#1f2328;--color-prettylights-syntax-storage-modifier-import:#1f2328;--contribution-default-borderColor-1:var(--contribution-default-borderColor-0);--contribution-default-borderColor-2:var(--contribution-default-borderColor-0);--contribution-default-borderColor-3:var(--contribution-default-borderColor-0);--contribution-default-borderColor-4:var(--contribution-default-borderColor-0);--control-bgColor-disabled:var(--bgColor-disabled);--control-bgColor-selected:var(--control-bgColor-rest);--control-borderColor-danger:var(--borderColor-danger-emphasis);--control-borderColor-disabled:var(--borderColor-disabled);--control-borderColor-emphasis:var(--borderColor-emphasis);--control-borderColor-rest:var(--borderColor-default);--control-borderColor-success:var(--borderColor-success-emphasis);--control-borderColor-warning:var(--borderColor-attention-emphasis);--control-checked-bgColor-disabled:var(--fgColor-disabled);--control-checked-bgColor-rest:var(--bgColor-accent-emphasis);--control-danger-bgColor-active:#ffebe966;--control-danger-bgColor-hover:var(--bgColor-danger-muted);--control-fgColor-disabled:var(--fgColor-disabled);--control-fgColor-placeholder:var(--fgColor-muted);--control-iconColor-rest:var(--fgColor-muted);--control-transparent-bgColor-disabled:var(--bgColor-disabled);--controlKnob-bgColor-checked:#ffffff;--controlKnob-bgColor-rest:#ffffff;--controlTrack-bgColor-disabled:var(--fgColor-disabled);--controlTrack-borderColor-disabled:var(--fgColor-disabled);--controlTrack-borderColor-rest:var(--borderColor-default);--counter-bgColor-emphasis:var(--bgColor-neutral-emphasis);--counter-bgColor-muted:var(--bgColor-neutral-muted);--darkreader-bg--diffBlob-additionLine-bgColor:var(--darkreader-bg--bgColor-success-muted);--darkreader-bg--diffBlob-deletionLine-bgColor:var(--darkreader-bg--bgColor-danger-muted);--darkreader-bg--diffBlob-emptyLine-bgColor:var(--darkreader-bg--bgColor-muted);--diffBlob-emptyNum-bgColor:var(--bgColor-muted);--darkreader-text--diffBlob-expander-iconColor:var(--darkreader-text--fgColor-muted);--diffBlob-hunkLine-bgColor:var(--bgColor-accent-muted);--diffBlob-hunkLine-fgColor:var(--fgColor-muted);--diffBlob-hunkNum-bgColor-hover:var(--bgColor-accent-emphasis);--fgColor-black:#1f2328;--darkreader-text--fgColor-default:var(--darkreader-text-1f2328,#d2cec8);--fgColor-draft:var(--fgColor-neutral);--fgColor-link:var(--fgColor-accent);--darkreader-text--fgColor-onEmphasis:var(--darkreader-text-ffffff,#e8e6e3);--fgColor-onInverse:#ffffff;--fgColor-open:var(--fgColor-success);--fgColor-upsell:var(--fgColor-done);--fgColor-white:#ffffff;--focus-outlineColor:var(--borderColor-accent-emphasis);--header-fgColor-default:#ffffffb3;--header-fgColor-logo:#ffffff;--overlay-bgColor:#ffffff;--page-header-bgColor:var(--bgColor-muted);--progressBar-bgColor-accent:var(--bgColor-accent-emphasis);--progressBar-bgColor-attention:var(--bgColor-attention-emphasis);--progressBar-bgColor-danger:var(--bgColor-danger-emphasis);--progressBar-bgColor-done:var(--bgColor-done-emphasis);--progressBar-bgColor-neutral:var(--bgColor-neutral-emphasis);--progressBar-bgColor-severe:var(--bgColor-severe-emphasis);--progressBar-bgColor-sponsors:var(--bgColor-sponsors-emphasis);--progressBar-track-bgColor:var(--borderColor-default);--darkreader-bg--selection-bgColor:var(--darkreader-background-0969da33,rgba(7,84,174,0.2));--shadow-inset:inset 0px 1px 0px 0px #1f23280a;--shadow-resting-small:0px 1px 1px 0px #1f23280f,0px 1px 3px 0px #1f23280f;--shadow-resting-xsmall:0px 1px 1px 0px #1f23280f;--sideNav-bgColor-selected:#ffffff;--timelineBadge-bgColor:var(--bgColor-muted);--tooltip-bgColor:var(--bgColor-emphasis);--underlineNav-iconColor-rest:var(--fgColor-muted);--avatar-borderColor:var(--borderColor-translucent);--border-closed-emphasis:var(--border-danger-emphasis);--border-closed-muted:var(--border-danger-muted);--border-muted:0.0625rem solid #d1d9e0b3;--border-open-emphasis:var(--border-success-emphasis);--border-open-muted:var(--border-success-muted);--border-upsell-emphasis:0.0625rem solid #8250df;--border-upsell-muted:0.0625rem solid #c297ff66;--borderColor-neutral-muted:var(--borderColor-muted);--button-danger-bgColor-disabled:var(--control-bgColor-disabled);--button-danger-borderColor-rest:var(--control-borderColor-rest);--button-default-bgColor-disabled:var(--control-bgColor-disabled);--button-default-borderColor-active:var(--control-borderColor-rest);--button-default-borderColor-disabled:var(--control-borderColor-disabled);--button-default-borderColor-rest:var(--control-borderColor-rest);--button-invisible-fgColor-disabled:var(--control-fgColor-disabled);--button-invisible-iconColor-disabled:var(--control-fgColor-disabled);--button-outline-bgColor-disabled:var(--control-bgColor-disabled);--button-primary-borderColor-rest:var(--borderColor-translucent);--button-primary-fgColor-rest:var(--fgColor-white);--button-primary-iconColor-rest:#ffffffcc;--card-bgColor:var(--bgColor-default);--codeMirror-bgColor:var(--bgColor-default);--codeMirror-cursor-fgColor:var(--fgColor-default);--codeMirror-fgColor:var(--fgColor-default);--codeMirror-gutterMarker-fgColor-default:var(--bgColor-default);--codeMirror-gutters-bgColor:var(--bgColor-default);--codeMirror-lines-bgColor:var(--bgColor-default);--codeMirror-matchingBracket-fgColor:var(--fgColor-default);--control-borderColor-selected:var(--control-bgColor-selected);--control-checked-borderColor-disabled:var(--control-checked-bgColor-disabled);--control-checked-borderColor-rest:var(--control-checked-bgColor-rest);--control-checked-fgColor-disabled:var(--fgColor-onEmphasis);--control-checked-fgColor-rest:var(--fgColor-onEmphasis);--controlKnob-bgColor-disabled:var(--control-bgColor-disabled);--controlKnob-borderColor-checked:var(--control-checked-bgColor-rest);--controlKnob-borderColor-disabled:var(--control-bgColor-disabled);--controlKnob-borderColor-rest:var(--control-borderColor-rest);--controlTrack-fgColor-disabled:var(--fgColor-onEmphasis);--dashboard-bgColor:var(--bgColor-default);--diffBlob-additionLine-fgColor:var(--fgColor-default);--darkreader-text--diffBlob-additionNum-fgColor:var(--darkreader-text--fgColor-default);--darkreader-text--diffBlob-additionWord-fgColor:var(--darkreader-text--fgColor-default);--diffBlob-deletionLine-fgColor:var(--fgColor-default);--darkreader-text--diffBlob-deletionNum-fgColor:var(--darkreader-text--fgColor-default);--darkreader-text--diffBlob-deletionWord-fgColor:var(--darkreader-text--fgColor-default);--diffBlob-hunkNum-fgColor-hover:var(--fgColor-onEmphasis);--diffBlob-hunkNum-fgColor-rest:var(--fgColor-default);--focus-outline:2px solid #0969da;--overlay-borderColor:#d1d9e080;--reactionButton-selected-fgColor-rest:var(--fgColor-link);--tooltip-fgColor:var(--fgColor-onEmphasis);--underlineNav-borderColor-hover:var(--borderColor-muted);--border-neutral-muted:0.0625rem solid #d1d9e0b3;--borderColor-draft-muted:var(--borderColor-neutral-muted);--button-danger-borderColor-hover:var(--button-primary-borderColor-rest);--button-default-borderColor-hover:var(--button-default-borderColor-rest);--button-primary-borderColor-active:var(--button-primary-borderColor-rest);--button-primary-borderColor-hover:var(--button-primary-borderColor-rest);--shadow-floating-large:0px 0px 0px 1px #d1d9e0,0px 40px 80px 0px #25292e3d;--shadow-floating-medium:0px 0px 0px 1px #d1d9e0,0px 8px 16px -4px #25292e14,0px 4px 32px -4px #25292e14,0px 24px 48px -12px #25292e14,0px 48px 96px -24px #25292e14;--shadow-floating-small:0px 0px 0px 1px #d1d9e080,0px 6px 12px -3px #25292e0a,0px 6px 18px 0px #25292e1f;--shadow-floating-xlarge:0px 0px 0px 1px #d1d9e0,0px 56px 112px 0px #25292e52;--button-danger-borderColor-active:var(--button-danger-borderColor-hover);--button-outline-borderColor-hover:var(--button-primary-borderColor-hover);--button-outline-borderColor-active:var(--button-outline-borderColor-hover)}@media (prefers-color-scheme:dark){}.gist{color:var(--darkreader-text-333333,#c8c3bc)}.gist .pl-c{color:var(--darkreader-text-6a737d,#9f978a)}.gist .pl-c1{color:var(--darkreader-text-005cc5,#56b1ff)}.gist .pl-en{color:var(--darkreader-text-6f42c1,#7d54c7)}.gist .pl-k{color:var(--darkreader-text-d73a49,#da4b58)}.gist .pl-s{color:var(--darkreader-text-032f62,#c8c3bc)}.gist .pl-v{color:var(--darkreader-text-e36209,#f7812f)}.gist .blob-wrapper table tr:nth-child(2n){background-color:var(--darkreader-background-00000000,rgba(0,0,0,0))}.gist .blob-num{color:var(--darkreader-text--fgColor-muted,var(--darkreader-text--color-fg-subtle))}.gist .blob-num:hover{color:var(--darkreader-text--fgColor-default,var(--darkreader-text--color-fg-default))}.gist .blob-code-inner{color:var(--darkreader-text--fgColor-default,var(--darkreader-text--color-fg-default))}.gist .blob-code-inner::selection,.gist .blob-code-inner ::selection{background-color:var(--darkreader-bg--selection-bgColor,var(--darkreader-bg--color-accent-muted))}.gist .highlight{color:var(--darkreader-text-333333,#c8c3bc);border-color:currentcolor;background:var(--darkreader-bg--bgColor-default,var(--darkreader-bg--color-canvas-default))}.gist .gist-meta{color:var(--darkreader-text--fgColor-muted,var(--darkreader-text--color-fg-muted));background-color:var(--darkreader-background-f7f7f7,#1d1f20)}.gist .gist-meta a{color:var(--darkreader-text-666666,#a8a095);text-decoration-color:currentcolor;border-color:currentcolor}.gist .gist-data{background-color:var(--darkreader-bg--bgColor-default,var(--darkreader-bg--color-canvas-default));border-bottom:var(--darkreader-border--borderWidth-thin) solid #ddd}.gist .gist-file{border:var(--darkreader-border--borderWidth-thin) solid #ddd}.gist .blob-num{background-color:var(--darkreader-background-00000000,rgba(0,0,0,0));background-image:none}.gist .blob-code{background-color:var(--darkreader-background-00000000,rgba(0,0,0,0));background-image:none;border-color:currentcolor}.gist .blob-code-inner::selection,.gist .blob-code-inner ::selection{background-color:var(--darkreader-bg--selection-bgColor,var(--darkreader-background-c8e1ff,#282b2c))}</style><div id=gist83419922 class=gist>
+ <div class=gist-file translate=no data-color-mode=light data-light-theme=light>
+ <div class=gist-data>
+ <div class="js-gist-file-update-container js-task-list-container">
+ <div id=file-skin_merge-py class="file my-2">
+ 
+ <div itemprop=text class="Box-body p-0 blob-wrapper data type-python" style=overflow:auto tabindex=0 role=region aria-label="skin_merge.py content, created by kattkieru on 06:33PM on November 25, 2017.">
+ 
+<div class="js-check-hidden-unicode js-blob-code-container blob-code-content">
+ <template class=js-file-alert-template>
+  <div data-view-component="true" class="flash flash-warn flash-full d-flex flex-items-center">
+  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
+    <path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg>
+    <span>
+      This file contains hidden or bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
+      <a class="Link--inTextBlock" href="https://github.co/hiddenchars" target="_blank">Learn more about bidirectional Unicode characters</a>
+    </span>
+
+
+  <div data-view-component="true" class="flash-action">        <a href="{{ revealButtonHref }}" data-view-component="true" class="btn-sm btn">    Show hidden characters
+</a>
+</div>
+</div></template>
+<template class=js-line-alert-template>
+  <span aria-label="This line has hidden Unicode characters" data-view-component="true" class="line-alert tooltipped tooltipped-e">
+    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
+    <path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg>
+</span></template>
+ <table data-hpc class="highlight tab-size js-file-line-container" data-tab-size=4 data-paste-markdown-skip data-tagsearch-path=skin_merge.py>
+ <tbody><tr>
+ <td id=file-skin_merge-py-L1 class="blob-num js-line-number js-blob-rnum" data-line-number=1></td>
+ <td id=file-skin_merge-py-LC1 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L2 class="blob-num js-line-number js-blob-rnum" data-line-number=2></td>
+ <td id=file-skin_merge-py-LC2 class="blob-code blob-code-inner js-file-line"><span class=pl-k>from</span> <span class=pl-s1>maya</span>.<span class=pl-s1>api</span> <span class=pl-k>import</span> <span class=pl-v>OpenMaya</span> <span class=pl-k>as</span> <span class=pl-s1>om2</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L3 class="blob-num js-line-number js-blob-rnum" data-line-number=3></td>
+ <td id=file-skin_merge-py-LC3 class="blob-code blob-code-inner js-file-line"><span class=pl-k>from</span> <span class=pl-s1>maya</span>.<span class=pl-s1>api</span> <span class=pl-k>import</span> <span class=pl-v>OpenMayaAnim</span> <span class=pl-k>as</span> <span class=pl-s1>oma2</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L4 class="blob-num js-line-number js-blob-rnum" data-line-number=4></td>
+ <td id=file-skin_merge-py-LC4 class="blob-code blob-code-inner js-file-line"><span class=pl-k>import</span> <span class=pl-s1>pymel</span>.<span class=pl-s1>core</span> <span class=pl-k>as</span> <span class=pl-s1>pm</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L5 class="blob-num js-line-number js-blob-rnum" data-line-number=5></td>
+ <td id=file-skin_merge-py-LC5 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L6 class="blob-num js-line-number js-blob-rnum" data-line-number=6></td>
+ <td id=file-skin_merge-py-LC6 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L7 class="blob-num js-line-number js-blob-rnum" data-line-number=7></td>
+ <td id=file-skin_merge-py-LC7 class="blob-code blob-code-inner js-file-line"><span class=pl-c>## ======================================================================</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L8 class="blob-num js-line-number js-blob-rnum" data-line-number=8></td>
+ <td id=file-skin_merge-py-LC8 class="blob-code blob-code-inner js-file-line"><span class=pl-k>def</span> <span class=pl-en>get_deform_shape</span>( <span class=pl-s1>ob</span> ):</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L9 class="blob-num js-line-number js-blob-rnum" data-line-number=9></td>
+ <td id=file-skin_merge-py-LC9 class="blob-code blob-code-inner js-file-line">	<span class=pl-s>"""</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L10 class="blob-num js-line-number js-blob-rnum" data-line-number=10></td>
+ <td id=file-skin_merge-py-LC10 class="blob-code blob-code-inner js-file-line"><span class=pl-s>	Gets the visible geometry shape regardless of whether or not</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L11 class="blob-num js-line-number js-blob-rnum" data-line-number=11></td>
+ <td id=file-skin_merge-py-LC11 class="blob-code blob-code-inner js-file-line"><span class=pl-s>	the object is deformed or not.</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L12 class="blob-num js-line-number js-blob-rnum" data-line-number=12></td>
+ <td id=file-skin_merge-py-LC12 class="blob-code blob-code-inner js-file-line"><span class=pl-s></span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L13 class="blob-num js-line-number js-blob-rnum" data-line-number=13></td>
+ <td id=file-skin_merge-py-LC13 class="blob-code blob-code-inner js-file-line"><span class=pl-s>	:param ob: The object to check.</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L14 class="blob-num js-line-number js-blob-rnum" data-line-number=14></td>
+ <td id=file-skin_merge-py-LC14 class="blob-code blob-code-inner js-file-line"><span class=pl-s>	:returns: The object's deform shape.</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L15 class="blob-num js-line-number js-blob-rnum" data-line-number=15></td>
+ <td id=file-skin_merge-py-LC15 class="blob-code blob-code-inner js-file-line"><span class=pl-s>	"""</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L16 class="blob-num js-line-number js-blob-rnum" data-line-number=16></td>
+ <td id=file-skin_merge-py-LC16 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L17 class="blob-num js-line-number js-blob-rnum" data-line-number=17></td>
+ <td id=file-skin_merge-py-LC17 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>ob</span> <span class=pl-c1>=</span> <span class=pl-s1>pm</span>.<span class=pl-c1>PyNode</span>(<span class=pl-s1>ob</span>)</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L18 class="blob-num js-line-number js-blob-rnum" data-line-number=18></td>
+ <td id=file-skin_merge-py-LC18 class="blob-code blob-code-inner js-file-line">	<span class=pl-k>if</span> <span class=pl-s1>ob</span>.<span class=pl-c1>type</span>() <span class=pl-c1>in</span> [<span class=pl-s>'nurbsSurface'</span>, <span class=pl-s>'mesh'</span>, <span class=pl-s>'nurbsCurve'</span>]:</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L19 class="blob-num js-line-number js-blob-rnum" data-line-number=19></td>
+ <td id=file-skin_merge-py-LC19 class="blob-code blob-code-inner js-file-line">		<span class=pl-s1>ob</span> <span class=pl-c1>=</span> <span class=pl-s1>ob</span>.<span class=pl-c1>getParent</span>()</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L20 class="blob-num js-line-number js-blob-rnum" data-line-number=20></td>
+ <td id=file-skin_merge-py-LC20 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>shapes</span> <span class=pl-c1>=</span> <span class=pl-s1>pm</span>.<span class=pl-c1>PyNode</span>(<span class=pl-s1>ob</span>).<span class=pl-c1>getShapes</span>()</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L21 class="blob-num js-line-number js-blob-rnum" data-line-number=21></td>
+ <td id=file-skin_merge-py-LC21 class="blob-code blob-code-inner js-file-line">	<span class=pl-k>if</span> <span class=pl-en>len</span>(<span class=pl-s1>shapes</span>) <span class=pl-c1>==</span> <span class=pl-c1>1</span>:</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L22 class="blob-num js-line-number js-blob-rnum" data-line-number=22></td>
+ <td id=file-skin_merge-py-LC22 class="blob-code blob-code-inner js-file-line">		<span class=pl-k>return</span>( <span class=pl-s1>shapes</span>[<span class=pl-c1>0</span>] )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L23 class="blob-num js-line-number js-blob-rnum" data-line-number=23></td>
+ <td id=file-skin_merge-py-LC23 class="blob-code blob-code-inner js-file-line">	<span class=pl-k>else</span>:</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L24 class="blob-num js-line-number js-blob-rnum" data-line-number=24></td>
+ <td id=file-skin_merge-py-LC24 class="blob-code blob-code-inner js-file-line">		<span class=pl-s1>real_shapes</span> <span class=pl-c1>=</span> [ <span class=pl-s1>x</span> <span class=pl-k>for</span> <span class=pl-s1>x</span> <span class=pl-c1>in</span> <span class=pl-s1>shapes</span> <span class=pl-k>if</span> <span class=pl-c1>not</span> <span class=pl-s1>x</span>.<span class=pl-c1>intermediateObject</span>.<span class=pl-c1>get</span>() ]</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L25 class="blob-num js-line-number js-blob-rnum" data-line-number=25></td>
+ <td id=file-skin_merge-py-LC25 class="blob-code blob-code-inner js-file-line">		<span class=pl-k>return</span>( <span class=pl-s1>real_shapes</span>[<span class=pl-c1>0</span>] <span class=pl-k>if</span> <span class=pl-en>len</span>(<span class=pl-s1>real_shapes</span>) <span class=pl-k>else</span> <span class=pl-c1>None</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L26 class="blob-num js-line-number js-blob-rnum" data-line-number=26></td>
+ <td id=file-skin_merge-py-LC26 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L27 class="blob-num js-line-number js-blob-rnum" data-line-number=27></td>
+ <td id=file-skin_merge-py-LC27 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L28 class="blob-num js-line-number js-blob-rnum" data-line-number=28></td>
+ <td id=file-skin_merge-py-LC28 class="blob-code blob-code-inner js-file-line"><span class=pl-c>## ---------------------------------------------------------------------</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L29 class="blob-num js-line-number js-blob-rnum" data-line-number=29></td>
+ <td id=file-skin_merge-py-LC29 class="blob-code blob-code-inner js-file-line"><span class=pl-k>def</span> <span class=pl-en>get_skin_cluster</span>(<span class=pl-s1>ob</span>):</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L30 class="blob-num js-line-number js-blob-rnum" data-line-number=30></td>
+ <td id=file-skin_merge-py-LC30 class="blob-code blob-code-inner js-file-line">	<span class=pl-s>"""</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L31 class="blob-num js-line-number js-blob-rnum" data-line-number=31></td>
+ <td id=file-skin_merge-py-LC31 class="blob-code blob-code-inner js-file-line"><span class=pl-s>	Find the first skinCluster on the object that actually effects it.</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L32 class="blob-num js-line-number js-blob-rnum" data-line-number=32></td>
+ <td id=file-skin_merge-py-LC32 class="blob-code blob-code-inner js-file-line"><span class=pl-s>	When multiple deformers are layered, this means that the latest skin</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L33 class="blob-num js-line-number js-blob-rnum" data-line-number=33></td>
+ <td id=file-skin_merge-py-LC33 class="blob-code blob-code-inner js-file-line"><span class=pl-s>	in the deform chain will be returned.</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L34 class="blob-num js-line-number js-blob-rnum" data-line-number=34></td>
+ <td id=file-skin_merge-py-LC34 class="blob-code blob-code-inner js-file-line"><span class=pl-s></span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L35 class="blob-num js-line-number js-blob-rnum" data-line-number=35></td>
+ <td id=file-skin_merge-py-LC35 class="blob-code blob-code-inner js-file-line"><span class=pl-s>	In situations where multiple skins are layered through blendshapes,</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L36 class="blob-num js-line-number js-blob-rnum" data-line-number=36></td>
+ <td id=file-skin_merge-py-LC36 class="blob-code blob-code-inner js-file-line"><span class=pl-s>	this function will only return the skin on the current mesh and not</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L37 class="blob-num js-line-number js-blob-rnum" data-line-number=37></td>
+ <td id=file-skin_merge-py-LC37 class="blob-code blob-code-inner js-file-line"><span class=pl-s>	any of the blendshape sources.</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L38 class="blob-num js-line-number js-blob-rnum" data-line-number=38></td>
+ <td id=file-skin_merge-py-LC38 class="blob-code blob-code-inner js-file-line"><span class=pl-s></span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L39 class="blob-num js-line-number js-blob-rnum" data-line-number=39></td>
+ <td id=file-skin_merge-py-LC39 class="blob-code blob-code-inner js-file-line"><span class=pl-s>	:param ob: The object whose skin you wish to return.</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L40 class="blob-num js-line-number js-blob-rnum" data-line-number=40></td>
+ <td id=file-skin_merge-py-LC40 class="blob-code blob-code-inner js-file-line"><span class=pl-s>	:returns: A skinCluster object, or None.</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L41 class="blob-num js-line-number js-blob-rnum" data-line-number=41></td>
+ <td id=file-skin_merge-py-LC41 class="blob-code blob-code-inner js-file-line"><span class=pl-s>	"""</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L42 class="blob-num js-line-number js-blob-rnum" data-line-number=42></td>
+ <td id=file-skin_merge-py-LC42 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L43 class="blob-num js-line-number js-blob-rnum" data-line-number=43></td>
+ <td id=file-skin_merge-py-LC43 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>shape</span> <span class=pl-c1>=</span> <span class=pl-en>get_deform_shape</span>( <span class=pl-s1>ob</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L44 class="blob-num js-line-number js-blob-rnum" data-line-number=44></td>
+ <td id=file-skin_merge-py-LC44 class="blob-code blob-code-inner js-file-line">	<span class=pl-k>if</span> <span class=pl-s1>shape</span> <span class=pl-c1>is</span> <span class=pl-c1>None</span>:</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L45 class="blob-num js-line-number js-blob-rnum" data-line-number=45></td>
+ <td id=file-skin_merge-py-LC45 class="blob-code blob-code-inner js-file-line">		<span class=pl-k>return</span>(<span class=pl-c1>None</span>)</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L46 class="blob-num js-line-number js-blob-rnum" data-line-number=46></td>
+ <td id=file-skin_merge-py-LC46 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>skins</span> <span class=pl-c1>=</span> <span class=pl-s1>pm</span>.<span class=pl-c1>ls</span>( <span class=pl-s1>pm</span>.<span class=pl-c1>listHistory</span>( <span class=pl-s1>shape</span> ), <span class=pl-s1>type</span><span class=pl-c1>=</span><span class=pl-s>'skinCluster'</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L47 class="blob-num js-line-number js-blob-rnum" data-line-number=47></td>
+ <td id=file-skin_merge-py-LC47 class="blob-code blob-code-inner js-file-line">	<span class=pl-k>if</span> <span class=pl-en>len</span>( <span class=pl-s1>skins</span> ):</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L48 class="blob-num js-line-number js-blob-rnum" data-line-number=48></td>
+ <td id=file-skin_merge-py-LC48 class="blob-code blob-code-inner js-file-line">		<span class=pl-k>for</span> <span class=pl-s1>skin</span> <span class=pl-c1>in</span> <span class=pl-s1>skins</span>:</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L49 class="blob-num js-line-number js-blob-rnum" data-line-number=49></td>
+ <td id=file-skin_merge-py-LC49 class="blob-code blob-code-inner js-file-line">			<span class=pl-c># log( '\t+ Processing %s...' % skin )</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L50 class="blob-num js-line-number js-blob-rnum" data-line-number=50></td>
+ <td id=file-skin_merge-py-LC50 class="blob-code blob-code-inner js-file-line">			<span class=pl-s1>groupId</span> <span class=pl-c1>=</span> <span class=pl-s1>skin</span>.<span class=pl-c1>input</span>[<span class=pl-c1>0</span>].<span class=pl-c1>groupId</span>.<span class=pl-c1>inputs</span>( <span class=pl-s1>plugs</span><span class=pl-c1>=</span><span class=pl-c1>True</span> )[<span class=pl-c1>0</span>]</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L51 class="blob-num js-line-number js-blob-rnum" data-line-number=51></td>
+ <td id=file-skin_merge-py-LC51 class="blob-code blob-code-inner js-file-line">			<span class=pl-s1>outputs</span> <span class=pl-c1>=</span> <span class=pl-s1>groupId</span>.<span class=pl-c1>outputs</span>(<span class=pl-s1>plugs</span><span class=pl-c1>=</span><span class=pl-c1>True</span>)</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L52 class="blob-num js-line-number js-blob-rnum" data-line-number=52></td>
+ <td id=file-skin_merge-py-LC52 class="blob-code blob-code-inner js-file-line">			<span class=pl-k>for</span> <span class=pl-s1>outp</span> <span class=pl-c1>in</span> <span class=pl-s1>outputs</span>:</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L53 class="blob-num js-line-number js-blob-rnum" data-line-number=53></td>
+ <td id=file-skin_merge-py-LC53 class="blob-code blob-code-inner js-file-line">				<span class=pl-s1>node</span> <span class=pl-c1>=</span> <span class=pl-s1>outp</span>.<span class=pl-c1>node</span>()</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L54 class="blob-num js-line-number js-blob-rnum" data-line-number=54></td>
+ <td id=file-skin_merge-py-LC54 class="blob-code blob-code-inner js-file-line">				<span class=pl-k>if</span> <span class=pl-s1>node</span> <span class=pl-c1>==</span> <span class=pl-s1>shape</span> <span class=pl-c1>or</span> <span class=pl-s1>node</span> <span class=pl-c1>==</span> <span class=pl-s1>ob</span>:</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L55 class="blob-num js-line-number js-blob-rnum" data-line-number=55></td>
+ <td id=file-skin_merge-py-LC55 class="blob-code blob-code-inner js-file-line">					<span class=pl-c>## force neighbors!</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L56 class="blob-num js-line-number js-blob-rnum" data-line-number=56></td>
+ <td id=file-skin_merge-py-LC56 class="blob-code blob-code-inner js-file-line">					<span class=pl-s1>skin</span>.<span class=pl-c1>weightDistribution</span>.<span class=pl-c1>set</span>(<span class=pl-c1>1</span>) <span class=pl-c>## neighbors</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L57 class="blob-num js-line-number js-blob-rnum" data-line-number=57></td>
+ <td id=file-skin_merge-py-LC57 class="blob-code blob-code-inner js-file-line">					<span class=pl-k>return</span>( <span class=pl-s1>skin</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L58 class="blob-num js-line-number js-blob-rnum" data-line-number=58></td>
+ <td id=file-skin_merge-py-LC58 class="blob-code blob-code-inner js-file-line">	<span class=pl-k>return</span>( <span class=pl-c1>None</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L59 class="blob-num js-line-number js-blob-rnum" data-line-number=59></td>
+ <td id=file-skin_merge-py-LC59 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L60 class="blob-num js-line-number js-blob-rnum" data-line-number=60></td>
+ <td id=file-skin_merge-py-LC60 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L61 class="blob-num js-line-number js-blob-rnum" data-line-number=61></td>
+ <td id=file-skin_merge-py-LC61 class="blob-code blob-code-inner js-file-line"><span class=pl-c>## ---------------------------------------------------------------------</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L62 class="blob-num js-line-number js-blob-rnum" data-line-number=62></td>
+ <td id=file-skin_merge-py-LC62 class="blob-code blob-code-inner js-file-line"><span class=pl-k>def</span> <span class=pl-en>log</span>( <span class=pl-s1>msg</span>, <span class=pl-s1>warn</span><span class=pl-c1>=</span><span class=pl-c1>False</span>, <span class=pl-s1>error</span><span class=pl-c1>=</span><span class=pl-c1>False</span> ):</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L63 class="blob-num js-line-number js-blob-rnum" data-line-number=63></td>
+ <td id=file-skin_merge-py-LC63 class="blob-code blob-code-inner js-file-line">	<span class=pl-k>if</span> <span class=pl-s1>warn</span> <span class=pl-c1>and</span> <span class=pl-s1>error</span>:</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L64 class="blob-num js-line-number js-blob-rnum" data-line-number=64></td>
+ <td id=file-skin_merge-py-LC64 class="blob-code blob-code-inner js-file-line">		<span class=pl-k>raise</span> <span class=pl-en>ValueError</span>(<span class=pl-s>'Please specify only one of warn / error.'</span>)</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L65 class="blob-num js-line-number js-blob-rnum" data-line-number=65></td>
+ <td id=file-skin_merge-py-LC65 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L66 class="blob-num js-line-number js-blob-rnum" data-line-number=66></td>
+ <td id=file-skin_merge-py-LC66 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>log_func</span> <span class=pl-c1>=</span> <span class=pl-s1>om</span>.<span class=pl-c1>MGlobal</span>.<span class=pl-c1>displayInfo</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L67 class="blob-num js-line-number js-blob-rnum" data-line-number=67></td>
+ <td id=file-skin_merge-py-LC67 class="blob-code blob-code-inner js-file-line">	<span class=pl-k>if</span> <span class=pl-s1>warn</span>:</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L68 class="blob-num js-line-number js-blob-rnum" data-line-number=68></td>
+ <td id=file-skin_merge-py-LC68 class="blob-code blob-code-inner js-file-line">		<span class=pl-s1>log_func</span> <span class=pl-c1>=</span> <span class=pl-s1>om</span>.<span class=pl-c1>MGlobal</span>.<span class=pl-c1>displayWarning</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L69 class="blob-num js-line-number js-blob-rnum" data-line-number=69></td>
+ <td id=file-skin_merge-py-LC69 class="blob-code blob-code-inner js-file-line">	<span class=pl-k>elif</span> <span class=pl-s1>error</span>:</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L70 class="blob-num js-line-number js-blob-rnum" data-line-number=70></td>
+ <td id=file-skin_merge-py-LC70 class="blob-code blob-code-inner js-file-line">		<span class=pl-s1>log_func</span> <span class=pl-c1>=</span> <span class=pl-s1>om</span>.<span class=pl-c1>MGlobal</span>.<span class=pl-c1>displayError</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L71 class="blob-num js-line-number js-blob-rnum" data-line-number=71></td>
+ <td id=file-skin_merge-py-LC71 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L72 class="blob-num js-line-number js-blob-rnum" data-line-number=72></td>
+ <td id=file-skin_merge-py-LC72 class="blob-code blob-code-inner js-file-line">	<span class=pl-en>log_func</span>( <span class=pl-s1>msg</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L73 class="blob-num js-line-number js-blob-rnum" data-line-number=73></td>
+ <td id=file-skin_merge-py-LC73 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L74 class="blob-num js-line-number js-blob-rnum" data-line-number=74></td>
+ <td id=file-skin_merge-py-LC74 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L75 class="blob-num js-line-number js-blob-rnum" data-line-number=75></td>
+ <td id=file-skin_merge-py-LC75 class="blob-code blob-code-inner js-file-line"><span class=pl-c>## ======================================================================</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L76 class="blob-num js-line-number js-blob-rnum" data-line-number=76></td>
+ <td id=file-skin_merge-py-LC76 class="blob-code blob-code-inner js-file-line"><span class=pl-c>## om2 utilities</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L77 class="blob-num js-line-number js-blob-rnum" data-line-number=77></td>
+ <td id=file-skin_merge-py-LC77 class="blob-code blob-code-inner js-file-line"><span class=pl-k>def</span> <span class=pl-en>get_mobject</span>( <span class=pl-s1>name</span> ):</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L78 class="blob-num js-line-number js-blob-rnum" data-line-number=78></td>
+ <td id=file-skin_merge-py-LC78 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>sel</span> <span class=pl-c1>=</span> <span class=pl-s1>om2</span>.<span class=pl-c1>MGlobal</span>.<span class=pl-c1>getSelectionListByName</span>( <span class=pl-s1>name</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L79 class="blob-num js-line-number js-blob-rnum" data-line-number=79></td>
+ <td id=file-skin_merge-py-LC79 class="blob-code blob-code-inner js-file-line">	<span class=pl-k>return</span> <span class=pl-s1>sel</span>.<span class=pl-c1>getDependNode</span>(<span class=pl-c1>0</span>)</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L80 class="blob-num js-line-number js-blob-rnum" data-line-number=80></td>
+ <td id=file-skin_merge-py-LC80 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L81 class="blob-num js-line-number js-blob-rnum" data-line-number=81></td>
+ <td id=file-skin_merge-py-LC81 class="blob-code blob-code-inner js-file-line"><span class=pl-c>## ---------------------------------------------------------------------</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L82 class="blob-num js-line-number js-blob-rnum" data-line-number=82></td>
+ <td id=file-skin_merge-py-LC82 class="blob-code blob-code-inner js-file-line"><span class=pl-k>def</span> <span class=pl-en>get_dag_path</span>( <span class=pl-s1>name</span> ):</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L83 class="blob-num js-line-number js-blob-rnum" data-line-number=83></td>
+ <td id=file-skin_merge-py-LC83 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>sel</span> <span class=pl-c1>=</span> <span class=pl-s1>om2</span>.<span class=pl-c1>MGlobal</span>.<span class=pl-c1>getSelectionListByName</span>( <span class=pl-s1>name</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L84 class="blob-num js-line-number js-blob-rnum" data-line-number=84></td>
+ <td id=file-skin_merge-py-LC84 class="blob-code blob-code-inner js-file-line">	<span class=pl-k>return</span> <span class=pl-s1>sel</span>.<span class=pl-c1>getDagPath</span>(<span class=pl-c1>0</span>)</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L85 class="blob-num js-line-number js-blob-rnum" data-line-number=85></td>
+ <td id=file-skin_merge-py-LC85 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L86 class="blob-num js-line-number js-blob-rnum" data-line-number=86></td>
+ <td id=file-skin_merge-py-LC86 class="blob-code blob-code-inner js-file-line"><span class=pl-c>## ---------------------------------------------------------------------</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L87 class="blob-num js-line-number js-blob-rnum" data-line-number=87></td>
+ <td id=file-skin_merge-py-LC87 class="blob-code blob-code-inner js-file-line"><span class=pl-k>def</span> <span class=pl-en>get_mfn_skin</span>( <span class=pl-s1>skin_ob</span> ):</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L88 class="blob-num js-line-number js-blob-rnum" data-line-number=88></td>
+ <td id=file-skin_merge-py-LC88 class="blob-code blob-code-inner js-file-line">	<span class=pl-k>if</span> <span class=pl-en>isinstance</span>( <span class=pl-s1>skin_ob</span>, <span class=pl-s1>pm</span>.<span class=pl-c1>PyNode</span> ):</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L89 class="blob-num js-line-number js-blob-rnum" data-line-number=89></td>
+ <td id=file-skin_merge-py-LC89 class="blob-code blob-code-inner js-file-line">		<span class=pl-s1>skin_ob</span> <span class=pl-c1>=</span> <span class=pl-en>get_mobject</span>( <span class=pl-s1>skin_ob</span>.<span class=pl-c1>longName</span>() )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L90 class="blob-num js-line-number js-blob-rnum" data-line-number=90></td>
+ <td id=file-skin_merge-py-LC90 class="blob-code blob-code-inner js-file-line">	<span class=pl-k>return</span> <span class=pl-s1>oma2</span>.<span class=pl-c1>MFnSkinCluster</span>( <span class=pl-s1>skin_ob</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L91 class="blob-num js-line-number js-blob-rnum" data-line-number=91></td>
+ <td id=file-skin_merge-py-LC91 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L92 class="blob-num js-line-number js-blob-rnum" data-line-number=92></td>
+ <td id=file-skin_merge-py-LC92 class="blob-code blob-code-inner js-file-line"><span class=pl-c>## ---------------------------------------------------------------------</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L93 class="blob-num js-line-number js-blob-rnum" data-line-number=93></td>
+ <td id=file-skin_merge-py-LC93 class="blob-code blob-code-inner js-file-line"><span class=pl-k>def</span> <span class=pl-en>get_mfn_mesh</span>( <span class=pl-s1>mesh_ob</span> ):</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L94 class="blob-num js-line-number js-blob-rnum" data-line-number=94></td>
+ <td id=file-skin_merge-py-LC94 class="blob-code blob-code-inner js-file-line">	<span class=pl-k>if</span> <span class=pl-en>isinstance</span>( <span class=pl-s1>mesh_ob</span>, <span class=pl-s1>pm</span>.<span class=pl-c1>PyNode</span> ):</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L95 class="blob-num js-line-number js-blob-rnum" data-line-number=95></td>
+ <td id=file-skin_merge-py-LC95 class="blob-code blob-code-inner js-file-line">		<span class=pl-s1>mesh_ob</span> <span class=pl-c1>=</span> <span class=pl-en>get_mobject</span>( <span class=pl-s1>mesh_ob</span>.<span class=pl-c1>longName</span>() )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L96 class="blob-num js-line-number js-blob-rnum" data-line-number=96></td>
+ <td id=file-skin_merge-py-LC96 class="blob-code blob-code-inner js-file-line">	<span class=pl-k>return</span> <span class=pl-s1>om2</span>.<span class=pl-c1>MFnMesh</span>( <span class=pl-s1>mesh_ob</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L97 class="blob-num js-line-number js-blob-rnum" data-line-number=97></td>
+ <td id=file-skin_merge-py-LC97 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L98 class="blob-num js-line-number js-blob-rnum" data-line-number=98></td>
+ <td id=file-skin_merge-py-LC98 class="blob-code blob-code-inner js-file-line"><span class=pl-c>## ---------------------------------------------------------------------</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L99 class="blob-num js-line-number js-blob-rnum" data-line-number=99></td>
+ <td id=file-skin_merge-py-LC99 class="blob-code blob-code-inner js-file-line"><span class=pl-k>def</span> <span class=pl-en>get_complete_components</span>( <span class=pl-s1>mesh_ob</span> ):</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L100 class="blob-num js-line-number js-blob-rnum" data-line-number=100></td>
+ <td id=file-skin_merge-py-LC100 class="blob-code blob-code-inner js-file-line">	<span class=pl-k>assert</span>( <span class=pl-en>isinstance</span>(<span class=pl-s1>mesh_ob</span>, <span class=pl-s1>om2</span>.<span class=pl-c1>MFnMesh</span>) )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L101 class="blob-num js-line-number js-blob-rnum" data-line-number=101></td>
+ <td id=file-skin_merge-py-LC101 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>comp</span> <span class=pl-c1>=</span> <span class=pl-s1>om2</span>.<span class=pl-c1>MFnSingleIndexedComponent</span>()</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L102 class="blob-num js-line-number js-blob-rnum" data-line-number=102></td>
+ <td id=file-skin_merge-py-LC102 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>ob</span> <span class=pl-c1>=</span> <span class=pl-s1>comp</span>.<span class=pl-c1>create</span>( <span class=pl-s1>om2</span>.<span class=pl-c1>MFn</span>.<span class=pl-c1>kMeshVertComponent</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L103 class="blob-num js-line-number js-blob-rnum" data-line-number=103></td>
+ <td id=file-skin_merge-py-LC103 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>comp</span>.<span class=pl-c1>setCompleteData</span>( <span class=pl-s1>mesh_ob</span>.<span class=pl-c1>numVertices</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L104 class="blob-num js-line-number js-blob-rnum" data-line-number=104></td>
+ <td id=file-skin_merge-py-LC104 class="blob-code blob-code-inner js-file-line">	<span class=pl-k>return</span>( <span class=pl-s1>ob</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L105 class="blob-num js-line-number js-blob-rnum" data-line-number=105></td>
+ <td id=file-skin_merge-py-LC105 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L106 class="blob-num js-line-number js-blob-rnum" data-line-number=106></td>
+ <td id=file-skin_merge-py-LC106 class="blob-code blob-code-inner js-file-line"><span class=pl-c>## ======================================================================</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L107 class="blob-num js-line-number js-blob-rnum" data-line-number=107></td>
+ <td id=file-skin_merge-py-LC107 class="blob-code blob-code-inner js-file-line"><span class=pl-k>def</span> <span class=pl-en>move_skin</span>( <span class=pl-s1>source</span>, <span class=pl-s1>target</span> ):</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L108 class="blob-num js-line-number js-blob-rnum" data-line-number=108></td>
+ <td id=file-skin_merge-py-LC108 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>source_shape</span> <span class=pl-c1>=</span> <span class=pl-en>get_deform_shape</span>( <span class=pl-s1>source</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L109 class="blob-num js-line-number js-blob-rnum" data-line-number=109></td>
+ <td id=file-skin_merge-py-LC109 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>source_dp</span> <span class=pl-c1>=</span> <span class=pl-en>get_dag_path</span>( <span class=pl-s1>source_shape</span>.<span class=pl-c1>longName</span>() )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L110 class="blob-num js-line-number js-blob-rnum" data-line-number=110></td>
+ <td id=file-skin_merge-py-LC110 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>source_skin</span> <span class=pl-c1>=</span> <span class=pl-en>get_skin_cluster</span>( <span class=pl-s1>source</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L111 class="blob-num js-line-number js-blob-rnum" data-line-number=111></td>
+ <td id=file-skin_merge-py-LC111 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>source_mfn</span>  <span class=pl-c1>=</span> <span class=pl-en>get_mfn_skin</span>( <span class=pl-s1>source_skin</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L112 class="blob-num js-line-number js-blob-rnum" data-line-number=112></td>
+ <td id=file-skin_merge-py-LC112 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>source_mesh</span> <span class=pl-c1>=</span> <span class=pl-en>get_mfn_mesh</span>( <span class=pl-en>get_deform_shape</span>(<span class=pl-s1>source</span>) )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L113 class="blob-num js-line-number js-blob-rnum" data-line-number=113></td>
+ <td id=file-skin_merge-py-LC113 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>components</span> <span class=pl-c1>=</span> <span class=pl-en>get_complete_components</span>( <span class=pl-s1>source_mesh</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L114 class="blob-num js-line-number js-blob-rnum" data-line-number=114></td>
+ <td id=file-skin_merge-py-LC114 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L115 class="blob-num js-line-number js-blob-rnum" data-line-number=115></td>
+ <td id=file-skin_merge-py-LC115 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>weights</span>, <span class=pl-s1>influence_count</span> <span class=pl-c1>=</span> <span class=pl-s1>source_mfn</span>.<span class=pl-c1>getWeights</span>( <span class=pl-s1>source_dp</span>, <span class=pl-s1>components</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L116 class="blob-num js-line-number js-blob-rnum" data-line-number=116></td>
+ <td id=file-skin_merge-py-LC116 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L117 class="blob-num js-line-number js-blob-rnum" data-line-number=117></td>
+ <td id=file-skin_merge-py-LC117 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>pm</span>.<span class=pl-c1>select</span>( <span class=pl-s1>cl</span><span class=pl-c1>=</span><span class=pl-c1>True</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L118 class="blob-num js-line-number js-blob-rnum" data-line-number=118></td>
+ <td id=file-skin_merge-py-LC118 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>target_skin</span> <span class=pl-c1>=</span> <span class=pl-s1>pm</span>.<span class=pl-c1>deformer</span>( <span class=pl-s1>target</span>, <span class=pl-s1>type</span><span class=pl-c1>=</span><span class=pl-s>'skinCluster'</span>, <span class=pl-s1>n</span><span class=pl-c1>=</span><span class=pl-s>'MERGED__'</span> <span class=pl-c1>+</span> <span class=pl-s1>source_skin</span>.<span class=pl-c1>name</span>() )[<span class=pl-c1>0</span>]</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L119 class="blob-num js-line-number js-blob-rnum" data-line-number=119></td>
+ <td id=file-skin_merge-py-LC119 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L120 class="blob-num js-line-number js-blob-rnum" data-line-number=120></td>
+ <td id=file-skin_merge-py-LC120 class="blob-code blob-code-inner js-file-line">	<span class=pl-c>## copy over input values / connections</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L121 class="blob-num js-line-number js-blob-rnum" data-line-number=121></td>
+ <td id=file-skin_merge-py-LC121 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>bind_inputs</span> <span class=pl-c1>=</span> [ (<span class=pl-s1>x</span>.<span class=pl-c1>inputs</span>(<span class=pl-s1>plugs</span><span class=pl-c1>=</span><span class=pl-c1>True</span>)[<span class=pl-c1>0</span>] <span class=pl-k>if</span> <span class=pl-s1>x</span>.<span class=pl-c1>isConnected</span>() <span class=pl-k>else</span> <span class=pl-c1>None</span>) <span class=pl-k>for</span> <span class=pl-s1>x</span> <span class=pl-c1>in</span> <span class=pl-s1>source_skin</span>.<span class=pl-c1>bindPreMatrix</span> ]</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L122 class="blob-num js-line-number js-blob-rnum" data-line-number=122></td>
+ <td id=file-skin_merge-py-LC122 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>bind_values</span> <span class=pl-c1>=</span> [ <span class=pl-s1>x</span>.<span class=pl-c1>get</span>() <span class=pl-k>for</span> <span class=pl-s1>x</span> <span class=pl-c1>in</span> <span class=pl-s1>source_skin</span>.<span class=pl-c1>bindPreMatrix</span> ]</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L123 class="blob-num js-line-number js-blob-rnum" data-line-number=123></td>
+ <td id=file-skin_merge-py-LC123 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>mat_inputs</span>  <span class=pl-c1>=</span> [ (<span class=pl-s1>x</span>.<span class=pl-c1>inputs</span>(<span class=pl-s1>plugs</span><span class=pl-c1>=</span><span class=pl-c1>True</span>)[<span class=pl-c1>0</span>] <span class=pl-k>if</span> <span class=pl-s1>x</span>.<span class=pl-c1>isConnected</span>() <span class=pl-k>else</span> <span class=pl-c1>None</span>) <span class=pl-k>for</span> <span class=pl-s1>x</span> <span class=pl-c1>in</span> <span class=pl-s1>source_skin</span>.<span class=pl-c1>matrix</span> ]</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L124 class="blob-num js-line-number js-blob-rnum" data-line-number=124></td>
+ <td id=file-skin_merge-py-LC124 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>mat_values</span>  <span class=pl-c1>=</span> [ <span class=pl-s1>x</span>.<span class=pl-c1>get</span>() <span class=pl-k>for</span> <span class=pl-s1>x</span> <span class=pl-c1>in</span> <span class=pl-s1>source_skin</span>.<span class=pl-c1>matrix</span> ]</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L125 class="blob-num js-line-number js-blob-rnum" data-line-number=125></td>
+ <td id=file-skin_merge-py-LC125 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L126 class="blob-num js-line-number js-blob-rnum" data-line-number=126></td>
+ <td id=file-skin_merge-py-LC126 class="blob-code blob-code-inner js-file-line">	<span class=pl-k>for</span> <span class=pl-s1>index</span>, <span class=pl-s1>bind_value</span>, <span class=pl-s1>mat_value</span> <span class=pl-c1>in</span> <span class=pl-en>zip</span>( <span class=pl-en>xrange</span>(<span class=pl-s1>influence_count</span>), <span class=pl-s1>bind_values</span>, <span class=pl-s1>mat_values</span> ):</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L127 class="blob-num js-line-number js-blob-rnum" data-line-number=127></td>
+ <td id=file-skin_merge-py-LC127 class="blob-code blob-code-inner js-file-line">		<span class=pl-s1>target_skin</span>.<span class=pl-c1>bindPreMatrix</span>[<span class=pl-s1>index</span>].<span class=pl-c1>set</span>( <span class=pl-s1>bind_value</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L128 class="blob-num js-line-number js-blob-rnum" data-line-number=128></td>
+ <td id=file-skin_merge-py-LC128 class="blob-code blob-code-inner js-file-line">		<span class=pl-s1>target_skin</span>.<span class=pl-c1>matrix</span>[<span class=pl-s1>index</span>].<span class=pl-c1>set</span>( <span class=pl-s1>mat_value</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L129 class="blob-num js-line-number js-blob-rnum" data-line-number=129></td>
+ <td id=file-skin_merge-py-LC129 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L130 class="blob-num js-line-number js-blob-rnum" data-line-number=130></td>
+ <td id=file-skin_merge-py-LC130 class="blob-code blob-code-inner js-file-line">	<span class=pl-k>for</span> <span class=pl-s1>index</span>, <span class=pl-s1>bind_input</span>, <span class=pl-s1>mat_input</span> <span class=pl-c1>in</span> <span class=pl-en>zip</span>( <span class=pl-en>xrange</span>(<span class=pl-s1>influence_count</span>), <span class=pl-s1>bind_inputs</span>, <span class=pl-s1>mat_inputs</span> ):</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L131 class="blob-num js-line-number js-blob-rnum" data-line-number=131></td>
+ <td id=file-skin_merge-py-LC131 class="blob-code blob-code-inner js-file-line">		<span class=pl-k>if</span> <span class=pl-s1>bind_input</span>:</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L132 class="blob-num js-line-number js-blob-rnum" data-line-number=132></td>
+ <td id=file-skin_merge-py-LC132 class="blob-code blob-code-inner js-file-line">			<span class=pl-s1>bind_input</span> <span class=pl-c1>&gt;&gt;</span> <span class=pl-s1>target_skin</span>.<span class=pl-c1>bindPreMatrix</span>[<span class=pl-s1>index</span>]</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L133 class="blob-num js-line-number js-blob-rnum" data-line-number=133></td>
+ <td id=file-skin_merge-py-LC133 class="blob-code blob-code-inner js-file-line">		<span class=pl-k>if</span> <span class=pl-s1>mat_input</span>:</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L134 class="blob-num js-line-number js-blob-rnum" data-line-number=134></td>
+ <td id=file-skin_merge-py-LC134 class="blob-code blob-code-inner js-file-line">			<span class=pl-s1>mat_input</span> <span class=pl-c1>&gt;&gt;</span> <span class=pl-s1>target_skin</span>.<span class=pl-c1>matrix</span>[<span class=pl-s1>index</span>]</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L135 class="blob-num js-line-number js-blob-rnum" data-line-number=135></td>
+ <td id=file-skin_merge-py-LC135 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L136 class="blob-num js-line-number js-blob-rnum" data-line-number=136></td>
+ <td id=file-skin_merge-py-LC136 class="blob-code blob-code-inner js-file-line">	<span class=pl-c>## copy over weights</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L137 class="blob-num js-line-number js-blob-rnum" data-line-number=137></td>
+ <td id=file-skin_merge-py-LC137 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>target_mfn</span>  <span class=pl-c1>=</span> <span class=pl-en>get_mfn_skin</span>( <span class=pl-s1>target_skin</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L138 class="blob-num js-line-number js-blob-rnum" data-line-number=138></td>
+ <td id=file-skin_merge-py-LC138 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>target_mesh</span> <span class=pl-c1>=</span> <span class=pl-en>get_mfn_mesh</span>( <span class=pl-en>get_deform_shape</span>(<span class=pl-s1>target</span>) )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L139 class="blob-num js-line-number js-blob-rnum" data-line-number=139></td>
+ <td id=file-skin_merge-py-LC139 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>target_dp</span>   <span class=pl-c1>=</span> <span class=pl-en>get_dag_path</span>( <span class=pl-en>get_deform_shape</span>(<span class=pl-s1>target</span>).<span class=pl-c1>longName</span>() )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L140 class="blob-num js-line-number js-blob-rnum" data-line-number=140></td>
+ <td id=file-skin_merge-py-LC140 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>components</span>  <span class=pl-c1>=</span> <span class=pl-en>get_complete_components</span>( <span class=pl-s1>target_mesh</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L141 class="blob-num js-line-number js-blob-rnum" data-line-number=141></td>
+ <td id=file-skin_merge-py-LC141 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>all_indices</span> <span class=pl-c1>=</span> <span class=pl-s1>om2</span>.<span class=pl-c1>MIntArray</span>( <span class=pl-en>range</span>(<span class=pl-s1>influence_count</span>) )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L142 class="blob-num js-line-number js-blob-rnum" data-line-number=142></td>
+ <td id=file-skin_merge-py-LC142 class="blob-code blob-code-inner js-file-line">	</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L143 class="blob-num js-line-number js-blob-rnum" data-line-number=143></td>
+ <td id=file-skin_merge-py-LC143 class="blob-code blob-code-inner js-file-line">	<span class=pl-s1>target_mfn</span>.<span class=pl-c1>setWeights</span>( <span class=pl-s1>target_dp</span>, <span class=pl-s1>components</span>, <span class=pl-s1>all_indices</span>, <span class=pl-s1>weights</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L144 class="blob-num js-line-number js-blob-rnum" data-line-number=144></td>
+ <td id=file-skin_merge-py-LC144 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L145 class="blob-num js-line-number js-blob-rnum" data-line-number=145></td>
+ <td id=file-skin_merge-py-LC145 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L146 class="blob-num js-line-number js-blob-rnum" data-line-number=146></td>
+ <td id=file-skin_merge-py-LC146 class="blob-code blob-code-inner js-file-line"><span class=pl-c>## ======================================================================</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L147 class="blob-num js-line-number js-blob-rnum" data-line-number=147></td>
+ <td id=file-skin_merge-py-LC147 class="blob-code blob-code-inner js-file-line"><span class=pl-c>## main</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L148 class="blob-num js-line-number js-blob-rnum" data-line-number=148></td>
+ <td id=file-skin_merge-py-LC148 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L149 class="blob-num js-line-number js-blob-rnum" data-line-number=149></td>
+ <td id=file-skin_merge-py-LC149 class="blob-code blob-code-inner js-file-line"><span class=pl-s1>items</span> <span class=pl-c1>=</span> <span class=pl-s1>pm</span>.<span class=pl-c1>selected</span>()</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L150 class="blob-num js-line-number js-blob-rnum" data-line-number=150></td>
+ <td id=file-skin_merge-py-LC150 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L151 class="blob-num js-line-number js-blob-rnum" data-line-number=151></td>
+ <td id=file-skin_merge-py-LC151 class="blob-code blob-code-inner js-file-line"><span class=pl-k>if</span> <span class=pl-en>len</span>(<span class=pl-s1>items</span>) <span class=pl-c1>==</span> <span class=pl-c1>2</span>:</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L152 class="blob-num js-line-number js-blob-rnum" data-line-number=152></td>
+ <td id=file-skin_merge-py-LC152 class="blob-code blob-code-inner js-file-line">	<span class=pl-en>move_skin</span>( <span class=pl-s1>items</span>[<span class=pl-c1>0</span>], <span class=pl-s1>items</span>[<span class=pl-c1>1</span>] )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L153 class="blob-num js-line-number js-blob-rnum" data-line-number=153></td>
+ <td id=file-skin_merge-py-LC153 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L154 class="blob-num js-line-number js-blob-rnum" data-line-number=154></td>
+ <td id=file-skin_merge-py-LC154 class="blob-code blob-code-inner js-file-line">	<span class=pl-en>log</span>(</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L155 class="blob-num js-line-number js-blob-rnum" data-line-number=155></td>
+ <td id=file-skin_merge-py-LC155 class="blob-code blob-code-inner js-file-line">		<span class=pl-s>'+ SkinMerge: Complete. Merged skin from {} onto {}.'</span></td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L156 class="blob-num js-line-number js-blob-rnum" data-line-number=156></td>
+ <td id=file-skin_merge-py-LC156 class="blob-code blob-code-inner js-file-line">		.<span class=pl-c1>format</span>( <span class=pl-c1>*</span><span class=pl-s1>items</span> )</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L157 class="blob-num js-line-number js-blob-rnum" data-line-number=157></td>
+ <td id=file-skin_merge-py-LC157 class="blob-code blob-code-inner js-file-line">	)</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L158 class="blob-num js-line-number js-blob-rnum" data-line-number=158></td>
+ <td id=file-skin_merge-py-LC158 class="blob-code blob-code-inner js-file-line">
+</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L159 class="blob-num js-line-number js-blob-rnum" data-line-number=159></td>
+ <td id=file-skin_merge-py-LC159 class="blob-code blob-code-inner js-file-line"><span class=pl-k>else</span>:</td>
+ </tr>
+ <tr>
+ <td id=file-skin_merge-py-L160 class="blob-num js-line-number js-blob-rnum" data-line-number=160></td>
+ <td id=file-skin_merge-py-LC160 class="blob-code blob-code-inner js-file-line">	<span class=pl-en>log</span>( <span class=pl-s>"-- Please select a skinned mesh and a target mesh."</span>, <span class=pl-s1>error</span><span class=pl-c1>=</span><span class=pl-c1>True</span> )</td>
+ </tr>
+ </table>
+</div>
+ </div>
+ </div>
+</div>
+ </div>
+ <div class=gist-meta>
+ <a href=https://gist.github.com/kattkieru/7abbcf8307f7e2aa8fec313309a6f39e/raw/9bc87910aa328f9c226b2d8200f69ef24daa486c/skin_merge.py style=float:right class=Link--inTextBlock>view raw</a>
+ <a href=https://gist.github.com/kattkieru/7abbcf8307f7e2aa8fec313309a6f39e#file-skin_merge-py class=Link--inTextBlock>
+ skin_merge.py
+ </a>
+ hosted with ❤ by <a class=Link--inTextBlock href=https://github.com/>GitHub</a>
+ </div>
+ </div>
+</div>
