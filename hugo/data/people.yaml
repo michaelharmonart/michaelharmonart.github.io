@@ -1,25 +1,42 @@
-- name: Walter Yoder
-  role: Founder / Rigging Artist
-  company: Squarebit Studios
-  company_website: https://www.squarebitstudios.com/
+- name: Hector Abraham Torres
+  role: Character TD / Rigger
+  company: Walt Disney Animation Studios
+  company_website: https://disneyanimation.com/
   notable_work:
-    - Raya and The Last Dragon – Raya facial Rig
+    - "Moana 2: Matangi Rig"
+    - "Spider-Man Across the Spider-Verse: Miguel O Hará (Face rig)"
   links:
     - title: Website
-      url: https://https://walteryoder.blogspot.com/.com/johndoe
-    - title: Raya Facial Rig
-      url: https://www.instagram.com/p/CNHJm8AjwlC/
-  notes: Check out his Siggraph paper on Rig optimization at Disney.
+      url: https://www.hatrigs.com
+    - title: Instagram
+      url: https://www.instagram.com/hat_3dart/
+    - title: Vittorio Rig
+      url: https://www.hatrigs.com/vittorio
+    - title: Rigging Workshops
+      url: https://www.hatrigs.com/workshops
 
 - name: Perry Leijten
   role: Rigging / Tech Artist
   company: Square Enix Tokyo
   company_website: https://www.square-enix.com/
   notable_work:
-    - Horizon Zero Dawn – Rigged many of the Robots
+    - "Horizon Zero Dawn: Rigged many of the Robots"
   links:
     - title: Website
       url: https://www.perryleijten.com
     - title: Gumroad
       url: https://peerke.gumroad.com/
   notes: Has some great articles, but is also active on the [Ask A Rigger Discord Server](/resources/ask-a-rigger).
+
+- name: Walter Yoder
+  role: Founder / Rigging Artist
+  company: Squarebit Studios
+  company_website: https://www.squarebitstudios.com/
+  notable_work:
+    - "Raya and The Last Dragon: Raya facial Rig"
+  links:
+    - title: Website
+      url: https://https://walteryoder.blogspot.com/.com/johndoe
+    - title: Raya Facial Rig
+      url: https://www.instagram.com/p/CNHJm8AjwlC/
+  notes: Check out his Siggraph paper on Rig optimization at Disney.

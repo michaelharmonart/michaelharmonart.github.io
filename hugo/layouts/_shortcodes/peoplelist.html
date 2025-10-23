@@ -6,8 +6,14 @@
         {{ $person.role }} at <a href="{{ $person.company_website }}">{{ $person.company }}</a><br>
 
         {{ if $person.notable_work }}
-            <strong>Notable Work:</strong> {{ delimit $person.notable_work ", " | markdownify }}<br>
+            <strong>Notable Work:</strong>
+            <ul>
+            {{ range $work := $person.notable_work }}
+                <li>{{ $work | markdownify }}</li>
+            {{ end }}
+            </ul>
         {{ end }}
+
 
         {{ if $person.links }}
             {{ range $i, $link := $person.links }}
