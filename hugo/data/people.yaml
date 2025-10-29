@@ -15,6 +15,17 @@
     - title: Rigging Workshops
       url: https://www.hatrigs.com/workshops
 
+- name: Kyle Burris
+  role: Sr Software Engineer - Rigging
+  company: Sony Pictures Imageworks
+  company_website: https://www.imageworks.com/
+  links:
+    - title: Website
+      url: https://kyleburris3d.wordpress.com
+    - title: mGear Rigging Interview
+      url: https://www.youtube.com/watch?v=biZGUcC2cZI
+  notes: Also active on the [Ask A Rigger Discord Server](/resources/ask-a-rigger).
+
 - name: Perry Leijten
   role: Rigging / Tech Artist
   company: Square Enix Tokyo

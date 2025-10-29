@@ -2,7 +2,7 @@
     {{ $people := .Site.Data.people }}
     {{ range $person := $people }}
     <div class="person">
-        <h2>{{ $person.name }}</h2>   
+        <h2 id="{{ $person.name | anchorize }}">{{ $person.name }}</h2>
         {{ $person.role }} at <a href="{{ $person.company_website }}">{{ $person.company }}</a><br>
 
         {{ if $person.notable_work }}
@@ -21,7 +21,7 @@
             {{ end }}<br>
         {{ end }}
         {{ if $person.notes }}
-            <em>Notes:</em> {{ $person.notes | markdownify}}
+            <em>Notes: </em> {{ $person.notes | markdownify}}
         {{ end }}
     </div>
     {{ end }}
