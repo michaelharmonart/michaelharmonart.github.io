@@ -14,7 +14,7 @@ A good default rotateOrder setting could be the difference between a rig that's 
 
 People always seem to over-complicate this, but it's not hard once you understand this general rule of thumb:
 ### **TLDR:** In Maya the rotate order for a control should be (Twist Axis, Least Important Axis, Primary/Hinge Axis)
-Keep in mind tha in certain software you may need to switch the first and last axes depending on how rotation order are represented [See Intrinsic vs. Extrinsic Rotation Orders](#intrinsic-vs-extrinsic-euler-angles).
+Keep in mind that in certain software you may need to switch the first and last axes depending on how rotation order are represented [See Intrinsic vs. Extrinsic Rotation Orders](#intrinsic-vs-extrinsic-euler-angles).
 
 ## What are Rotation Orders?
 Representing rotation is actually pretty tough, and there are a number of methods to do so.
