@@ -5,7 +5,7 @@ date: 2025-10-14
 tags: ["maya", "rigging", "facial"]
 original_url: "https://rigmarolestudio.com/rigging-spherical-eyes/"
 ---
-{{< figure src="preview.gif" link="https://rigmarolestudio.com/rigging-spherical-eyes/" alt="Rigging Spherical Eyes with Just a skinCluster and Sin and Cos Rig Example" >}}
+{{< figure src="cover.gif" link="https://rigmarolestudio.com/rigging-spherical-eyes/" alt="Rigging Spherical Eyes with Just a skinCluster and Sin and Cos Rig Example" >}}
 
 This is a quick Maya character rigging tip about how to rig perfectly spherical iris and pupil scaling in your characters, using only a single skinCluster and some basic nodes.
 
