@@ -17,4 +17,5 @@ params:
       url: "https://github.com/michaelharmonart"
     - name: "email"
       url: "mailto:michaelharmonart@gmail.com"
-    
+ignoreFiles:
+  - "_work/.*"
