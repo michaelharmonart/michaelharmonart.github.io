@@ -15,6 +15,21 @@
     - title: Rigging Workshops
       url: https://www.hatrigs.com/workshops
 
+- name: Iker J. de los Mozos
+  role: Staff Technical Artist / Character TD
+  company: Google
+  company_website: https://google.com/
+  notable_work:
+    - "Moana 2: Pua Rig"
+    - "Ralph Breaks The Internet: Rapunzel + Mulan (Face rig)"
+  links:
+    - title: Youtube
+      url: https://www.youtube.com/@ikerclon
+    - title: Instagram
+      url: https://www.instagram.com/iker.mozos/
+    - title: Artstation
+      url: https://www.artstation.com/ikerclon
+
 - name: Kyle Burris
   role: Sr Software Engineer - Rigging
   company: Sony Pictures Imageworks
