@@ -1,6 +1,6 @@
-baseURL: https://michaelharmonart.github.io/
+baseURL: https://michaelharmonart.com/
 languageCode: en-us
-title: Michael Harmon's Rigging Resources
+title: Michael Harmon
 theme: PaperMod
 sectionPagesMenu: main
 ShowPostType: true
@@ -11,7 +11,7 @@ params:
   author:
     name: Michael Harmon
     email: michaelharmonart@gmail.com
-  mainSections: ["clippings", "posts"]
+  mainSections: ["posts"]
   homeInfoParams:
     Title: "Welcome!"
     Content: "This is a collection of some of the best rigging resources from around the internet. Learning to rig at high level often feels like trying to divine industry secrets, and these resources have been what I've found helpful. Feel free to reach out if you need anything."
