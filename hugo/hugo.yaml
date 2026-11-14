@@ -8,6 +8,9 @@ caches:
   images:
     dir: :cacheDir/images
 params:
+  author:
+    name: Michael Harmon
+    email: michaelharmonart@gmail.com
   mainSections: ["clippings", "posts"]
   homeInfoParams:
     Title: "Welcome!"
