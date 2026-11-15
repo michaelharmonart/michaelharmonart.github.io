@@ -5,16 +5,8 @@
 
 {{- if eq $paginator.PageNumber 1 }}
 <article class="home-showcase">
-  <div class="home-backdrop" aria-hidden="true">
-    <span class="home-orbit home-orbit-one"></span>
-    <span class="home-orbit home-orbit-two"></span>
-    <span class="home-orbit home-orbit-three"></span>
-  </div>
   <div class="home-introduction">
   <header class="home-heading">
-    {{- with .Params.profile.eyebrow }}
-    <p class="home-eyebrow">{{ . }}</p>
-    {{- end }}
     <h1>{{ .Title }}</h1>
     {{- with .Params.profile.role }}
     <p class="home-role">{{ . }}</p>

@@ -1,7 +1,6 @@
 ---
 title: "Michael Harmon"
 profile:
-  eyebrow: "Character Rigging · Tools · Techinical Direction"
   role: "Rigging Artist & Technical Director"
   photo: "images/profile-icon.png"
   photoAlt: "Michael Harmon's profile photo"
